@@ -1,0 +1,314 @@
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chcore.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.port_halt,"ax",%progbits
+  19              		.align	2
+  20              		.weak	port_halt
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	port_halt, %function
+  24              	port_halt:
+  25              	.LFB7:
+  26              		.file 1 "../../os/ports/GCC/ARMCMx/chcore.c"
+  27              		.loc 1 46 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              		.loc 1 48 0
+  33              	@ 48 "../../os/ports/GCC/ARMCMx/chcore.c" 1
+  34 0000 72B6     		cpsid   i
+  35              	@ 0 "" 2
+  36              		.thumb
+  37              	.L2:
+  38 0002 FEE7     		b	.L2
+  39              		.cfi_endproc
+  40              	.LFE7:
+  41              		.size	port_halt, .-port_halt
+  42              		.text
+  43              	.Letext0:
+  44              		.section	.debug_info,"",%progbits
+  45              	.Ldebug_info0:
+  46 0000 8F000000 		.4byte	0x8f
+  47 0004 0200     		.2byte	0x2
+  48 0006 00000000 		.4byte	.Ldebug_abbrev0
+  49 000a 04       		.byte	0x4
+  50 000b 01       		.uleb128 0x1
+  51 000c 3E000000 		.4byte	.LASF11
+  52 0010 01       		.byte	0x1
+  53 0011 1B000000 		.4byte	.LASF12
+  54 0015 73000000 		.4byte	.LASF13
+  55 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  56 001d 00000000 		.4byte	0
+  57 0021 00000000 		.4byte	0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s 			page 2
+
+
+  58 0025 00000000 		.4byte	.Ldebug_line0
+  59 0029 02       		.uleb128 0x2
+  60 002a 04       		.byte	0x4
+  61 002b 05       		.byte	0x5
+  62 002c 696E7400 		.ascii	"int\000"
+  63 0030 03       		.uleb128 0x3
+  64 0031 04       		.byte	0x4
+  65 0032 07       		.byte	0x7
+  66 0033 0E000000 		.4byte	.LASF0
+  67 0037 03       		.uleb128 0x3
+  68 0038 01       		.byte	0x1
+  69 0039 06       		.byte	0x6
+  70 003a C9000000 		.4byte	.LASF1
+  71 003e 03       		.uleb128 0x3
+  72 003f 01       		.byte	0x1
+  73 0040 08       		.byte	0x8
+  74 0041 9A000000 		.4byte	.LASF2
+  75 0045 03       		.uleb128 0x3
+  76 0046 02       		.byte	0x2
+  77 0047 05       		.byte	0x5
+  78 0048 DF000000 		.4byte	.LASF3
+  79 004c 03       		.uleb128 0x3
+  80 004d 02       		.byte	0x2
+  81 004e 07       		.byte	0x7
+  82 004f B6000000 		.4byte	.LASF4
+  83 0053 03       		.uleb128 0x3
+  84 0054 04       		.byte	0x4
+  85 0055 05       		.byte	0x5
+  86 0056 AD000000 		.4byte	.LASF5
+  87 005a 03       		.uleb128 0x3
+  88 005b 04       		.byte	0x4
+  89 005c 07       		.byte	0x7
+  90 005d 4A000000 		.4byte	.LASF6
+  91 0061 03       		.uleb128 0x3
+  92 0062 08       		.byte	0x8
+  93 0063 05       		.byte	0x5
+  94 0064 00000000 		.4byte	.LASF7
+  95 0068 03       		.uleb128 0x3
+  96 0069 08       		.byte	0x8
+  97 006a 07       		.byte	0x7
+  98 006b 5C000000 		.4byte	.LASF8
+  99 006f 03       		.uleb128 0x3
+ 100 0070 04       		.byte	0x4
+ 101 0071 07       		.byte	0x7
+ 102 0072 E9000000 		.4byte	.LASF9
+ 103 0076 03       		.uleb128 0x3
+ 104 0077 01       		.byte	0x1
+ 105 0078 08       		.byte	0x8
+ 106 0079 A8000000 		.4byte	.LASF10
+ 107 007d 04       		.uleb128 0x4
+ 108 007e 01       		.byte	0x1
+ 109 007f D5000000 		.4byte	.LASF14
+ 110 0083 01       		.byte	0x1
+ 111 0084 2E       		.byte	0x2e
+ 112 0085 01       		.byte	0x1
+ 113 0086 00000000 		.4byte	.LFB7
+ 114 008a 04000000 		.4byte	.LFE7
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s 			page 3
+
+
+ 115 008e 02       		.byte	0x2
+ 116 008f 7D       		.byte	0x7d
+ 117 0090 00       		.sleb128 0
+ 118 0091 01       		.byte	0x1
+ 119 0092 00       		.byte	0
+ 120              		.section	.debug_abbrev,"",%progbits
+ 121              	.Ldebug_abbrev0:
+ 122 0000 01       		.uleb128 0x1
+ 123 0001 11       		.uleb128 0x11
+ 124 0002 01       		.byte	0x1
+ 125 0003 25       		.uleb128 0x25
+ 126 0004 0E       		.uleb128 0xe
+ 127 0005 13       		.uleb128 0x13
+ 128 0006 0B       		.uleb128 0xb
+ 129 0007 03       		.uleb128 0x3
+ 130 0008 0E       		.uleb128 0xe
+ 131 0009 1B       		.uleb128 0x1b
+ 132 000a 0E       		.uleb128 0xe
+ 133 000b 55       		.uleb128 0x55
+ 134 000c 06       		.uleb128 0x6
+ 135 000d 11       		.uleb128 0x11
+ 136 000e 01       		.uleb128 0x1
+ 137 000f 52       		.uleb128 0x52
+ 138 0010 01       		.uleb128 0x1
+ 139 0011 10       		.uleb128 0x10
+ 140 0012 06       		.uleb128 0x6
+ 141 0013 00       		.byte	0
+ 142 0014 00       		.byte	0
+ 143 0015 02       		.uleb128 0x2
+ 144 0016 24       		.uleb128 0x24
+ 145 0017 00       		.byte	0
+ 146 0018 0B       		.uleb128 0xb
+ 147 0019 0B       		.uleb128 0xb
+ 148 001a 3E       		.uleb128 0x3e
+ 149 001b 0B       		.uleb128 0xb
+ 150 001c 03       		.uleb128 0x3
+ 151 001d 08       		.uleb128 0x8
+ 152 001e 00       		.byte	0
+ 153 001f 00       		.byte	0
+ 154 0020 03       		.uleb128 0x3
+ 155 0021 24       		.uleb128 0x24
+ 156 0022 00       		.byte	0
+ 157 0023 0B       		.uleb128 0xb
+ 158 0024 0B       		.uleb128 0xb
+ 159 0025 3E       		.uleb128 0x3e
+ 160 0026 0B       		.uleb128 0xb
+ 161 0027 03       		.uleb128 0x3
+ 162 0028 0E       		.uleb128 0xe
+ 163 0029 00       		.byte	0
+ 164 002a 00       		.byte	0
+ 165 002b 04       		.uleb128 0x4
+ 166 002c 2E       		.uleb128 0x2e
+ 167 002d 00       		.byte	0
+ 168 002e 3F       		.uleb128 0x3f
+ 169 002f 0C       		.uleb128 0xc
+ 170 0030 03       		.uleb128 0x3
+ 171 0031 0E       		.uleb128 0xe
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s 			page 4
+
+
+ 172 0032 3A       		.uleb128 0x3a
+ 173 0033 0B       		.uleb128 0xb
+ 174 0034 3B       		.uleb128 0x3b
+ 175 0035 0B       		.uleb128 0xb
+ 176 0036 27       		.uleb128 0x27
+ 177 0037 0C       		.uleb128 0xc
+ 178 0038 11       		.uleb128 0x11
+ 179 0039 01       		.uleb128 0x1
+ 180 003a 12       		.uleb128 0x12
+ 181 003b 01       		.uleb128 0x1
+ 182 003c 40       		.uleb128 0x40
+ 183 003d 0A       		.uleb128 0xa
+ 184 003e 9742     		.uleb128 0x2117
+ 185 0040 0C       		.uleb128 0xc
+ 186 0041 00       		.byte	0
+ 187 0042 00       		.byte	0
+ 188 0043 00       		.byte	0
+ 189              		.section	.debug_aranges,"",%progbits
+ 190 0000 1C000000 		.4byte	0x1c
+ 191 0004 0200     		.2byte	0x2
+ 192 0006 00000000 		.4byte	.Ldebug_info0
+ 193 000a 04       		.byte	0x4
+ 194 000b 00       		.byte	0
+ 195 000c 0000     		.2byte	0
+ 196 000e 0000     		.2byte	0
+ 197 0010 00000000 		.4byte	.LFB7
+ 198 0014 04000000 		.4byte	.LFE7-.LFB7
+ 199 0018 00000000 		.4byte	0
+ 200 001c 00000000 		.4byte	0
+ 201              		.section	.debug_ranges,"",%progbits
+ 202              	.Ldebug_ranges0:
+ 203 0000 00000000 		.4byte	.LFB7
+ 204 0004 04000000 		.4byte	.LFE7
+ 205 0008 00000000 		.4byte	0
+ 206 000c 00000000 		.4byte	0
+ 207              		.section	.debug_line,"",%progbits
+ 208              	.Ldebug_line0:
+ 209 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 209      02003900 
+ 209      00000201 
+ 209      FB0E0D00 
+ 209      01010101 
+ 210              	.LASF7:
+ 211 0000 6C6F6E67 		.ascii	"long long int\000"
+ 211      206C6F6E 
+ 211      6720696E 
+ 211      7400
+ 212              	.LASF0:
+ 213 000e 756E7369 		.ascii	"unsigned int\000"
+ 213      676E6564 
+ 213      20696E74 
+ 213      00
+ 214              	.LASF12:
+ 215 001b 2E2E2F2E 		.ascii	"../../os/ports/GCC/ARMCMx/chcore.c\000"
+ 215      2E2F6F73 
+ 215      2F706F72 
+ 215      74732F47 
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s 			page 5
+
+
+ 215      43432F41 
+ 216              	.LASF11:
+ 217 003e 474E5520 		.ascii	"GNU C 4.7.1\000"
+ 217      4320342E 
+ 217      372E3100 
+ 218              	.LASF6:
+ 219 004a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 219      20756E73 
+ 219      69676E65 
+ 219      6420696E 
+ 219      7400
+ 220              	.LASF8:
+ 221 005c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 221      206C6F6E 
+ 221      6720756E 
+ 221      7369676E 
+ 221      65642069 
+ 222              	.LASF13:
+ 223 0073 433A5C70 		.ascii	"C:\\projects\\ChibiOS_2.4.2\\demos\\TOAST2\000"
+ 223      726F6A65 
+ 223      6374735C 
+ 223      43686962 
+ 223      694F535F 
+ 224              	.LASF2:
+ 225 009a 756E7369 		.ascii	"unsigned char\000"
+ 225      676E6564 
+ 225      20636861 
+ 225      7200
+ 226              	.LASF10:
+ 227 00a8 63686172 		.ascii	"char\000"
+ 227      00
+ 228              	.LASF5:
+ 229 00ad 6C6F6E67 		.ascii	"long int\000"
+ 229      20696E74 
+ 229      00
+ 230              	.LASF4:
+ 231 00b6 73686F72 		.ascii	"short unsigned int\000"
+ 231      7420756E 
+ 231      7369676E 
+ 231      65642069 
+ 231      6E7400
+ 232              	.LASF1:
+ 233 00c9 7369676E 		.ascii	"signed char\000"
+ 233      65642063 
+ 233      68617200 
+ 234              	.LASF14:
+ 235 00d5 706F7274 		.ascii	"port_halt\000"
+ 235      5F68616C 
+ 235      7400
+ 236              	.LASF3:
+ 237 00df 73686F72 		.ascii	"short int\000"
+ 237      7420696E 
+ 237      7400
+ 238              	.LASF9:
+ 239 00e9 73697A65 		.ascii	"sizetype\000"
+ 239      74797065 
+ 239      00
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s 			page 6
+
+
+ 240              		.ident	"GCC: (GNU) 4.7.1"
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 chcore.c
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s:19     .text.port_halt:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccnEugD5.s:24     .text.port_halt:00000000 port_halt
+                     .debug_frame:00000010 $d
+
+NO UNDEFINED SYMBOLS

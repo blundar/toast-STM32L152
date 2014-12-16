@@ -1,0 +1,5553 @@
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"spi.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.spiInit,"ax",%progbits
+  19              		.align	2
+  20              		.global	spiInit
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	spiInit, %function
+  24              	spiInit:
+  25              	.LFB62:
+  26              		.file 1 "../../os/hal/src/spi.c"
+  27              		.loc 1 68 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              		.loc 1 71 0
+  33              		.loc 1 70 0
+  34 0000 FFF7FEBF 		b	spi_lld_init
+  35              	.LVL0:
+  36              		.cfi_endproc
+  37              	.LFE62:
+  38              		.size	spiInit, .-spiInit
+  39              		.section	.text.spiObjectInit,"ax",%progbits
+  40              		.align	2
+  41              		.global	spiObjectInit
+  42              		.thumb
+  43              		.thumb_func
+  44              		.type	spiObjectInit, %function
+  45              	spiObjectInit:
+  46              	.LFB63:
+  47              		.loc 1 80 0
+  48              		.cfi_startproc
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52              	.LVL1:
+  53              		.loc 1 83 0
+  54 0000 0023     		movs	r3, #0
+  55              		.loc 1 82 0
+  56 0002 0122     		movs	r2, #1
+  57 0004 0270     		strb	r2, [r0, #0]
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 2
+
+
+  58              		.loc 1 83 0
+  59 0006 4360     		str	r3, [r0, #4]
+  60              		.loc 1 85 0
+  61 0008 8360     		str	r3, [r0, #8]
+  62              		.loc 1 89 0
+  63 000a 0C30     		adds	r0, r0, #12
+  64              	.LVL2:
+  65              		.loc 1 97 0
+  66              		.loc 1 89 0
+  67 000c FFF7FEBF 		b	chMtxInit
+  68              	.LVL3:
+  69              		.cfi_endproc
+  70              	.LFE63:
+  71              		.size	spiObjectInit, .-spiObjectInit
+  72              		.section	.text.spiStart,"ax",%progbits
+  73              		.align	2
+  74              		.global	spiStart
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	spiStart, %function
+  78              	spiStart:
+  79              	.LFB64:
+  80              		.loc 1 107 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              	.LVL4:
+  85 0000 10B5     		push	{r4, lr}
+  86              	.LCFI0:
+  87              		.cfi_def_cfa_offset 8
+  88              		.cfi_offset 4, -8
+  89              		.cfi_offset 14, -4
+  90              	.LBB2:
+  91              		.loc 1 111 0
+  92 0002 2023     		movs	r3, #32
+  93              	.LVL5:
+  94              	.LBE2:
+  95              		.loc 1 107 0
+  96 0004 0446     		mov	r4, r0
+  97              	.LBB3:
+  98              		.loc 1 111 0
+  99              	@ 111 "../../os/hal/src/spi.c" 1
+ 100 0006 83F31188 		msr     BASEPRI, r3
+ 101              	@ 0 "" 2
+ 102              	.LVL6:
+ 103              		.thumb
+ 104              	.LBE3:
+ 105              		.loc 1 114 0
+ 106 000a 4160     		str	r1, [r0, #4]
+ 107              		.loc 1 115 0
+ 108 000c FFF7FEFF 		bl	spi_lld_start
+ 109              	.LVL7:
+ 110              		.loc 1 116 0
+ 111 0010 0223     		movs	r3, #2
+ 112 0012 2370     		strb	r3, [r4, #0]
+ 113              	.LBB4:
+ 114              		.loc 1 117 0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 3
+
+
+ 115 0014 0023     		movs	r3, #0
+ 116              	.LVL8:
+ 117              	@ 117 "../../os/hal/src/spi.c" 1
+ 118 0016 83F31188 		msr     BASEPRI, r3
+ 119              	@ 0 "" 2
+ 120              	.LVL9:
+ 121              		.thumb
+ 122 001a 10BD     		pop	{r4, pc}
+ 123              	.LBE4:
+ 124              		.cfi_endproc
+ 125              	.LFE64:
+ 126              		.size	spiStart, .-spiStart
+ 127              		.section	.text.spiStop,"ax",%progbits
+ 128              		.align	2
+ 129              		.global	spiStop
+ 130              		.thumb
+ 131              		.thumb_func
+ 132              		.type	spiStop, %function
+ 133              	spiStop:
+ 134              	.LFB65:
+ 135              		.loc 1 129 0
+ 136              		.cfi_startproc
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139              	.LVL10:
+ 140 0000 10B5     		push	{r4, lr}
+ 141              	.LCFI1:
+ 142              		.cfi_def_cfa_offset 8
+ 143              		.cfi_offset 4, -8
+ 144              		.cfi_offset 14, -4
+ 145              	.LBB5:
+ 146              		.loc 1 133 0
+ 147 0002 2023     		movs	r3, #32
+ 148              	.LVL11:
+ 149              	.LBE5:
+ 150              		.loc 1 129 0
+ 151 0004 0446     		mov	r4, r0
+ 152              	.LBB6:
+ 153              		.loc 1 133 0
+ 154              	@ 133 "../../os/hal/src/spi.c" 1
+ 155 0006 83F31188 		msr     BASEPRI, r3
+ 156              	@ 0 "" 2
+ 157              	.LVL12:
+ 158              		.thumb
+ 159              	.LBE6:
+ 160              		.loc 1 136 0
+ 161 000a FFF7FEFF 		bl	spi_lld_unselect
+ 162              	.LVL13:
+ 163              		.loc 1 137 0
+ 164 000e 2046     		mov	r0, r4
+ 165 0010 FFF7FEFF 		bl	spi_lld_stop
+ 166              	.LVL14:
+ 167              		.loc 1 138 0
+ 168 0014 0123     		movs	r3, #1
+ 169 0016 2370     		strb	r3, [r4, #0]
+ 170              	.LBB7:
+ 171              		.loc 1 139 0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 4
+
+
+ 172 0018 0023     		movs	r3, #0
+ 173              	.LVL15:
+ 174              	@ 139 "../../os/hal/src/spi.c" 1
+ 175 001a 83F31188 		msr     BASEPRI, r3
+ 176              	@ 0 "" 2
+ 177              	.LVL16:
+ 178              		.thumb
+ 179 001e 10BD     		pop	{r4, pc}
+ 180              	.LBE7:
+ 181              		.cfi_endproc
+ 182              	.LFE65:
+ 183              		.size	spiStop, .-spiStop
+ 184              		.section	.text.spiSelect,"ax",%progbits
+ 185              		.align	2
+ 186              		.global	spiSelect
+ 187              		.thumb
+ 188              		.thumb_func
+ 189              		.type	spiSelect, %function
+ 190              	spiSelect:
+ 191              	.LFB66:
+ 192              		.loc 1 149 0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196              	.LVL17:
+ 197 0000 08B5     		push	{r3, lr}
+ 198              	.LCFI2:
+ 199              		.cfi_def_cfa_offset 8
+ 200              		.cfi_offset 3, -8
+ 201              		.cfi_offset 14, -4
+ 202              	.LBB8:
+ 203              		.loc 1 153 0
+ 204 0002 2023     		movs	r3, #32
+ 205              	.LVL18:
+ 206              	@ 153 "../../os/hal/src/spi.c" 1
+ 207 0004 83F31188 		msr     BASEPRI, r3
+ 208              	@ 0 "" 2
+ 209              	.LVL19:
+ 210              		.thumb
+ 211              	.LBE8:
+ 212              		.loc 1 155 0
+ 213 0008 FFF7FEFF 		bl	spi_lld_select
+ 214              	.LVL20:
+ 215              	.LBB9:
+ 216              		.loc 1 156 0
+ 217 000c 0023     		movs	r3, #0
+ 218              	.LVL21:
+ 219              	@ 156 "../../os/hal/src/spi.c" 1
+ 220 000e 83F31188 		msr     BASEPRI, r3
+ 221              	@ 0 "" 2
+ 222              	.LVL22:
+ 223              		.thumb
+ 224 0012 08BD     		pop	{r3, pc}
+ 225              	.LBE9:
+ 226              		.cfi_endproc
+ 227              	.LFE66:
+ 228              		.size	spiSelect, .-spiSelect
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 5
+
+
+ 229              		.section	.text.spiUnselect,"ax",%progbits
+ 230              		.align	2
+ 231              		.global	spiUnselect
+ 232              		.thumb
+ 233              		.thumb_func
+ 234              		.type	spiUnselect, %function
+ 235              	spiUnselect:
+ 236              	.LFB67:
+ 237              		.loc 1 167 0
+ 238              		.cfi_startproc
+ 239              		@ args = 0, pretend = 0, frame = 0
+ 240              		@ frame_needed = 0, uses_anonymous_args = 0
+ 241              	.LVL23:
+ 242 0000 08B5     		push	{r3, lr}
+ 243              	.LCFI3:
+ 244              		.cfi_def_cfa_offset 8
+ 245              		.cfi_offset 3, -8
+ 246              		.cfi_offset 14, -4
+ 247              	.LBB10:
+ 248              		.loc 1 171 0
+ 249 0002 2023     		movs	r3, #32
+ 250              	.LVL24:
+ 251              	@ 171 "../../os/hal/src/spi.c" 1
+ 252 0004 83F31188 		msr     BASEPRI, r3
+ 253              	@ 0 "" 2
+ 254              	.LVL25:
+ 255              		.thumb
+ 256              	.LBE10:
+ 257              		.loc 1 173 0
+ 258 0008 FFF7FEFF 		bl	spi_lld_unselect
+ 259              	.LVL26:
+ 260              	.LBB11:
+ 261              		.loc 1 174 0
+ 262 000c 0023     		movs	r3, #0
+ 263              	.LVL27:
+ 264              	@ 174 "../../os/hal/src/spi.c" 1
+ 265 000e 83F31188 		msr     BASEPRI, r3
+ 266              	@ 0 "" 2
+ 267              	.LVL28:
+ 268              		.thumb
+ 269 0012 08BD     		pop	{r3, pc}
+ 270              	.LBE11:
+ 271              		.cfi_endproc
+ 272              	.LFE67:
+ 273              		.size	spiUnselect, .-spiUnselect
+ 274              		.section	.text.spiStartIgnore,"ax",%progbits
+ 275              		.align	2
+ 276              		.global	spiStartIgnore
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.type	spiStartIgnore, %function
+ 280              	spiStartIgnore:
+ 281              	.LFB68:
+ 282              		.loc 1 190 0
+ 283              		.cfi_startproc
+ 284              		@ args = 0, pretend = 0, frame = 0
+ 285              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 6
+
+
+ 286              	.LVL29:
+ 287 0000 08B5     		push	{r3, lr}
+ 288              	.LCFI4:
+ 289              		.cfi_def_cfa_offset 8
+ 290              		.cfi_offset 3, -8
+ 291              		.cfi_offset 14, -4
+ 292              	.LBB12:
+ 293              		.loc 1 194 0
+ 294 0002 2023     		movs	r3, #32
+ 295              	.LVL30:
+ 296              	@ 194 "../../os/hal/src/spi.c" 1
+ 297 0004 83F31188 		msr     BASEPRI, r3
+ 298              	@ 0 "" 2
+ 299              	.LVL31:
+ 300              		.thumb
+ 301              	.LBE12:
+ 302              		.loc 1 196 0
+ 303 0008 0323     		movs	r3, #3
+ 304              	.LVL32:
+ 305 000a 0370     		strb	r3, [r0, #0]
+ 306 000c FFF7FEFF 		bl	spi_lld_ignore
+ 307              	.LVL33:
+ 308              	.LBB13:
+ 309              		.loc 1 197 0
+ 310 0010 0023     		movs	r3, #0
+ 311              	.LVL34:
+ 312              	@ 197 "../../os/hal/src/spi.c" 1
+ 313 0012 83F31188 		msr     BASEPRI, r3
+ 314              	@ 0 "" 2
+ 315              	.LVL35:
+ 316              		.thumb
+ 317 0016 08BD     		pop	{r3, pc}
+ 318              	.LBE13:
+ 319              		.cfi_endproc
+ 320              	.LFE68:
+ 321              		.size	spiStartIgnore, .-spiStartIgnore
+ 322              		.section	.text.spiStartExchange,"ax",%progbits
+ 323              		.align	2
+ 324              		.global	spiStartExchange
+ 325              		.thumb
+ 326              		.thumb_func
+ 327              		.type	spiStartExchange, %function
+ 328              	spiStartExchange:
+ 329              	.LFB69:
+ 330              		.loc 1 218 0
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334              	.LVL36:
+ 335 0000 38B5     		push	{r3, r4, r5, lr}
+ 336              	.LCFI5:
+ 337              		.cfi_def_cfa_offset 16
+ 338              		.cfi_offset 3, -16
+ 339              		.cfi_offset 4, -12
+ 340              		.cfi_offset 5, -8
+ 341              		.cfi_offset 14, -4
+ 342              		.loc 1 218 0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 7
+
+
+ 343 0002 1D46     		mov	r5, r3
+ 344 0004 0446     		mov	r4, r0
+ 345              	.LBB14:
+ 346              		.loc 1 223 0
+ 347 0006 2023     		movs	r3, #32
+ 348              	.LVL37:
+ 349              	@ 223 "../../os/hal/src/spi.c" 1
+ 350 0008 83F31188 		msr     BASEPRI, r3
+ 351              	@ 0 "" 2
+ 352              	.LVL38:
+ 353              		.thumb
+ 354              	.LBE14:
+ 355              		.loc 1 225 0
+ 356 000c 2B46     		mov	r3, r5
+ 357              	.LVL39:
+ 358 000e 0325     		movs	r5, #3
+ 359              	.LVL40:
+ 360 0010 0570     		strb	r5, [r0, #0]
+ 361 0012 FFF7FEFF 		bl	spi_lld_exchange
+ 362              	.LVL41:
+ 363              	.LBB15:
+ 364              		.loc 1 226 0
+ 365 0016 0023     		movs	r3, #0
+ 366              	.LVL42:
+ 367              	@ 226 "../../os/hal/src/spi.c" 1
+ 368 0018 83F31188 		msr     BASEPRI, r3
+ 369              	@ 0 "" 2
+ 370              	.LVL43:
+ 371              		.thumb
+ 372 001c 38BD     		pop	{r3, r4, r5, pc}
+ 373              	.LBE15:
+ 374              		.cfi_endproc
+ 375              	.LFE69:
+ 376              		.size	spiStartExchange, .-spiStartExchange
+ 377 001e 00BF     		.section	.text.spiStartSend,"ax",%progbits
+ 378              		.align	2
+ 379              		.global	spiStartSend
+ 380              		.thumb
+ 381              		.thumb_func
+ 382              		.type	spiStartSend, %function
+ 383              	spiStartSend:
+ 384              	.LFB70:
+ 385              		.loc 1 244 0
+ 386              		.cfi_startproc
+ 387              		@ args = 0, pretend = 0, frame = 0
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 389              	.LVL44:
+ 390 0000 10B5     		push	{r4, lr}
+ 391              	.LCFI6:
+ 392              		.cfi_def_cfa_offset 8
+ 393              		.cfi_offset 4, -8
+ 394              		.cfi_offset 14, -4
+ 395              	.LBB16:
+ 396              		.loc 1 249 0
+ 397 0002 2023     		movs	r3, #32
+ 398              	.LVL45:
+ 399              	.LBE16:
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 8
+
+
+ 400              		.loc 1 244 0
+ 401 0004 0446     		mov	r4, r0
+ 402              	.LBB17:
+ 403              		.loc 1 249 0
+ 404              	@ 249 "../../os/hal/src/spi.c" 1
+ 405 0006 83F31188 		msr     BASEPRI, r3
+ 406              	@ 0 "" 2
+ 407              	.LVL46:
+ 408              		.thumb
+ 409              	.LBE17:
+ 410              		.loc 1 251 0
+ 411 000a 0323     		movs	r3, #3
+ 412              	.LVL47:
+ 413 000c 0370     		strb	r3, [r0, #0]
+ 414 000e FFF7FEFF 		bl	spi_lld_send
+ 415              	.LVL48:
+ 416              	.LBB18:
+ 417              		.loc 1 252 0
+ 418 0012 0023     		movs	r3, #0
+ 419              	.LVL49:
+ 420              	@ 252 "../../os/hal/src/spi.c" 1
+ 421 0014 83F31188 		msr     BASEPRI, r3
+ 422              	@ 0 "" 2
+ 423              	.LVL50:
+ 424              		.thumb
+ 425 0018 10BD     		pop	{r4, pc}
+ 426              	.LBE18:
+ 427              		.cfi_endproc
+ 428              	.LFE70:
+ 429              		.size	spiStartSend, .-spiStartSend
+ 430 001a 00BF     		.section	.text.spiStartReceive,"ax",%progbits
+ 431              		.align	2
+ 432              		.global	spiStartReceive
+ 433              		.thumb
+ 434              		.thumb_func
+ 435              		.type	spiStartReceive, %function
+ 436              	spiStartReceive:
+ 437              	.LFB71:
+ 438              		.loc 1 270 0
+ 439              		.cfi_startproc
+ 440              		@ args = 0, pretend = 0, frame = 0
+ 441              		@ frame_needed = 0, uses_anonymous_args = 0
+ 442              	.LVL51:
+ 443 0000 10B5     		push	{r4, lr}
+ 444              	.LCFI7:
+ 445              		.cfi_def_cfa_offset 8
+ 446              		.cfi_offset 4, -8
+ 447              		.cfi_offset 14, -4
+ 448              	.LBB19:
+ 449              		.loc 1 275 0
+ 450 0002 2023     		movs	r3, #32
+ 451              	.LVL52:
+ 452              	.LBE19:
+ 453              		.loc 1 270 0
+ 454 0004 0446     		mov	r4, r0
+ 455              	.LBB20:
+ 456              		.loc 1 275 0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 9
+
+
+ 457              	@ 275 "../../os/hal/src/spi.c" 1
+ 458 0006 83F31188 		msr     BASEPRI, r3
+ 459              	@ 0 "" 2
+ 460              	.LVL53:
+ 461              		.thumb
+ 462              	.LBE20:
+ 463              		.loc 1 277 0
+ 464 000a 0323     		movs	r3, #3
+ 465              	.LVL54:
+ 466 000c 0370     		strb	r3, [r0, #0]
+ 467 000e FFF7FEFF 		bl	spi_lld_receive
+ 468              	.LVL55:
+ 469              	.LBB21:
+ 470              		.loc 1 278 0
+ 471 0012 0023     		movs	r3, #0
+ 472              	.LVL56:
+ 473              	@ 278 "../../os/hal/src/spi.c" 1
+ 474 0014 83F31188 		msr     BASEPRI, r3
+ 475              	@ 0 "" 2
+ 476              	.LVL57:
+ 477              		.thumb
+ 478 0018 10BD     		pop	{r4, pc}
+ 479              	.LBE21:
+ 480              		.cfi_endproc
+ 481              	.LFE71:
+ 482              		.size	spiStartReceive, .-spiStartReceive
+ 483 001a 00BF     		.section	.text.spiIgnore,"ax",%progbits
+ 484              		.align	2
+ 485              		.global	spiIgnore
+ 486              		.thumb
+ 487              		.thumb_func
+ 488              		.type	spiIgnore, %function
+ 489              	spiIgnore:
+ 490              	.LFB72:
+ 491              		.loc 1 296 0
+ 492              		.cfi_startproc
+ 493              		@ args = 0, pretend = 0, frame = 0
+ 494              		@ frame_needed = 0, uses_anonymous_args = 0
+ 495              	.LVL58:
+ 496 0000 10B5     		push	{r4, lr}
+ 497              	.LCFI8:
+ 498              		.cfi_def_cfa_offset 8
+ 499              		.cfi_offset 4, -8
+ 500              		.cfi_offset 14, -4
+ 501              	.LBB22:
+ 502              		.loc 1 300 0
+ 503 0002 2023     		movs	r3, #32
+ 504              	.LVL59:
+ 505              	.LBE22:
+ 506              		.loc 1 296 0
+ 507 0004 0446     		mov	r4, r0
+ 508              	.LBB23:
+ 509              		.loc 1 300 0
+ 510              	@ 300 "../../os/hal/src/spi.c" 1
+ 511 0006 83F31188 		msr     BASEPRI, r3
+ 512              	@ 0 "" 2
+ 513              	.LVL60:
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 10
+
+
+ 514              		.thumb
+ 515              	.LBE23:
+ 516              		.loc 1 303 0
+ 517 000a 0323     		movs	r3, #3
+ 518              	.LVL61:
+ 519 000c 0370     		strb	r3, [r0, #0]
+ 520 000e FFF7FEFF 		bl	spi_lld_ignore
+ 521              	.LVL62:
+ 522              		.loc 1 304 0
+ 523 0012 40F20003 		movw	r3, #:lower16:rlist
+ 524 0016 C0F20003 		movt	r3, #:upper16:rlist
+ 525 001a DB69     		ldr	r3, [r3, #28]
+ 526 001c 0220     		movs	r0, #2
+ 527 001e A360     		str	r3, [r4, #8]
+ 528 0020 FFF7FEFF 		bl	chSchGoSleepS
+ 529              	.LVL63:
+ 530              	.LBB24:
+ 531              		.loc 1 305 0
+ 532 0024 0023     		movs	r3, #0
+ 533              	.LVL64:
+ 534              	@ 305 "../../os/hal/src/spi.c" 1
+ 535 0026 83F31188 		msr     BASEPRI, r3
+ 536              	@ 0 "" 2
+ 537              	.LVL65:
+ 538              		.thumb
+ 539 002a 10BD     		pop	{r4, pc}
+ 540              	.LBE24:
+ 541              		.cfi_endproc
+ 542              	.LFE72:
+ 543              		.size	spiIgnore, .-spiIgnore
+ 544              		.section	.text.spiExchange,"ax",%progbits
+ 545              		.align	2
+ 546              		.global	spiExchange
+ 547              		.thumb
+ 548              		.thumb_func
+ 549              		.type	spiExchange, %function
+ 550              	spiExchange:
+ 551              	.LFB73:
+ 552              		.loc 1 327 0
+ 553              		.cfi_startproc
+ 554              		@ args = 0, pretend = 0, frame = 0
+ 555              		@ frame_needed = 0, uses_anonymous_args = 0
+ 556              	.LVL66:
+ 557 0000 38B5     		push	{r3, r4, r5, lr}
+ 558              	.LCFI9:
+ 559              		.cfi_def_cfa_offset 16
+ 560              		.cfi_offset 3, -16
+ 561              		.cfi_offset 4, -12
+ 562              		.cfi_offset 5, -8
+ 563              		.cfi_offset 14, -4
+ 564              		.loc 1 327 0
+ 565 0002 1D46     		mov	r5, r3
+ 566 0004 0446     		mov	r4, r0
+ 567              	.LBB25:
+ 568              		.loc 1 332 0
+ 569 0006 2023     		movs	r3, #32
+ 570              	.LVL67:
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 11
+
+
+ 571              	@ 332 "../../os/hal/src/spi.c" 1
+ 572 0008 83F31188 		msr     BASEPRI, r3
+ 573              	@ 0 "" 2
+ 574              	.LVL68:
+ 575              		.thumb
+ 576              	.LBE25:
+ 577              		.loc 1 336 0
+ 578 000c 2B46     		mov	r3, r5
+ 579              	.LVL69:
+ 580 000e 0325     		movs	r5, #3
+ 581              	.LVL70:
+ 582 0010 0570     		strb	r5, [r0, #0]
+ 583 0012 FFF7FEFF 		bl	spi_lld_exchange
+ 584              	.LVL71:
+ 585              		.loc 1 337 0
+ 586 0016 40F20003 		movw	r3, #:lower16:rlist
+ 587 001a C0F20003 		movt	r3, #:upper16:rlist
+ 588 001e DB69     		ldr	r3, [r3, #28]
+ 589 0020 0220     		movs	r0, #2
+ 590 0022 A360     		str	r3, [r4, #8]
+ 591 0024 FFF7FEFF 		bl	chSchGoSleepS
+ 592              	.LVL72:
+ 593              	.LBB26:
+ 594              		.loc 1 338 0
+ 595 0028 0023     		movs	r3, #0
+ 596              	.LVL73:
+ 597              	@ 338 "../../os/hal/src/spi.c" 1
+ 598 002a 83F31188 		msr     BASEPRI, r3
+ 599              	@ 0 "" 2
+ 600              	.LVL74:
+ 601              		.thumb
+ 602 002e 38BD     		pop	{r3, r4, r5, pc}
+ 603              	.LBE26:
+ 604              		.cfi_endproc
+ 605              	.LFE73:
+ 606              		.size	spiExchange, .-spiExchange
+ 607              		.section	.text.spiSend,"ax",%progbits
+ 608              		.align	2
+ 609              		.global	spiSend
+ 610              		.thumb
+ 611              		.thumb_func
+ 612              		.type	spiSend, %function
+ 613              	spiSend:
+ 614              	.LFB74:
+ 615              		.loc 1 357 0
+ 616              		.cfi_startproc
+ 617              		@ args = 0, pretend = 0, frame = 0
+ 618              		@ frame_needed = 0, uses_anonymous_args = 0
+ 619              	.LVL75:
+ 620 0000 10B5     		push	{r4, lr}
+ 621              	.LCFI10:
+ 622              		.cfi_def_cfa_offset 8
+ 623              		.cfi_offset 4, -8
+ 624              		.cfi_offset 14, -4
+ 625              	.LBB27:
+ 626              		.loc 1 361 0
+ 627 0002 2023     		movs	r3, #32
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 12
+
+
+ 628              	.LVL76:
+ 629              	.LBE27:
+ 630              		.loc 1 357 0
+ 631 0004 0446     		mov	r4, r0
+ 632              	.LBB28:
+ 633              		.loc 1 361 0
+ 634              	@ 361 "../../os/hal/src/spi.c" 1
+ 635 0006 83F31188 		msr     BASEPRI, r3
+ 636              	@ 0 "" 2
+ 637              	.LVL77:
+ 638              		.thumb
+ 639              	.LBE28:
+ 640              		.loc 1 364 0
+ 641 000a 0323     		movs	r3, #3
+ 642              	.LVL78:
+ 643 000c 0370     		strb	r3, [r0, #0]
+ 644 000e FFF7FEFF 		bl	spi_lld_send
+ 645              	.LVL79:
+ 646              		.loc 1 365 0
+ 647 0012 40F20003 		movw	r3, #:lower16:rlist
+ 648 0016 C0F20003 		movt	r3, #:upper16:rlist
+ 649 001a DB69     		ldr	r3, [r3, #28]
+ 650 001c 0220     		movs	r0, #2
+ 651 001e A360     		str	r3, [r4, #8]
+ 652 0020 FFF7FEFF 		bl	chSchGoSleepS
+ 653              	.LVL80:
+ 654              	.LBB29:
+ 655              		.loc 1 366 0
+ 656 0024 0023     		movs	r3, #0
+ 657              	.LVL81:
+ 658              	@ 366 "../../os/hal/src/spi.c" 1
+ 659 0026 83F31188 		msr     BASEPRI, r3
+ 660              	@ 0 "" 2
+ 661              	.LVL82:
+ 662              		.thumb
+ 663 002a 10BD     		pop	{r4, pc}
+ 664              	.LBE29:
+ 665              		.cfi_endproc
+ 666              	.LFE74:
+ 667              		.size	spiSend, .-spiSend
+ 668              		.section	.text.spiReceive,"ax",%progbits
+ 669              		.align	2
+ 670              		.global	spiReceive
+ 671              		.thumb
+ 672              		.thumb_func
+ 673              		.type	spiReceive, %function
+ 674              	spiReceive:
+ 675              	.LFB75:
+ 676              		.loc 1 385 0
+ 677              		.cfi_startproc
+ 678              		@ args = 0, pretend = 0, frame = 0
+ 679              		@ frame_needed = 0, uses_anonymous_args = 0
+ 680              	.LVL83:
+ 681 0000 10B5     		push	{r4, lr}
+ 682              	.LCFI11:
+ 683              		.cfi_def_cfa_offset 8
+ 684              		.cfi_offset 4, -8
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 13
+
+
+ 685              		.cfi_offset 14, -4
+ 686              	.LBB30:
+ 687              		.loc 1 390 0
+ 688 0002 2023     		movs	r3, #32
+ 689              	.LVL84:
+ 690              	.LBE30:
+ 691              		.loc 1 385 0
+ 692 0004 0446     		mov	r4, r0
+ 693              	.LBB31:
+ 694              		.loc 1 390 0
+ 695              	@ 390 "../../os/hal/src/spi.c" 1
+ 696 0006 83F31188 		msr     BASEPRI, r3
+ 697              	@ 0 "" 2
+ 698              	.LVL85:
+ 699              		.thumb
+ 700              	.LBE31:
+ 701              		.loc 1 394 0
+ 702 000a 0323     		movs	r3, #3
+ 703              	.LVL86:
+ 704 000c 0370     		strb	r3, [r0, #0]
+ 705 000e FFF7FEFF 		bl	spi_lld_receive
+ 706              	.LVL87:
+ 707              		.loc 1 395 0
+ 708 0012 40F20003 		movw	r3, #:lower16:rlist
+ 709 0016 C0F20003 		movt	r3, #:upper16:rlist
+ 710 001a DB69     		ldr	r3, [r3, #28]
+ 711 001c 0220     		movs	r0, #2
+ 712 001e A360     		str	r3, [r4, #8]
+ 713 0020 FFF7FEFF 		bl	chSchGoSleepS
+ 714              	.LVL88:
+ 715              	.LBB32:
+ 716              		.loc 1 396 0
+ 717 0024 0023     		movs	r3, #0
+ 718              	.LVL89:
+ 719              	@ 396 "../../os/hal/src/spi.c" 1
+ 720 0026 83F31188 		msr     BASEPRI, r3
+ 721              	@ 0 "" 2
+ 722              	.LVL90:
+ 723              		.thumb
+ 724 002a 10BD     		pop	{r4, pc}
+ 725              	.LBE32:
+ 726              		.cfi_endproc
+ 727              	.LFE75:
+ 728              		.size	spiReceive, .-spiReceive
+ 729              		.section	.text.spiAcquireBus,"ax",%progbits
+ 730              		.align	2
+ 731              		.global	spiAcquireBus
+ 732              		.thumb
+ 733              		.thumb_func
+ 734              		.type	spiAcquireBus, %function
+ 735              	spiAcquireBus:
+ 736              	.LFB76:
+ 737              		.loc 1 412 0
+ 738              		.cfi_startproc
+ 739              		@ args = 0, pretend = 0, frame = 0
+ 740              		@ frame_needed = 0, uses_anonymous_args = 0
+ 741              		@ link register save eliminated.
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 14
+
+
+ 742              	.LVL91:
+ 743              		.loc 1 417 0
+ 744 0000 0C30     		adds	r0, r0, #12
+ 745              	.LVL92:
+ 746              		.loc 1 421 0
+ 747              		.loc 1 417 0
+ 748 0002 FFF7FEBF 		b	chMtxLock
+ 749              	.LVL93:
+ 750              		.cfi_endproc
+ 751              	.LFE76:
+ 752              		.size	spiAcquireBus, .-spiAcquireBus
+ 753 0006 00BF     		.section	.text.spiReleaseBus,"ax",%progbits
+ 754              		.align	2
+ 755              		.global	spiReleaseBus
+ 756              		.thumb
+ 757              		.thumb_func
+ 758              		.type	spiReleaseBus, %function
+ 759              	spiReleaseBus:
+ 760              	.LFB77:
+ 761              		.loc 1 432 0
+ 762              		.cfi_startproc
+ 763              		@ args = 0, pretend = 0, frame = 0
+ 764              		@ frame_needed = 0, uses_anonymous_args = 0
+ 765              		@ link register save eliminated.
+ 766              	.LVL94:
+ 767              		.loc 1 442 0
+ 768              		.loc 1 438 0
+ 769 0000 FFF7FEBF 		b	chMtxUnlock
+ 770              	.LVL95:
+ 771              		.cfi_endproc
+ 772              	.LFE77:
+ 773              		.size	spiReleaseBus, .-spiReleaseBus
+ 774              		.text
+ 775              	.Letext0:
+ 776              		.file 2 "c:\\program files\\yagarto\\bin\\../lib/gcc/arm-none-eabi/4.7.1/include/stddef.h"
+ 777              		.file 3 "c:/program files/yagarto/lib/gcc/../../arm-none-eabi/sys-include/stdint.h"
+ 778              		.file 4 "../../os/ports/GCC/ARMCMx/chtypes.h"
+ 779              		.file 5 "../../os/kernel/include/chlists.h"
+ 780              		.file 6 "../../os/kernel/include/chthreads.h"
+ 781              		.file 7 "../../os/ports/GCC/ARMCMx/chcore_v7m.h"
+ 782              		.file 8 "../../os/kernel/include/chschd.h"
+ 783              		.file 9 "../../os/kernel/include/chmtx.h"
+ 784              		.file 10 "../../os/hal/platforms/STM32L1xx/stm32l1xx.h"
+ 785              		.file 11 "../../os/hal/platforms/STM32L1xx/stm32_dma.h"
+ 786              		.file 12 "../../os/hal/platforms/STM32/GPIOv2/pal_lld.h"
+ 787              		.file 13 "../../os/hal/include/spi.h"
+ 788              		.file 14 "../../os/hal/platforms/STM32/spi_lld.h"
+ 789              		.file 15 "../../os/ports/common/ARMCMx/CMSIS/include/core_cm3.h"
+ 790              		.section	.debug_info,"",%progbits
+ 791              	.Ldebug_info0:
+ 792 0000 A1110000 		.4byte	0x11a1
+ 793 0004 0200     		.2byte	0x2
+ 794 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 795 000a 04       		.byte	0x4
+ 796 000b 01       		.uleb128 0x1
+ 797 000c 05030000 		.4byte	.LASF148
+ 798 0010 01       		.byte	0x1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 15
+
+
+ 799 0011 C9020000 		.4byte	.LASF149
+ 800 0015 1D040000 		.4byte	.LASF150
+ 801 0019 A8000000 		.4byte	.Ldebug_ranges0+0xa8
+ 802 001d 00000000 		.4byte	0
+ 803 0021 00000000 		.4byte	0
+ 804 0025 00000000 		.4byte	.Ldebug_line0
+ 805 0029 02       		.uleb128 0x2
+ 806 002a 04       		.byte	0x4
+ 807 002b 05       		.byte	0x5
+ 808 002c 696E7400 		.ascii	"int\000"
+ 809 0030 03       		.uleb128 0x3
+ 810 0031 06000000 		.4byte	.LASF2
+ 811 0035 02       		.byte	0x2
+ 812 0036 D5       		.byte	0xd5
+ 813 0037 3B000000 		.4byte	0x3b
+ 814 003b 04       		.uleb128 0x4
+ 815 003c 04       		.byte	0x4
+ 816 003d 07       		.byte	0x7
+ 817 003e BD010000 		.4byte	.LASF0
+ 818 0042 04       		.uleb128 0x4
+ 819 0043 01       		.byte	0x1
+ 820 0044 06       		.byte	0x6
+ 821 0045 A4000000 		.4byte	.LASF1
+ 822 0049 03       		.uleb128 0x3
+ 823 004a 95050000 		.4byte	.LASF3
+ 824 004e 03       		.byte	0x3
+ 825 004f 2A       		.byte	0x2a
+ 826 0050 54000000 		.4byte	0x54
+ 827 0054 04       		.uleb128 0x4
+ 828 0055 01       		.byte	0x1
+ 829 0056 08       		.byte	0x8
+ 830 0057 B7030000 		.4byte	.LASF4
+ 831 005b 04       		.uleb128 0x4
+ 832 005c 02       		.byte	0x2
+ 833 005d 05       		.byte	0x5
+ 834 005e CF030000 		.4byte	.LASF5
+ 835 0062 03       		.uleb128 0x3
+ 836 0063 37010000 		.4byte	.LASF6
+ 837 0067 03       		.byte	0x3
+ 838 0068 36       		.byte	0x36
+ 839 0069 6D000000 		.4byte	0x6d
+ 840 006d 04       		.uleb128 0x4
+ 841 006e 02       		.byte	0x2
+ 842 006f 07       		.byte	0x7
+ 843 0070 2A020000 		.4byte	.LASF7
+ 844 0074 03       		.uleb128 0x3
+ 845 0075 AF030000 		.4byte	.LASF8
+ 846 0079 03       		.byte	0x3
+ 847 007a 4F       		.byte	0x4f
+ 848 007b 7F000000 		.4byte	0x7f
+ 849 007f 04       		.uleb128 0x4
+ 850 0080 04       		.byte	0x4
+ 851 0081 05       		.byte	0x5
+ 852 0082 EF000000 		.4byte	.LASF9
+ 853 0086 03       		.uleb128 0x3
+ 854 0087 6C040000 		.4byte	.LASF10
+ 855 008b 03       		.byte	0x3
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 16
+
+
+ 856 008c 50       		.byte	0x50
+ 857 008d 91000000 		.4byte	0x91
+ 858 0091 04       		.uleb128 0x4
+ 859 0092 04       		.byte	0x4
+ 860 0093 07       		.byte	0x7
+ 861 0094 85040000 		.4byte	.LASF11
+ 862 0098 04       		.uleb128 0x4
+ 863 0099 08       		.byte	0x8
+ 864 009a 05       		.byte	0x5
+ 865 009b 29010000 		.4byte	.LASF12
+ 866 009f 04       		.uleb128 0x4
+ 867 00a0 08       		.byte	0x8
+ 868 00a1 07       		.byte	0x7
+ 869 00a2 3A000000 		.4byte	.LASF13
+ 870 00a6 03       		.uleb128 0x3
+ 871 00a7 43020000 		.4byte	.LASF14
+ 872 00ab 04       		.byte	0x4
+ 873 00ac 2F       		.byte	0x2f
+ 874 00ad 49000000 		.4byte	0x49
+ 875 00b1 03       		.uleb128 0x3
+ 876 00b2 F8000000 		.4byte	.LASF15
+ 877 00b6 04       		.byte	0x4
+ 878 00b7 30       		.byte	0x30
+ 879 00b8 49000000 		.4byte	0x49
+ 880 00bc 03       		.uleb128 0x3
+ 881 00bd 7D040000 		.4byte	.LASF16
+ 882 00c1 04       		.byte	0x4
+ 883 00c2 31       		.byte	0x31
+ 884 00c3 49000000 		.4byte	0x49
+ 885 00c7 03       		.uleb128 0x3
+ 886 00c8 A1030000 		.4byte	.LASF17
+ 887 00cc 04       		.byte	0x4
+ 888 00cd 32       		.byte	0x32
+ 889 00ce 86000000 		.4byte	0x86
+ 890 00d2 03       		.uleb128 0x3
+ 891 00d3 3D020000 		.4byte	.LASF18
+ 892 00d7 04       		.byte	0x4
+ 893 00d8 33       		.byte	0x33
+ 894 00d9 74000000 		.4byte	0x74
+ 895 00dd 03       		.uleb128 0x3
+ 896 00de 57020000 		.4byte	.LASF19
+ 897 00e2 04       		.byte	0x4
+ 898 00e3 35       		.byte	0x35
+ 899 00e4 86000000 		.4byte	0x86
+ 900 00e8 03       		.uleb128 0x3
+ 901 00e9 CE040000 		.4byte	.LASF20
+ 902 00ed 04       		.byte	0x4
+ 903 00ee 36       		.byte	0x36
+ 904 00ef 86000000 		.4byte	0x86
+ 905 00f3 03       		.uleb128 0x3
+ 906 00f4 B7010000 		.4byte	.LASF21
+ 907 00f8 04       		.byte	0x4
+ 908 00f9 37       		.byte	0x37
+ 909 00fa 74000000 		.4byte	0x74
+ 910 00fe 03       		.uleb128 0x3
+ 911 00ff 75020000 		.4byte	.LASF22
+ 912 0103 05       		.byte	0x5
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 17
+
+
+ 913 0104 2A       		.byte	0x2a
+ 914 0105 09010000 		.4byte	0x109
+ 915 0109 05       		.uleb128 0x5
+ 916 010a 75020000 		.4byte	.LASF22
+ 917 010e 48       		.byte	0x48
+ 918 010f 06       		.byte	0x6
+ 919 0110 5E       		.byte	0x5e
+ 920 0111 20020000 		.4byte	0x220
+ 921 0115 06       		.uleb128 0x6
+ 922 0116 06040000 		.4byte	.LASF23
+ 923 011a 06       		.byte	0x6
+ 924 011b 5F       		.byte	0x5f
+ 925 011c 45020000 		.4byte	0x245
+ 926 0120 02       		.byte	0x2
+ 927 0121 23       		.byte	0x23
+ 928 0122 00       		.uleb128 0
+ 929 0123 06       		.uleb128 0x6
+ 930 0124 75030000 		.4byte	.LASF24
+ 931 0128 06       		.byte	0x6
+ 932 0129 61       		.byte	0x61
+ 933 012a 45020000 		.4byte	0x245
+ 934 012e 02       		.byte	0x2
+ 935 012f 23       		.byte	0x23
+ 936 0130 04       		.uleb128 0x4
+ 937 0131 06       		.uleb128 0x6
+ 938 0132 8B000000 		.4byte	.LASF25
+ 939 0136 06       		.byte	0x6
+ 940 0137 63       		.byte	0x63
+ 941 0138 C7000000 		.4byte	0xc7
+ 942 013c 02       		.byte	0x2
+ 943 013d 23       		.byte	0x23
+ 944 013e 08       		.uleb128 0x8
+ 945 013f 06       		.uleb128 0x6
+ 946 0140 D7050000 		.4byte	.LASF26
+ 947 0144 06       		.byte	0x6
+ 948 0145 64       		.byte	0x64
+ 949 0146 12030000 		.4byte	0x312
+ 950 014a 02       		.byte	0x2
+ 951 014b 23       		.byte	0x23
+ 952 014c 0C       		.uleb128 0xc
+ 953 014d 06       		.uleb128 0x6
+ 954 014e 56010000 		.4byte	.LASF27
+ 955 0152 06       		.byte	0x6
+ 956 0153 66       		.byte	0x66
+ 957 0154 45020000 		.4byte	0x245
+ 958 0158 02       		.byte	0x2
+ 959 0159 23       		.byte	0x23
+ 960 015a 10       		.uleb128 0x10
+ 961 015b 06       		.uleb128 0x6
+ 962 015c E0020000 		.4byte	.LASF28
+ 963 0160 06       		.byte	0x6
+ 964 0161 67       		.byte	0x67
+ 965 0162 45020000 		.4byte	0x245
+ 966 0166 02       		.byte	0x2
+ 967 0167 23       		.byte	0x23
+ 968 0168 14       		.uleb128 0x14
+ 969 0169 06       		.uleb128 0x6
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 18
+
+
+ 970 016a A9050000 		.4byte	.LASF29
+ 971 016e 06       		.byte	0x6
+ 972 016f 6E       		.byte	0x6e
+ 973 0170 39040000 		.4byte	0x439
+ 974 0174 02       		.byte	0x2
+ 975 0175 23       		.byte	0x23
+ 976 0176 18       		.uleb128 0x18
+ 977 0177 06       		.uleb128 0x6
+ 978 0178 D9030000 		.4byte	.LASF30
+ 979 017c 06       		.byte	0x6
+ 980 017d 79       		.byte	0x79
+ 981 017e B1000000 		.4byte	0xb1
+ 982 0182 02       		.byte	0x2
+ 983 0183 23       		.byte	0x23
+ 984 0184 1C       		.uleb128 0x1c
+ 985 0185 06       		.uleb128 0x6
+ 986 0186 0D040000 		.4byte	.LASF31
+ 987 018a 06       		.byte	0x6
+ 988 018b 7D       		.byte	0x7d
+ 989 018c A6000000 		.4byte	0xa6
+ 990 0190 02       		.byte	0x2
+ 991 0191 23       		.byte	0x23
+ 992 0192 1D       		.uleb128 0x1d
+ 993 0193 06       		.uleb128 0x6
+ 994 0194 22010000 		.4byte	.LASF32
+ 995 0198 06       		.byte	0x6
+ 996 0199 82       		.byte	0x82
+ 997 019a BC000000 		.4byte	0xbc
+ 998 019e 02       		.byte	0x2
+ 999 019f 23       		.byte	0x23
+ 1000 01a0 1E       		.uleb128 0x1e
+ 1001 01a1 06       		.uleb128 0x6
+ 1002 01a2 40010000 		.4byte	.LASF33
+ 1003 01a6 06       		.byte	0x6
+ 1004 01a7 89       		.byte	0x89
+ 1005 01a8 41030000 		.4byte	0x341
+ 1006 01ac 02       		.byte	0x2
+ 1007 01ad 23       		.byte	0x23
+ 1008 01ae 20       		.uleb128 0x20
+ 1009 01af 07       		.uleb128 0x7
+ 1010 01b0 705F7500 		.ascii	"p_u\000"
+ 1011 01b4 06       		.byte	0x6
+ 1012 01b5 AE       		.byte	0xae
+ 1013 01b6 04040000 		.4byte	0x404
+ 1014 01ba 02       		.byte	0x2
+ 1015 01bb 23       		.byte	0x23
+ 1016 01bc 24       		.uleb128 0x24
+ 1017 01bd 06       		.uleb128 0x6
+ 1018 01be DD050000 		.4byte	.LASF34
+ 1019 01c2 06       		.byte	0x6
+ 1020 01c3 B3       		.byte	0xb3
+ 1021 01c4 6D020000 		.4byte	0x26d
+ 1022 01c8 02       		.byte	0x2
+ 1023 01c9 23       		.byte	0x23
+ 1024 01ca 28       		.uleb128 0x28
+ 1025 01cb 06       		.uleb128 0x6
+ 1026 01cc F1010000 		.4byte	.LASF35
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 19
+
+
+ 1027 01d0 06       		.byte	0x6
+ 1028 01d1 B9       		.byte	0xb9
+ 1029 01d2 4B020000 		.4byte	0x24b
+ 1030 01d6 02       		.byte	0x2
+ 1031 01d7 23       		.byte	0x23
+ 1032 01d8 2C       		.uleb128 0x2c
+ 1033 01d9 06       		.uleb128 0x6
+ 1034 01da BA050000 		.4byte	.LASF36
+ 1035 01de 06       		.byte	0x6
+ 1036 01df BD       		.byte	0xbd
+ 1037 01e0 D2000000 		.4byte	0xd2
+ 1038 01e4 02       		.byte	0x2
+ 1039 01e5 23       		.byte	0x23
+ 1040 01e6 34       		.uleb128 0x34
+ 1041 01e7 06       		.uleb128 0x6
+ 1042 01e8 52040000 		.4byte	.LASF37
+ 1043 01ec 06       		.byte	0x6
+ 1044 01ed C3       		.byte	0xc3
+ 1045 01ee DD000000 		.4byte	0xdd
+ 1046 01f2 02       		.byte	0x2
+ 1047 01f3 23       		.byte	0x23
+ 1048 01f4 38       		.uleb128 0x38
+ 1049 01f5 06       		.uleb128 0x6
+ 1050 01f6 C5030000 		.4byte	.LASF38
+ 1051 01fa 06       		.byte	0x6
+ 1052 01fb CA       		.byte	0xca
+ 1053 01fc 4B040000 		.4byte	0x44b
+ 1054 0200 02       		.byte	0x2
+ 1055 0201 23       		.byte	0x23
+ 1056 0202 3C       		.uleb128 0x3c
+ 1057 0203 06       		.uleb128 0x6
+ 1058 0204 D8040000 		.4byte	.LASF39
+ 1059 0208 06       		.byte	0x6
+ 1060 0209 CE       		.byte	0xce
+ 1061 020a C7000000 		.4byte	0xc7
+ 1062 020e 02       		.byte	0x2
+ 1063 020f 23       		.byte	0x23
+ 1064 0210 40       		.uleb128 0x40
+ 1065 0211 06       		.uleb128 0x6
+ 1066 0212 BE000000 		.4byte	.LASF40
+ 1067 0216 06       		.byte	0x6
+ 1068 0217 D4       		.byte	0xd4
+ 1069 0218 83020000 		.4byte	0x283
+ 1070 021c 02       		.byte	0x2
+ 1071 021d 23       		.byte	0x23
+ 1072 021e 44       		.uleb128 0x44
+ 1073 021f 00       		.byte	0
+ 1074 0220 08       		.uleb128 0x8
+ 1075 0221 08       		.byte	0x8
+ 1076 0222 05       		.byte	0x5
+ 1077 0223 61       		.byte	0x61
+ 1078 0224 45020000 		.4byte	0x245
+ 1079 0228 06       		.uleb128 0x6
+ 1080 0229 06040000 		.4byte	.LASF23
+ 1081 022d 05       		.byte	0x5
+ 1082 022e 62       		.byte	0x62
+ 1083 022f 45020000 		.4byte	0x245
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 20
+
+
+ 1084 0233 02       		.byte	0x2
+ 1085 0234 23       		.byte	0x23
+ 1086 0235 00       		.uleb128 0
+ 1087 0236 06       		.uleb128 0x6
+ 1088 0237 75030000 		.4byte	.LASF24
+ 1089 023b 05       		.byte	0x5
+ 1090 023c 64       		.byte	0x64
+ 1091 023d 45020000 		.4byte	0x245
+ 1092 0241 02       		.byte	0x2
+ 1093 0242 23       		.byte	0x23
+ 1094 0243 04       		.uleb128 0x4
+ 1095 0244 00       		.byte	0
+ 1096 0245 09       		.uleb128 0x9
+ 1097 0246 04       		.byte	0x4
+ 1098 0247 FE000000 		.4byte	0xfe
+ 1099 024b 03       		.uleb128 0x3
+ 1100 024c EE020000 		.4byte	.LASF41
+ 1101 0250 05       		.byte	0x5
+ 1102 0251 66       		.byte	0x66
+ 1103 0252 20020000 		.4byte	0x220
+ 1104 0256 08       		.uleb128 0x8
+ 1105 0257 04       		.byte	0x4
+ 1106 0258 05       		.byte	0x5
+ 1107 0259 6B       		.byte	0x6b
+ 1108 025a 6D020000 		.4byte	0x26d
+ 1109 025e 06       		.uleb128 0x6
+ 1110 025f 06040000 		.4byte	.LASF23
+ 1111 0263 05       		.byte	0x5
+ 1112 0264 6D       		.byte	0x6d
+ 1113 0265 45020000 		.4byte	0x245
+ 1114 0269 02       		.byte	0x2
+ 1115 026a 23       		.byte	0x23
+ 1116 026b 00       		.uleb128 0
+ 1117 026c 00       		.byte	0
+ 1118 026d 03       		.uleb128 0x3
+ 1119 026e 4B020000 		.4byte	.LASF42
+ 1120 0272 05       		.byte	0x5
+ 1121 0273 70       		.byte	0x70
+ 1122 0274 56020000 		.4byte	0x256
+ 1123 0278 03       		.uleb128 0x3
+ 1124 0279 85010000 		.4byte	.LASF43
+ 1125 027d 07       		.byte	0x7
+ 1126 027e D7       		.byte	0xd7
+ 1127 027f 83020000 		.4byte	0x283
+ 1128 0283 0A       		.uleb128 0xa
+ 1129 0284 04       		.byte	0x4
+ 1130 0285 05       		.uleb128 0x5
+ 1131 0286 2F050000 		.4byte	.LASF44
+ 1132 028a 24       		.byte	0x24
+ 1133 028b 07       		.byte	0x7
+ 1134 028c FE       		.byte	0xfe
+ 1135 028d 12030000 		.4byte	0x312
+ 1136 0291 0B       		.uleb128 0xb
+ 1137 0292 723400   		.ascii	"r4\000"
+ 1138 0295 07       		.byte	0x7
+ 1139 0296 1101     		.2byte	0x111
+ 1140 0298 78020000 		.4byte	0x278
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 21
+
+
+ 1141 029c 02       		.byte	0x2
+ 1142 029d 23       		.byte	0x23
+ 1143 029e 00       		.uleb128 0
+ 1144 029f 0B       		.uleb128 0xb
+ 1145 02a0 723500   		.ascii	"r5\000"
+ 1146 02a3 07       		.byte	0x7
+ 1147 02a4 1201     		.2byte	0x112
+ 1148 02a6 78020000 		.4byte	0x278
+ 1149 02aa 02       		.byte	0x2
+ 1150 02ab 23       		.byte	0x23
+ 1151 02ac 04       		.uleb128 0x4
+ 1152 02ad 0B       		.uleb128 0xb
+ 1153 02ae 723600   		.ascii	"r6\000"
+ 1154 02b1 07       		.byte	0x7
+ 1155 02b2 1301     		.2byte	0x113
+ 1156 02b4 78020000 		.4byte	0x278
+ 1157 02b8 02       		.byte	0x2
+ 1158 02b9 23       		.byte	0x23
+ 1159 02ba 08       		.uleb128 0x8
+ 1160 02bb 0B       		.uleb128 0xb
+ 1161 02bc 723700   		.ascii	"r7\000"
+ 1162 02bf 07       		.byte	0x7
+ 1163 02c0 1401     		.2byte	0x114
+ 1164 02c2 78020000 		.4byte	0x278
+ 1165 02c6 02       		.byte	0x2
+ 1166 02c7 23       		.byte	0x23
+ 1167 02c8 0C       		.uleb128 0xc
+ 1168 02c9 0B       		.uleb128 0xb
+ 1169 02ca 723800   		.ascii	"r8\000"
+ 1170 02cd 07       		.byte	0x7
+ 1171 02ce 1501     		.2byte	0x115
+ 1172 02d0 78020000 		.4byte	0x278
+ 1173 02d4 02       		.byte	0x2
+ 1174 02d5 23       		.byte	0x23
+ 1175 02d6 10       		.uleb128 0x10
+ 1176 02d7 0B       		.uleb128 0xb
+ 1177 02d8 723900   		.ascii	"r9\000"
+ 1178 02db 07       		.byte	0x7
+ 1179 02dc 1601     		.2byte	0x116
+ 1180 02de 78020000 		.4byte	0x278
+ 1181 02e2 02       		.byte	0x2
+ 1182 02e3 23       		.byte	0x23
+ 1183 02e4 14       		.uleb128 0x14
+ 1184 02e5 0B       		.uleb128 0xb
+ 1185 02e6 72313000 		.ascii	"r10\000"
+ 1186 02ea 07       		.byte	0x7
+ 1187 02eb 1701     		.2byte	0x117
+ 1188 02ed 78020000 		.4byte	0x278
+ 1189 02f1 02       		.byte	0x2
+ 1190 02f2 23       		.byte	0x23
+ 1191 02f3 18       		.uleb128 0x18
+ 1192 02f4 0B       		.uleb128 0xb
+ 1193 02f5 72313100 		.ascii	"r11\000"
+ 1194 02f9 07       		.byte	0x7
+ 1195 02fa 1801     		.2byte	0x118
+ 1196 02fc 78020000 		.4byte	0x278
+ 1197 0300 02       		.byte	0x2
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 22
+
+
+ 1198 0301 23       		.byte	0x23
+ 1199 0302 1C       		.uleb128 0x1c
+ 1200 0303 0B       		.uleb128 0xb
+ 1201 0304 6C7200   		.ascii	"lr\000"
+ 1202 0307 07       		.byte	0x7
+ 1203 0308 1901     		.2byte	0x119
+ 1204 030a 78020000 		.4byte	0x278
+ 1205 030e 02       		.byte	0x2
+ 1206 030f 23       		.byte	0x23
+ 1207 0310 20       		.uleb128 0x20
+ 1208 0311 00       		.byte	0
+ 1209 0312 0C       		.uleb128 0xc
+ 1210 0313 22020000 		.4byte	.LASF45
+ 1211 0317 04       		.byte	0x4
+ 1212 0318 07       		.byte	0x7
+ 1213 0319 2301     		.2byte	0x123
+ 1214 031b 2F030000 		.4byte	0x32f
+ 1215 031f 0B       		.uleb128 0xb
+ 1216 0320 72313300 		.ascii	"r13\000"
+ 1217 0324 07       		.byte	0x7
+ 1218 0325 2401     		.2byte	0x124
+ 1219 0327 2F030000 		.4byte	0x32f
+ 1220 032b 02       		.byte	0x2
+ 1221 032c 23       		.byte	0x23
+ 1222 032d 00       		.uleb128 0
+ 1223 032e 00       		.byte	0
+ 1224 032f 09       		.uleb128 0x9
+ 1225 0330 04       		.byte	0x4
+ 1226 0331 85020000 		.4byte	0x285
+ 1227 0335 0D       		.uleb128 0xd
+ 1228 0336 86000000 		.4byte	0x86
+ 1229 033a 04       		.uleb128 0x4
+ 1230 033b 04       		.byte	0x4
+ 1231 033c 07       		.byte	0x7
+ 1232 033d 8F020000 		.4byte	.LASF46
+ 1233 0341 0D       		.uleb128 0xd
+ 1234 0342 E8000000 		.4byte	0xe8
+ 1235 0346 08       		.uleb128 0x8
+ 1236 0347 20       		.byte	0x20
+ 1237 0348 08       		.byte	0x8
+ 1238 0349 5E       		.byte	0x5e
+ 1239 034a B1030000 		.4byte	0x3b1
+ 1240 034e 06       		.uleb128 0x6
+ 1241 034f 75040000 		.4byte	.LASF47
+ 1242 0353 08       		.byte	0x8
+ 1243 0354 5F       		.byte	0x5f
+ 1244 0355 4B020000 		.4byte	0x24b
+ 1245 0359 02       		.byte	0x2
+ 1246 035a 23       		.byte	0x23
+ 1247 035b 00       		.uleb128 0
+ 1248 035c 06       		.uleb128 0x6
+ 1249 035d 7C020000 		.4byte	.LASF48
+ 1250 0361 08       		.byte	0x8
+ 1251 0362 60       		.byte	0x60
+ 1252 0363 C7000000 		.4byte	0xc7
+ 1253 0367 02       		.byte	0x2
+ 1254 0368 23       		.byte	0x23
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 23
+
+
+ 1255 0369 08       		.uleb128 0x8
+ 1256 036a 06       		.uleb128 0x6
+ 1257 036b E8020000 		.4byte	.LASF49
+ 1258 036f 08       		.byte	0x8
+ 1259 0370 62       		.byte	0x62
+ 1260 0371 12030000 		.4byte	0x312
+ 1261 0375 02       		.byte	0x2
+ 1262 0376 23       		.byte	0x23
+ 1263 0377 0C       		.uleb128 0xc
+ 1264 0378 06       		.uleb128 0x6
+ 1265 0379 7D010000 		.4byte	.LASF50
+ 1266 037d 08       		.byte	0x8
+ 1267 037e 65       		.byte	0x65
+ 1268 037f 45020000 		.4byte	0x245
+ 1269 0383 02       		.byte	0x2
+ 1270 0384 23       		.byte	0x23
+ 1271 0385 10       		.uleb128 0x10
+ 1272 0386 06       		.uleb128 0x6
+ 1273 0387 1B030000 		.4byte	.LASF51
+ 1274 038b 08       		.byte	0x8
+ 1275 038c 66       		.byte	0x66
+ 1276 038d 45020000 		.4byte	0x245
+ 1277 0391 02       		.byte	0x2
+ 1278 0392 23       		.byte	0x23
+ 1279 0393 14       		.uleb128 0x14
+ 1280 0394 06       		.uleb128 0x6
+ 1281 0395 C0050000 		.4byte	.LASF52
+ 1282 0399 08       		.byte	0x8
+ 1283 039a 6A       		.byte	0x6a
+ 1284 039b F3000000 		.4byte	0xf3
+ 1285 039f 02       		.byte	0x2
+ 1286 03a0 23       		.byte	0x23
+ 1287 03a1 18       		.uleb128 0x18
+ 1288 03a2 06       		.uleb128 0x6
+ 1289 03a3 11030000 		.4byte	.LASF53
+ 1290 03a7 08       		.byte	0x8
+ 1291 03a8 6C       		.byte	0x6c
+ 1292 03a9 45020000 		.4byte	0x245
+ 1293 03ad 02       		.byte	0x2
+ 1294 03ae 23       		.byte	0x23
+ 1295 03af 1C       		.uleb128 0x1c
+ 1296 03b0 00       		.byte	0
+ 1297 03b1 03       		.uleb128 0x3
+ 1298 03b2 63020000 		.4byte	.LASF54
+ 1299 03b6 08       		.byte	0x8
+ 1300 03b7 6E       		.byte	0x6e
+ 1301 03b8 46030000 		.4byte	0x346
+ 1302 03bc 05       		.uleb128 0x5
+ 1303 03bd 9E020000 		.4byte	.LASF55
+ 1304 03c1 10       		.byte	0x10
+ 1305 03c2 09       		.byte	0x9
+ 1306 03c3 2C       		.byte	0x2c
+ 1307 03c4 F3030000 		.4byte	0x3f3
+ 1308 03c8 06       		.uleb128 0x6
+ 1309 03c9 D3000000 		.4byte	.LASF56
+ 1310 03cd 09       		.byte	0x9
+ 1311 03ce 2D       		.byte	0x2d
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 24
+
+
+ 1312 03cf 4B020000 		.4byte	0x24b
+ 1313 03d3 02       		.byte	0x2
+ 1314 03d4 23       		.byte	0x23
+ 1315 03d5 00       		.uleb128 0
+ 1316 03d6 06       		.uleb128 0x6
+ 1317 03d7 CF050000 		.4byte	.LASF57
+ 1318 03db 09       		.byte	0x9
+ 1319 03dc 2F       		.byte	0x2f
+ 1320 03dd 45020000 		.4byte	0x245
+ 1321 03e1 02       		.byte	0x2
+ 1322 03e2 23       		.byte	0x23
+ 1323 03e3 08       		.uleb128 0x8
+ 1324 03e4 06       		.uleb128 0x6
+ 1325 03e5 C7040000 		.4byte	.LASF58
+ 1326 03e9 09       		.byte	0x9
+ 1327 03ea 31       		.byte	0x31
+ 1328 03eb F3030000 		.4byte	0x3f3
+ 1329 03ef 02       		.byte	0x2
+ 1330 03f0 23       		.byte	0x23
+ 1331 03f1 0C       		.uleb128 0xc
+ 1332 03f2 00       		.byte	0
+ 1333 03f3 09       		.uleb128 0x9
+ 1334 03f4 04       		.byte	0x4
+ 1335 03f5 BC030000 		.4byte	0x3bc
+ 1336 03f9 03       		.uleb128 0x3
+ 1337 03fa 9E020000 		.4byte	.LASF55
+ 1338 03fe 09       		.byte	0x9
+ 1339 03ff 33       		.byte	0x33
+ 1340 0400 BC030000 		.4byte	0x3bc
+ 1341 0404 0E       		.uleb128 0xe
+ 1342 0405 04       		.byte	0x4
+ 1343 0406 06       		.byte	0x6
+ 1344 0407 90       		.byte	0x90
+ 1345 0408 39040000 		.4byte	0x439
+ 1346 040c 0F       		.uleb128 0xf
+ 1347 040d 0D000000 		.4byte	.LASF59
+ 1348 0411 06       		.byte	0x6
+ 1349 0412 97       		.byte	0x97
+ 1350 0413 D2000000 		.4byte	0xd2
+ 1351 0417 0F       		.uleb128 0xf
+ 1352 0418 5D000000 		.4byte	.LASF60
+ 1353 041c 06       		.byte	0x6
+ 1354 041d 9E       		.byte	0x9e
+ 1355 041e D2000000 		.4byte	0xd2
+ 1356 0422 0F       		.uleb128 0xf
+ 1357 0423 A2050000 		.4byte	.LASF61
+ 1358 0427 06       		.byte	0x6
+ 1359 0428 A5       		.byte	0xa5
+ 1360 0429 83020000 		.4byte	0x283
+ 1361 042d 0F       		.uleb128 0xf
+ 1362 042e FF030000 		.4byte	.LASF62
+ 1363 0432 06       		.byte	0x6
+ 1364 0433 AC       		.byte	0xac
+ 1365 0434 DD000000 		.4byte	0xdd
+ 1366 0438 00       		.byte	0
+ 1367 0439 09       		.uleb128 0x9
+ 1368 043a 04       		.byte	0x4
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 25
+
+
+ 1369 043b 3F040000 		.4byte	0x43f
+ 1370 043f 10       		.uleb128 0x10
+ 1371 0440 44040000 		.4byte	0x444
+ 1372 0444 04       		.uleb128 0x4
+ 1373 0445 01       		.byte	0x1
+ 1374 0446 08       		.byte	0x8
+ 1375 0447 A3040000 		.4byte	.LASF63
+ 1376 044b 09       		.uleb128 0x9
+ 1377 044c 04       		.byte	0x4
+ 1378 044d F9030000 		.4byte	0x3f9
+ 1379 0451 0D       		.uleb128 0xd
+ 1380 0452 62000000 		.4byte	0x62
+ 1381 0456 11       		.uleb128 0x11
+ 1382 0457 10       		.byte	0x10
+ 1383 0458 0A       		.byte	0xa
+ 1384 0459 6301     		.2byte	0x163
+ 1385 045b 9C040000 		.4byte	0x49c
+ 1386 045f 0B       		.uleb128 0xb
+ 1387 0460 43435200 		.ascii	"CCR\000"
+ 1388 0464 0A       		.byte	0xa
+ 1389 0465 6501     		.2byte	0x165
+ 1390 0467 35030000 		.4byte	0x335
+ 1391 046b 02       		.byte	0x2
+ 1392 046c 23       		.byte	0x23
+ 1393 046d 00       		.uleb128 0
+ 1394 046e 12       		.uleb128 0x12
+ 1395 046f 75050000 		.4byte	.LASF64
+ 1396 0473 0A       		.byte	0xa
+ 1397 0474 6601     		.2byte	0x166
+ 1398 0476 35030000 		.4byte	0x335
+ 1399 047a 02       		.byte	0x2
+ 1400 047b 23       		.byte	0x23
+ 1401 047c 04       		.uleb128 0x4
+ 1402 047d 12       		.uleb128 0x12
+ 1403 047e EC010000 		.4byte	.LASF65
+ 1404 0482 0A       		.byte	0xa
+ 1405 0483 6701     		.2byte	0x167
+ 1406 0485 35030000 		.4byte	0x335
+ 1407 0489 02       		.byte	0x2
+ 1408 048a 23       		.byte	0x23
+ 1409 048b 08       		.uleb128 0x8
+ 1410 048c 12       		.uleb128 0x12
+ 1411 048d 7B050000 		.4byte	.LASF66
+ 1412 0491 0A       		.byte	0xa
+ 1413 0492 6801     		.2byte	0x168
+ 1414 0494 35030000 		.4byte	0x335
+ 1415 0498 02       		.byte	0x2
+ 1416 0499 23       		.byte	0x23
+ 1417 049a 0C       		.uleb128 0xc
+ 1418 049b 00       		.byte	0
+ 1419 049c 13       		.uleb128 0x13
+ 1420 049d 23030000 		.4byte	.LASF67
+ 1421 04a1 0A       		.byte	0xa
+ 1422 04a2 6901     		.2byte	0x169
+ 1423 04a4 56040000 		.4byte	0x456
+ 1424 04a8 11       		.uleb128 0x11
+ 1425 04a9 1C       		.byte	0x1c
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 26
+
+
+ 1426 04aa 0A       		.byte	0xa
+ 1427 04ab 5502     		.2byte	0x255
+ 1428 04ad 82050000 		.4byte	0x582
+ 1429 04b1 0B       		.uleb128 0xb
+ 1430 04b2 43523100 		.ascii	"CR1\000"
+ 1431 04b6 0A       		.byte	0xa
+ 1432 04b7 5702     		.2byte	0x257
+ 1433 04b9 51040000 		.4byte	0x451
+ 1434 04bd 02       		.byte	0x2
+ 1435 04be 23       		.byte	0x23
+ 1436 04bf 00       		.uleb128 0
+ 1437 04c0 12       		.uleb128 0x12
+ 1438 04c1 43030000 		.4byte	.LASF68
+ 1439 04c5 0A       		.byte	0xa
+ 1440 04c6 5802     		.2byte	0x258
+ 1441 04c8 62000000 		.4byte	0x62
+ 1442 04cc 02       		.byte	0x2
+ 1443 04cd 23       		.byte	0x23
+ 1444 04ce 02       		.uleb128 0x2
+ 1445 04cf 0B       		.uleb128 0xb
+ 1446 04d0 43523200 		.ascii	"CR2\000"
+ 1447 04d4 0A       		.byte	0xa
+ 1448 04d5 5902     		.2byte	0x259
+ 1449 04d7 51040000 		.4byte	0x451
+ 1450 04db 02       		.byte	0x2
+ 1451 04dc 23       		.byte	0x23
+ 1452 04dd 04       		.uleb128 0x4
+ 1453 04de 12       		.uleb128 0x12
+ 1454 04df 4D030000 		.4byte	.LASF69
+ 1455 04e3 0A       		.byte	0xa
+ 1456 04e4 5A02     		.2byte	0x25a
+ 1457 04e6 62000000 		.4byte	0x62
+ 1458 04ea 02       		.byte	0x2
+ 1459 04eb 23       		.byte	0x23
+ 1460 04ec 06       		.uleb128 0x6
+ 1461 04ed 0B       		.uleb128 0xb
+ 1462 04ee 535200   		.ascii	"SR\000"
+ 1463 04f1 0A       		.byte	0xa
+ 1464 04f2 5B02     		.2byte	0x25b
+ 1465 04f4 51040000 		.4byte	0x451
+ 1466 04f8 02       		.byte	0x2
+ 1467 04f9 23       		.byte	0x23
+ 1468 04fa 08       		.uleb128 0x8
+ 1469 04fb 12       		.uleb128 0x12
+ 1470 04fc 57030000 		.4byte	.LASF70
+ 1471 0500 0A       		.byte	0xa
+ 1472 0501 5C02     		.2byte	0x25c
+ 1473 0503 62000000 		.4byte	0x62
+ 1474 0507 02       		.byte	0x2
+ 1475 0508 23       		.byte	0x23
+ 1476 0509 0A       		.uleb128 0xa
+ 1477 050a 0B       		.uleb128 0xb
+ 1478 050b 445200   		.ascii	"DR\000"
+ 1479 050e 0A       		.byte	0xa
+ 1480 050f 5D02     		.2byte	0x25d
+ 1481 0511 51040000 		.4byte	0x451
+ 1482 0515 02       		.byte	0x2
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 27
+
+
+ 1483 0516 23       		.byte	0x23
+ 1484 0517 0C       		.uleb128 0xc
+ 1485 0518 12       		.uleb128 0x12
+ 1486 0519 61030000 		.4byte	.LASF71
+ 1487 051d 0A       		.byte	0xa
+ 1488 051e 5E02     		.2byte	0x25e
+ 1489 0520 62000000 		.4byte	0x62
+ 1490 0524 02       		.byte	0x2
+ 1491 0525 23       		.byte	0x23
+ 1492 0526 0E       		.uleb128 0xe
+ 1493 0527 12       		.uleb128 0x12
+ 1494 0528 51000000 		.4byte	.LASF72
+ 1495 052c 0A       		.byte	0xa
+ 1496 052d 5F02     		.2byte	0x25f
+ 1497 052f 51040000 		.4byte	0x451
+ 1498 0533 02       		.byte	0x2
+ 1499 0534 23       		.byte	0x23
+ 1500 0535 10       		.uleb128 0x10
+ 1501 0536 12       		.uleb128 0x12
+ 1502 0537 6B030000 		.4byte	.LASF73
+ 1503 053b 0A       		.byte	0xa
+ 1504 053c 6002     		.2byte	0x260
+ 1505 053e 62000000 		.4byte	0x62
+ 1506 0542 02       		.byte	0x2
+ 1507 0543 23       		.byte	0x23
+ 1508 0544 12       		.uleb128 0x12
+ 1509 0545 12       		.uleb128 0x12
+ 1510 0546 80050000 		.4byte	.LASF74
+ 1511 054a 0A       		.byte	0xa
+ 1512 054b 6102     		.2byte	0x261
+ 1513 054d 51040000 		.4byte	0x451
+ 1514 0551 02       		.byte	0x2
+ 1515 0552 23       		.byte	0x23
+ 1516 0553 14       		.uleb128 0x14
+ 1517 0554 12       		.uleb128 0x12
+ 1518 0555 62040000 		.4byte	.LASF75
+ 1519 0559 0A       		.byte	0xa
+ 1520 055a 6202     		.2byte	0x262
+ 1521 055c 62000000 		.4byte	0x62
+ 1522 0560 02       		.byte	0x2
+ 1523 0561 23       		.byte	0x23
+ 1524 0562 16       		.uleb128 0x16
+ 1525 0563 12       		.uleb128 0x12
+ 1526 0564 3C030000 		.4byte	.LASF76
+ 1527 0568 0A       		.byte	0xa
+ 1528 0569 6302     		.2byte	0x263
+ 1529 056b 51040000 		.4byte	0x451
+ 1530 056f 02       		.byte	0x2
+ 1531 0570 23       		.byte	0x23
+ 1532 0571 18       		.uleb128 0x18
+ 1533 0572 12       		.uleb128 0x12
+ 1534 0573 7C030000 		.4byte	.LASF77
+ 1535 0577 0A       		.byte	0xa
+ 1536 0578 6402     		.2byte	0x264
+ 1537 057a 62000000 		.4byte	0x62
+ 1538 057e 02       		.byte	0x2
+ 1539 057f 23       		.byte	0x23
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 28
+
+
+ 1540 0580 1A       		.uleb128 0x1a
+ 1541 0581 00       		.byte	0
+ 1542 0582 13       		.uleb128 0x13
+ 1543 0583 97040000 		.4byte	.LASF78
+ 1544 0587 0A       		.byte	0xa
+ 1545 0588 6502     		.2byte	0x265
+ 1546 058a A8040000 		.4byte	0x4a8
+ 1547 058e 08       		.uleb128 0x8
+ 1548 058f 0C       		.byte	0xc
+ 1549 0590 0B       		.byte	0xb
+ 1550 0591 B9       		.byte	0xb9
+ 1551 0592 DD050000 		.4byte	0x5dd
+ 1552 0596 06       		.uleb128 0x6
+ 1553 0597 15040000 		.4byte	.LASF79
+ 1554 059b 0B       		.byte	0xb
+ 1555 059c BA       		.byte	0xba
+ 1556 059d DD050000 		.4byte	0x5dd
+ 1557 05a1 02       		.byte	0x2
+ 1558 05a2 23       		.byte	0x23
+ 1559 05a3 00       		.uleb128 0
+ 1560 05a4 06       		.uleb128 0x6
+ 1561 05a5 5D040000 		.4byte	.LASF80
+ 1562 05a9 0B       		.byte	0xb
+ 1563 05aa BB       		.byte	0xbb
+ 1564 05ab E3050000 		.4byte	0x5e3
+ 1565 05af 02       		.byte	0x2
+ 1566 05b0 23       		.byte	0x23
+ 1567 05b1 04       		.uleb128 0x4
+ 1568 05b2 06       		.uleb128 0x6
+ 1569 05b3 0E020000 		.4byte	.LASF81
+ 1570 05b7 0B       		.byte	0xb
+ 1571 05b8 BC       		.byte	0xbc
+ 1572 05b9 49000000 		.4byte	0x49
+ 1573 05bd 02       		.byte	0x2
+ 1574 05be 23       		.byte	0x23
+ 1575 05bf 08       		.uleb128 0x8
+ 1576 05c0 06       		.uleb128 0x6
+ 1577 05c1 8E010000 		.4byte	.LASF82
+ 1578 05c5 0B       		.byte	0xb
+ 1579 05c6 BE       		.byte	0xbe
+ 1580 05c7 49000000 		.4byte	0x49
+ 1581 05cb 02       		.byte	0x2
+ 1582 05cc 23       		.byte	0x23
+ 1583 05cd 09       		.uleb128 0x9
+ 1584 05ce 06       		.uleb128 0x6
+ 1585 05cf 66000000 		.4byte	.LASF83
+ 1586 05d3 0B       		.byte	0xb
+ 1587 05d4 BF       		.byte	0xbf
+ 1588 05d5 49000000 		.4byte	0x49
+ 1589 05d9 02       		.byte	0x2
+ 1590 05da 23       		.byte	0x23
+ 1591 05db 0A       		.uleb128 0xa
+ 1592 05dc 00       		.byte	0
+ 1593 05dd 09       		.uleb128 0x9
+ 1594 05de 04       		.byte	0x4
+ 1595 05df 9C040000 		.4byte	0x49c
+ 1596 05e3 09       		.uleb128 0x9
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 29
+
+
+ 1597 05e4 04       		.byte	0x4
+ 1598 05e5 35030000 		.4byte	0x335
+ 1599 05e9 03       		.uleb128 0x3
+ 1600 05ea 86030000 		.4byte	.LASF84
+ 1601 05ee 0B       		.byte	0xb
+ 1602 05ef C0       		.byte	0xc0
+ 1603 05f0 8E050000 		.4byte	0x58e
+ 1604 05f4 08       		.uleb128 0x8
+ 1605 05f5 04       		.byte	0x4
+ 1606 05f6 0C       		.byte	0xc
+ 1607 05f7 9D       		.byte	0x9d
+ 1608 05f8 19060000 		.4byte	0x619
+ 1609 05fc 07       		.uleb128 0x7
+ 1610 05fd 73657400 		.ascii	"set\000"
+ 1611 0601 0C       		.byte	0xc
+ 1612 0602 9E       		.byte	0x9e
+ 1613 0603 62000000 		.4byte	0x62
+ 1614 0607 02       		.byte	0x2
+ 1615 0608 23       		.byte	0x23
+ 1616 0609 00       		.uleb128 0
+ 1617 060a 06       		.uleb128 0x6
+ 1618 060b 98020000 		.4byte	.LASF85
+ 1619 060f 0C       		.byte	0xc
+ 1620 0610 9F       		.byte	0x9f
+ 1621 0611 62000000 		.4byte	0x62
+ 1622 0615 02       		.byte	0x2
+ 1623 0616 23       		.byte	0x23
+ 1624 0617 02       		.uleb128 0x2
+ 1625 0618 00       		.byte	0
+ 1626 0619 0E       		.uleb128 0xe
+ 1627 061a 04       		.byte	0x4
+ 1628 061b 0C       		.byte	0xc
+ 1629 061c 9B       		.byte	0x9b
+ 1630 061d 34060000 		.4byte	0x634
+ 1631 0621 14       		.uleb128 0x14
+ 1632 0622 5700     		.ascii	"W\000"
+ 1633 0624 0C       		.byte	0xc
+ 1634 0625 9C       		.byte	0x9c
+ 1635 0626 86000000 		.4byte	0x86
+ 1636 062a 14       		.uleb128 0x14
+ 1637 062b 4800     		.ascii	"H\000"
+ 1638 062d 0C       		.byte	0xc
+ 1639 062e A0       		.byte	0xa0
+ 1640 062f F4050000 		.4byte	0x5f4
+ 1641 0633 00       		.byte	0
+ 1642 0634 08       		.uleb128 0x8
+ 1643 0635 28       		.byte	0x28
+ 1644 0636 0C       		.byte	0xc
+ 1645 0637 93       		.byte	0x93
+ 1646 0638 C9060000 		.4byte	0x6c9
+ 1647 063c 06       		.uleb128 0x6
+ 1648 063d 34000000 		.4byte	.LASF86
+ 1649 0641 0C       		.byte	0xc
+ 1650 0642 95       		.byte	0x95
+ 1651 0643 35030000 		.4byte	0x335
+ 1652 0647 02       		.byte	0x2
+ 1653 0648 23       		.byte	0x23
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 30
+
+
+ 1654 0649 00       		.uleb128 0
+ 1655 064a 06       		.uleb128 0x6
+ 1656 064b 14000000 		.4byte	.LASF87
+ 1657 064f 0C       		.byte	0xc
+ 1658 0650 96       		.byte	0x96
+ 1659 0651 35030000 		.4byte	0x335
+ 1660 0655 02       		.byte	0x2
+ 1661 0656 23       		.byte	0x23
+ 1662 0657 04       		.uleb128 0x4
+ 1663 0658 06       		.uleb128 0x6
+ 1664 0659 75010000 		.4byte	.LASF88
+ 1665 065d 0C       		.byte	0xc
+ 1666 065e 97       		.byte	0x97
+ 1667 065f 35030000 		.4byte	0x335
+ 1668 0663 02       		.byte	0x2
+ 1669 0664 23       		.byte	0x23
+ 1670 0665 08       		.uleb128 0x8
+ 1671 0666 06       		.uleb128 0x6
+ 1672 0667 57000000 		.4byte	.LASF89
+ 1673 066b 0C       		.byte	0xc
+ 1674 066c 98       		.byte	0x98
+ 1675 066d 35030000 		.4byte	0x335
+ 1676 0671 02       		.byte	0x2
+ 1677 0672 23       		.byte	0x23
+ 1678 0673 0C       		.uleb128 0xc
+ 1679 0674 07       		.uleb128 0x7
+ 1680 0675 49445200 		.ascii	"IDR\000"
+ 1681 0679 0C       		.byte	0xc
+ 1682 067a 99       		.byte	0x99
+ 1683 067b 35030000 		.4byte	0x335
+ 1684 067f 02       		.byte	0x2
+ 1685 0680 23       		.byte	0x23
+ 1686 0681 10       		.uleb128 0x10
+ 1687 0682 07       		.uleb128 0x7
+ 1688 0683 4F445200 		.ascii	"ODR\000"
+ 1689 0687 0C       		.byte	0xc
+ 1690 0688 9A       		.byte	0x9a
+ 1691 0689 35030000 		.4byte	0x335
+ 1692 068d 02       		.byte	0x2
+ 1693 068e 23       		.byte	0x23
+ 1694 068f 14       		.uleb128 0x14
+ 1695 0690 06       		.uleb128 0x6
+ 1696 0691 B0000000 		.4byte	.LASF90
+ 1697 0695 0C       		.byte	0xc
+ 1698 0696 A1       		.byte	0xa1
+ 1699 0697 C9060000 		.4byte	0x6c9
+ 1700 069b 02       		.byte	0x2
+ 1701 069c 23       		.byte	0x23
+ 1702 069d 18       		.uleb128 0x18
+ 1703 069e 06       		.uleb128 0x6
+ 1704 069f 09020000 		.4byte	.LASF91
+ 1705 06a3 0C       		.byte	0xc
+ 1706 06a4 A2       		.byte	0xa2
+ 1707 06a5 35030000 		.4byte	0x335
+ 1708 06a9 02       		.byte	0x2
+ 1709 06aa 23       		.byte	0x23
+ 1710 06ab 1C       		.uleb128 0x1c
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 31
+
+
+ 1711 06ac 06       		.uleb128 0x6
+ 1712 06ad 37030000 		.4byte	.LASF92
+ 1713 06b1 0C       		.byte	0xc
+ 1714 06b2 A3       		.byte	0xa3
+ 1715 06b3 35030000 		.4byte	0x335
+ 1716 06b7 02       		.byte	0x2
+ 1717 06b8 23       		.byte	0x23
+ 1718 06b9 20       		.uleb128 0x20
+ 1719 06ba 06       		.uleb128 0x6
+ 1720 06bb CA050000 		.4byte	.LASF93
+ 1721 06bf 0C       		.byte	0xc
+ 1722 06c0 A4       		.byte	0xa4
+ 1723 06c1 35030000 		.4byte	0x335
+ 1724 06c5 02       		.byte	0x2
+ 1725 06c6 23       		.byte	0x23
+ 1726 06c7 24       		.uleb128 0x24
+ 1727 06c8 00       		.byte	0
+ 1728 06c9 0D       		.uleb128 0xd
+ 1729 06ca 19060000 		.4byte	0x619
+ 1730 06ce 03       		.uleb128 0x3
+ 1731 06cf FC010000 		.4byte	.LASF94
+ 1732 06d3 0C       		.byte	0xc
+ 1733 06d4 A5       		.byte	0xa5
+ 1734 06d5 34060000 		.4byte	0x634
+ 1735 06d9 03       		.uleb128 0x3
+ 1736 06da 02050000 		.4byte	.LASF95
+ 1737 06de 0C       		.byte	0xc
+ 1738 06df FC       		.byte	0xfc
+ 1739 06e0 E4060000 		.4byte	0x6e4
+ 1740 06e4 09       		.uleb128 0x9
+ 1741 06e5 04       		.byte	0x4
+ 1742 06e6 CE060000 		.4byte	0x6ce
+ 1743 06ea 09       		.uleb128 0x9
+ 1744 06eb 04       		.byte	0x4
+ 1745 06ec F0060000 		.4byte	0x6f0
+ 1746 06f0 10       		.uleb128 0x10
+ 1747 06f1 E9050000 		.4byte	0x5e9
+ 1748 06f5 15       		.uleb128 0x15
+ 1749 06f6 01       		.byte	0x1
+ 1750 06f7 0D       		.byte	0xd
+ 1751 06f8 55       		.byte	0x55
+ 1752 06f9 1C070000 		.4byte	0x71c
+ 1753 06fd 16       		.uleb128 0x16
+ 1754 06fe 40050000 		.4byte	.LASF96
+ 1755 0702 00       		.sleb128 0
+ 1756 0703 16       		.uleb128 0x16
+ 1757 0704 B5000000 		.4byte	.LASF97
+ 1758 0708 01       		.sleb128 1
+ 1759 0709 16       		.uleb128 0x16
+ 1760 070a 36050000 		.4byte	.LASF98
+ 1761 070e 02       		.sleb128 2
+ 1762 070f 16       		.uleb128 0x16
+ 1763 0710 1B000000 		.4byte	.LASF99
+ 1764 0714 03       		.sleb128 3
+ 1765 0715 16       		.uleb128 0x16
+ 1766 0716 A8040000 		.4byte	.LASF100
+ 1767 071a 04       		.sleb128 4
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 32
+
+
+ 1768 071b 00       		.byte	0
+ 1769 071c 03       		.uleb128 0x3
+ 1770 071d BC040000 		.4byte	.LASF101
+ 1771 0721 0D       		.byte	0xd
+ 1772 0722 5B       		.byte	0x5b
+ 1773 0723 F5060000 		.4byte	0x6f5
+ 1774 0727 13       		.uleb128 0x13
+ 1775 0728 6D000000 		.4byte	.LASF102
+ 1776 072c 0E       		.byte	0xe
+ 1777 072d 0701     		.2byte	0x107
+ 1778 072f 33070000 		.4byte	0x733
+ 1779 0733 0C       		.uleb128 0xc
+ 1780 0734 6D000000 		.4byte	.LASF102
+ 1781 0738 30       		.byte	0x30
+ 1782 0739 0E       		.byte	0xe
+ 1783 073a 2B01     		.2byte	0x12b
+ 1784 073c C8070000 		.4byte	0x7c8
+ 1785 0740 12       		.uleb128 0x12
+ 1786 0741 E9000000 		.4byte	.LASF103
+ 1787 0745 0E       		.byte	0xe
+ 1788 0746 2F01     		.2byte	0x12f
+ 1789 0748 1C070000 		.4byte	0x71c
+ 1790 074c 02       		.byte	0x2
+ 1791 074d 23       		.byte	0x23
+ 1792 074e 00       		.uleb128 0
+ 1793 074f 12       		.uleb128 0x12
+ 1794 0750 B5040000 		.4byte	.LASF104
+ 1795 0754 0E       		.byte	0xe
+ 1796 0755 3301     		.2byte	0x133
+ 1797 0757 3E080000 		.4byte	0x83e
+ 1798 075b 02       		.byte	0x2
+ 1799 075c 23       		.byte	0x23
+ 1800 075d 04       		.uleb128 0x4
+ 1801 075e 12       		.uleb128 0x12
+ 1802 075f E3040000 		.4byte	.LASF105
+ 1803 0763 0E       		.byte	0xe
+ 1804 0764 3801     		.2byte	0x138
+ 1805 0766 45020000 		.4byte	0x245
+ 1806 076a 02       		.byte	0x2
+ 1807 076b 23       		.byte	0x23
+ 1808 076c 08       		.uleb128 0x8
+ 1809 076d 12       		.uleb128 0x12
+ 1810 076e A9030000 		.4byte	.LASF106
+ 1811 0772 0E       		.byte	0xe
+ 1812 0773 3F01     		.2byte	0x13f
+ 1813 0775 F9030000 		.4byte	0x3f9
+ 1814 0779 02       		.byte	0x2
+ 1815 077a 23       		.byte	0x23
+ 1816 077b 0C       		.uleb128 0xc
+ 1817 077c 0B       		.uleb128 0xb
+ 1818 077d 73706900 		.ascii	"spi\000"
+ 1819 0781 0E       		.byte	0xe
+ 1820 0782 4B01     		.2byte	0x14b
+ 1821 0784 49080000 		.4byte	0x849
+ 1822 0788 02       		.byte	0x2
+ 1823 0789 23       		.byte	0x23
+ 1824 078a 1C       		.uleb128 0x1c
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 33
+
+
+ 1825 078b 12       		.uleb128 0x12
+ 1826 078c 00000000 		.4byte	.LASF107
+ 1827 0790 0E       		.byte	0xe
+ 1828 0791 4F01     		.2byte	0x14f
+ 1829 0793 EA060000 		.4byte	0x6ea
+ 1830 0797 02       		.byte	0x2
+ 1831 0798 23       		.byte	0x23
+ 1832 0799 20       		.uleb128 0x20
+ 1833 079a 12       		.uleb128 0x12
+ 1834 079b 6F010000 		.4byte	.LASF108
+ 1835 079f 0E       		.byte	0xe
+ 1836 07a0 5301     		.2byte	0x153
+ 1837 07a2 EA060000 		.4byte	0x6ea
+ 1838 07a6 02       		.byte	0x2
+ 1839 07a7 23       		.byte	0x23
+ 1840 07a8 24       		.uleb128 0x24
+ 1841 07a9 12       		.uleb128 0x12
+ 1842 07aa 65010000 		.4byte	.LASF109
+ 1843 07ae 0E       		.byte	0xe
+ 1844 07af 5701     		.2byte	0x157
+ 1845 07b1 86000000 		.4byte	0x86
+ 1846 07b5 02       		.byte	0x2
+ 1847 07b6 23       		.byte	0x23
+ 1848 07b7 28       		.uleb128 0x28
+ 1849 07b8 12       		.uleb128 0x12
+ 1850 07b9 FB020000 		.4byte	.LASF110
+ 1851 07bd 0E       		.byte	0xe
+ 1852 07be 5B01     		.2byte	0x15b
+ 1853 07c0 86000000 		.4byte	0x86
+ 1854 07c4 02       		.byte	0x2
+ 1855 07c5 23       		.byte	0x23
+ 1856 07c6 2C       		.uleb128 0x2c
+ 1857 07c7 00       		.byte	0
+ 1858 07c8 13       		.uleb128 0x13
+ 1859 07c9 DB000000 		.4byte	.LASF111
+ 1860 07cd 0E       		.byte	0xe
+ 1861 07ce 0F01     		.2byte	0x10f
+ 1862 07d0 D4070000 		.4byte	0x7d4
+ 1863 07d4 09       		.uleb128 0x9
+ 1864 07d5 04       		.byte	0x4
+ 1865 07d6 DA070000 		.4byte	0x7da
+ 1866 07da 17       		.uleb128 0x17
+ 1867 07db 01       		.byte	0x1
+ 1868 07dc E6070000 		.4byte	0x7e6
+ 1869 07e0 18       		.uleb128 0x18
+ 1870 07e1 E6070000 		.4byte	0x7e6
+ 1871 07e5 00       		.byte	0
+ 1872 07e6 09       		.uleb128 0x9
+ 1873 07e7 04       		.byte	0x4
+ 1874 07e8 27070000 		.4byte	0x727
+ 1875 07ec 11       		.uleb128 0x11
+ 1876 07ed 0C       		.byte	0xc
+ 1877 07ee 0E       		.byte	0xe
+ 1878 07ef 1401     		.2byte	0x114
+ 1879 07f1 32080000 		.4byte	0x832
+ 1880 07f5 12       		.uleb128 0x12
+ 1881 07f6 5E010000 		.4byte	.LASF112
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 34
+
+
+ 1882 07fa 0E       		.byte	0xe
+ 1883 07fb 1801     		.2byte	0x118
+ 1884 07fd C8070000 		.4byte	0x7c8
+ 1885 0801 02       		.byte	0x2
+ 1886 0802 23       		.byte	0x23
+ 1887 0803 00       		.uleb128 0
+ 1888 0804 12       		.uleb128 0x12
+ 1889 0805 77000000 		.4byte	.LASF113
+ 1890 0809 0E       		.byte	0xe
+ 1891 080a 1D01     		.2byte	0x11d
+ 1892 080c D9060000 		.4byte	0x6d9
+ 1893 0810 02       		.byte	0x2
+ 1894 0811 23       		.byte	0x23
+ 1895 0812 04       		.uleb128 0x4
+ 1896 0813 12       		.uleb128 0x12
+ 1897 0814 92000000 		.4byte	.LASF114
+ 1898 0818 0E       		.byte	0xe
+ 1899 0819 2101     		.2byte	0x121
+ 1900 081b 62000000 		.4byte	0x62
+ 1901 081f 02       		.byte	0x2
+ 1902 0820 23       		.byte	0x23
+ 1903 0821 08       		.uleb128 0x8
+ 1904 0822 0B       		.uleb128 0xb
+ 1905 0823 63723100 		.ascii	"cr1\000"
+ 1906 0827 0E       		.byte	0xe
+ 1907 0828 2501     		.2byte	0x125
+ 1908 082a 62000000 		.4byte	0x62
+ 1909 082e 02       		.byte	0x2
+ 1910 082f 23       		.byte	0x23
+ 1911 0830 0A       		.uleb128 0xa
+ 1912 0831 00       		.byte	0
+ 1913 0832 13       		.uleb128 0x13
+ 1914 0833 B0050000 		.4byte	.LASF115
+ 1915 0837 0E       		.byte	0xe
+ 1916 0838 2601     		.2byte	0x126
+ 1917 083a EC070000 		.4byte	0x7ec
+ 1918 083e 09       		.uleb128 0x9
+ 1919 083f 04       		.byte	0x4
+ 1920 0840 44080000 		.4byte	0x844
+ 1921 0844 10       		.uleb128 0x10
+ 1922 0845 32080000 		.4byte	0x832
+ 1923 0849 09       		.uleb128 0x9
+ 1924 084a 04       		.byte	0x4
+ 1925 084b 82050000 		.4byte	0x582
+ 1926 084f 19       		.uleb128 0x19
+ 1927 0850 01       		.byte	0x1
+ 1928 0851 6D020000 		.4byte	.LASF116
+ 1929 0855 01       		.byte	0x1
+ 1930 0856 44       		.byte	0x44
+ 1931 0857 01       		.byte	0x1
+ 1932 0858 00000000 		.4byte	.LFB62
+ 1933 085c 04000000 		.4byte	.LFE62
+ 1934 0860 02       		.byte	0x2
+ 1935 0861 7D       		.byte	0x7d
+ 1936 0862 00       		.sleb128 0
+ 1937 0863 01       		.byte	0x1
+ 1938 0864 73080000 		.4byte	0x873
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 35
+
+
+ 1939 0868 1A       		.uleb128 0x1a
+ 1940 0869 04000000 		.4byte	.LVL0
+ 1941 086d 01       		.byte	0x1
+ 1942 086e 7F100000 		.4byte	0x107f
+ 1943 0872 00       		.byte	0
+ 1944 0873 19       		.uleb128 0x19
+ 1945 0874 01       		.byte	0x1
+ 1946 0875 F1030000 		.4byte	.LASF117
+ 1947 0879 01       		.byte	0x1
+ 1948 087a 50       		.byte	0x50
+ 1949 087b 01       		.byte	0x1
+ 1950 087c 00000000 		.4byte	.LFB63
+ 1951 0880 10000000 		.4byte	.LFE63
+ 1952 0884 02       		.byte	0x2
+ 1953 0885 7D       		.byte	0x7d
+ 1954 0886 00       		.sleb128 0
+ 1955 0887 01       		.byte	0x1
+ 1956 0888 B0080000 		.4byte	0x8b0
+ 1957 088c 1B       		.uleb128 0x1b
+ 1958 088d 9D050000 		.4byte	.LASF119
+ 1959 0891 01       		.byte	0x1
+ 1960 0892 50       		.byte	0x50
+ 1961 0893 E6070000 		.4byte	0x7e6
+ 1962 0897 00000000 		.4byte	.LLST0
+ 1963 089b 1C       		.uleb128 0x1c
+ 1964 089c 10000000 		.4byte	.LVL3
+ 1965 08a0 01       		.byte	0x1
+ 1966 08a1 8A100000 		.4byte	0x108a
+ 1967 08a5 1D       		.uleb128 0x1d
+ 1968 08a6 01       		.byte	0x1
+ 1969 08a7 50       		.byte	0x50
+ 1970 08a8 05       		.byte	0x5
+ 1971 08a9 F3       		.byte	0xf3
+ 1972 08aa 01       		.uleb128 0x1
+ 1973 08ab 50       		.byte	0x50
+ 1974 08ac 23       		.byte	0x23
+ 1975 08ad 0C       		.uleb128 0xc
+ 1976 08ae 00       		.byte	0
+ 1977 08af 00       		.byte	0
+ 1978 08b0 1E       		.uleb128 0x1e
+ 1979 08b1 01       		.byte	0x1
+ 1980 08b2 1C050000 		.4byte	.LASF118
+ 1981 08b6 01       		.byte	0x1
+ 1982 08b7 6B       		.byte	0x6b
+ 1983 08b8 01       		.byte	0x1
+ 1984 08b9 00000000 		.4byte	.LFB64
+ 1985 08bd 1C000000 		.4byte	.LFE64
+ 1986 08c1 2E000000 		.4byte	.LLST1
+ 1987 08c5 01       		.byte	0x1
+ 1988 08c6 2F090000 		.4byte	0x92f
+ 1989 08ca 1B       		.uleb128 0x1b
+ 1990 08cb 9D050000 		.4byte	.LASF119
+ 1991 08cf 01       		.byte	0x1
+ 1992 08d0 6B       		.byte	0x6b
+ 1993 08d1 E6070000 		.4byte	0x7e6
+ 1994 08d5 4E000000 		.4byte	.LLST2
+ 1995 08d9 1B       		.uleb128 0x1b
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 36
+
+
+ 1996 08da B5040000 		.4byte	.LASF104
+ 1997 08de 01       		.byte	0x1
+ 1998 08df 6B       		.byte	0x6b
+ 1999 08e0 3E080000 		.4byte	0x83e
+ 2000 08e4 6C000000 		.4byte	.LLST3
+ 2001 08e8 1F       		.uleb128 0x1f
+ 2002 08e9 00000000 		.4byte	.Ldebug_ranges0+0
+ 2003 08ed 01090000 		.4byte	0x901
+ 2004 08f1 20       		.uleb128 0x20
+ 2005 08f2 746D7000 		.ascii	"tmp\000"
+ 2006 08f6 01       		.byte	0x1
+ 2007 08f7 6F       		.byte	0x6f
+ 2008 08f8 86000000 		.4byte	0x86
+ 2009 08fc 8D000000 		.4byte	.LLST4
+ 2010 0900 00       		.byte	0
+ 2011 0901 21       		.uleb128 0x21
+ 2012 0902 14000000 		.4byte	.LBB4
+ 2013 0906 1C000000 		.4byte	.LBE4
+ 2014 090a 1E090000 		.4byte	0x91e
+ 2015 090e 20       		.uleb128 0x20
+ 2016 090f 746D7000 		.ascii	"tmp\000"
+ 2017 0913 01       		.byte	0x1
+ 2018 0914 75       		.byte	0x75
+ 2019 0915 86000000 		.4byte	0x86
+ 2020 0919 A0000000 		.4byte	.LLST5
+ 2021 091d 00       		.byte	0
+ 2022 091e 22       		.uleb128 0x22
+ 2023 091f 10000000 		.4byte	.LVL7
+ 2024 0923 9E100000 		.4byte	0x109e
+ 2025 0927 1D       		.uleb128 0x1d
+ 2026 0928 01       		.byte	0x1
+ 2027 0929 50       		.byte	0x50
+ 2028 092a 02       		.byte	0x2
+ 2029 092b 74       		.byte	0x74
+ 2030 092c 00       		.sleb128 0
+ 2031 092d 00       		.byte	0
+ 2032 092e 00       		.byte	0
+ 2033 092f 1E       		.uleb128 0x1e
+ 2034 0930 01       		.byte	0x1
+ 2035 0931 26000000 		.4byte	.LASF120
+ 2036 0935 01       		.byte	0x1
+ 2037 0936 81       		.byte	0x81
+ 2038 0937 01       		.byte	0x1
+ 2039 0938 00000000 		.4byte	.LFB65
+ 2040 093c 20000000 		.4byte	.LFE65
+ 2041 0940 B3000000 		.4byte	.LLST6
+ 2042 0944 01       		.byte	0x1
+ 2043 0945 B3090000 		.4byte	0x9b3
+ 2044 0949 1B       		.uleb128 0x1b
+ 2045 094a 9D050000 		.4byte	.LASF119
+ 2046 094e 01       		.byte	0x1
+ 2047 094f 81       		.byte	0x81
+ 2048 0950 E6070000 		.4byte	0x7e6
+ 2049 0954 D3000000 		.4byte	.LLST7
+ 2050 0958 1F       		.uleb128 0x1f
+ 2051 0959 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 2052 095d 71090000 		.4byte	0x971
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 37
+
+
+ 2053 0961 20       		.uleb128 0x20
+ 2054 0962 746D7000 		.ascii	"tmp\000"
+ 2055 0966 01       		.byte	0x1
+ 2056 0967 85       		.byte	0x85
+ 2057 0968 86000000 		.4byte	0x86
+ 2058 096c F1000000 		.4byte	.LLST8
+ 2059 0970 00       		.byte	0
+ 2060 0971 21       		.uleb128 0x21
+ 2061 0972 18000000 		.4byte	.LBB7
+ 2062 0976 20000000 		.4byte	.LBE7
+ 2063 097a 8E090000 		.4byte	0x98e
+ 2064 097e 20       		.uleb128 0x20
+ 2065 097f 746D7000 		.ascii	"tmp\000"
+ 2066 0983 01       		.byte	0x1
+ 2067 0984 8B       		.byte	0x8b
+ 2068 0985 86000000 		.4byte	0x86
+ 2069 0989 04010000 		.4byte	.LLST9
+ 2070 098d 00       		.byte	0
+ 2071 098e 23       		.uleb128 0x23
+ 2072 098f 0E000000 		.4byte	.LVL13
+ 2073 0993 B3100000 		.4byte	0x10b3
+ 2074 0997 A2090000 		.4byte	0x9a2
+ 2075 099b 1D       		.uleb128 0x1d
+ 2076 099c 01       		.byte	0x1
+ 2077 099d 50       		.byte	0x50
+ 2078 099e 02       		.byte	0x2
+ 2079 099f 74       		.byte	0x74
+ 2080 09a0 00       		.sleb128 0
+ 2081 09a1 00       		.byte	0
+ 2082 09a2 22       		.uleb128 0x22
+ 2083 09a3 14000000 		.4byte	.LVL14
+ 2084 09a7 C8100000 		.4byte	0x10c8
+ 2085 09ab 1D       		.uleb128 0x1d
+ 2086 09ac 01       		.byte	0x1
+ 2087 09ad 50       		.byte	0x50
+ 2088 09ae 02       		.byte	0x2
+ 2089 09af 74       		.byte	0x74
+ 2090 09b0 00       		.sleb128 0
+ 2091 09b1 00       		.byte	0
+ 2092 09b2 00       		.byte	0
+ 2093 09b3 1E       		.uleb128 0x1e
+ 2094 09b4 01       		.byte	0x1
+ 2095 09b5 25050000 		.4byte	.LASF121
+ 2096 09b9 01       		.byte	0x1
+ 2097 09ba 95       		.byte	0x95
+ 2098 09bb 01       		.byte	0x1
+ 2099 09bc 00000000 		.4byte	.LFB66
+ 2100 09c0 14000000 		.4byte	.LFE66
+ 2101 09c4 17010000 		.4byte	.LLST10
+ 2102 09c8 01       		.byte	0x1
+ 2103 09c9 280A0000 		.4byte	0xa28
+ 2104 09cd 1B       		.uleb128 0x1b
+ 2105 09ce 9D050000 		.4byte	.LASF119
+ 2106 09d2 01       		.byte	0x1
+ 2107 09d3 95       		.byte	0x95
+ 2108 09d4 E6070000 		.4byte	0x7e6
+ 2109 09d8 37010000 		.4byte	.LLST11
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 38
+
+
+ 2110 09dc 21       		.uleb128 0x21
+ 2111 09dd 02000000 		.4byte	.LBB8
+ 2112 09e1 08000000 		.4byte	.LBE8
+ 2113 09e5 F9090000 		.4byte	0x9f9
+ 2114 09e9 20       		.uleb128 0x20
+ 2115 09ea 746D7000 		.ascii	"tmp\000"
+ 2116 09ee 01       		.byte	0x1
+ 2117 09ef 99       		.byte	0x99
+ 2118 09f0 86000000 		.4byte	0x86
+ 2119 09f4 58010000 		.4byte	.LLST12
+ 2120 09f8 00       		.byte	0
+ 2121 09f9 21       		.uleb128 0x21
+ 2122 09fa 0C000000 		.4byte	.LBB9
+ 2123 09fe 14000000 		.4byte	.LBE9
+ 2124 0a02 160A0000 		.4byte	0xa16
+ 2125 0a06 20       		.uleb128 0x20
+ 2126 0a07 746D7000 		.ascii	"tmp\000"
+ 2127 0a0b 01       		.byte	0x1
+ 2128 0a0c 9C       		.byte	0x9c
+ 2129 0a0d 86000000 		.4byte	0x86
+ 2130 0a11 6B010000 		.4byte	.LLST13
+ 2131 0a15 00       		.byte	0
+ 2132 0a16 22       		.uleb128 0x22
+ 2133 0a17 0C000000 		.4byte	.LVL20
+ 2134 0a1b DD100000 		.4byte	0x10dd
+ 2135 0a1f 1D       		.uleb128 0x1d
+ 2136 0a20 01       		.byte	0x1
+ 2137 0a21 50       		.byte	0x50
+ 2138 0a22 03       		.byte	0x3
+ 2139 0a23 F3       		.byte	0xf3
+ 2140 0a24 01       		.uleb128 0x1
+ 2141 0a25 50       		.byte	0x50
+ 2142 0a26 00       		.byte	0
+ 2143 0a27 00       		.byte	0
+ 2144 0a28 1E       		.uleb128 0x1e
+ 2145 0a29 01       		.byte	0x1
+ 2146 0a2a 98010000 		.4byte	.LASF122
+ 2147 0a2e 01       		.byte	0x1
+ 2148 0a2f A7       		.byte	0xa7
+ 2149 0a30 01       		.byte	0x1
+ 2150 0a31 00000000 		.4byte	.LFB67
+ 2151 0a35 14000000 		.4byte	.LFE67
+ 2152 0a39 7E010000 		.4byte	.LLST14
+ 2153 0a3d 01       		.byte	0x1
+ 2154 0a3e 9D0A0000 		.4byte	0xa9d
+ 2155 0a42 1B       		.uleb128 0x1b
+ 2156 0a43 9D050000 		.4byte	.LASF119
+ 2157 0a47 01       		.byte	0x1
+ 2158 0a48 A7       		.byte	0xa7
+ 2159 0a49 E6070000 		.4byte	0x7e6
+ 2160 0a4d 9E010000 		.4byte	.LLST15
+ 2161 0a51 21       		.uleb128 0x21
+ 2162 0a52 02000000 		.4byte	.LBB10
+ 2163 0a56 08000000 		.4byte	.LBE10
+ 2164 0a5a 6E0A0000 		.4byte	0xa6e
+ 2165 0a5e 20       		.uleb128 0x20
+ 2166 0a5f 746D7000 		.ascii	"tmp\000"
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 39
+
+
+ 2167 0a63 01       		.byte	0x1
+ 2168 0a64 AB       		.byte	0xab
+ 2169 0a65 86000000 		.4byte	0x86
+ 2170 0a69 BF010000 		.4byte	.LLST16
+ 2171 0a6d 00       		.byte	0
+ 2172 0a6e 21       		.uleb128 0x21
+ 2173 0a6f 0C000000 		.4byte	.LBB11
+ 2174 0a73 14000000 		.4byte	.LBE11
+ 2175 0a77 8B0A0000 		.4byte	0xa8b
+ 2176 0a7b 20       		.uleb128 0x20
+ 2177 0a7c 746D7000 		.ascii	"tmp\000"
+ 2178 0a80 01       		.byte	0x1
+ 2179 0a81 AE       		.byte	0xae
+ 2180 0a82 86000000 		.4byte	0x86
+ 2181 0a86 D2010000 		.4byte	.LLST17
+ 2182 0a8a 00       		.byte	0
+ 2183 0a8b 22       		.uleb128 0x22
+ 2184 0a8c 0C000000 		.4byte	.LVL26
+ 2185 0a90 B3100000 		.4byte	0x10b3
+ 2186 0a94 1D       		.uleb128 0x1d
+ 2187 0a95 01       		.byte	0x1
+ 2188 0a96 50       		.byte	0x50
+ 2189 0a97 03       		.byte	0x3
+ 2190 0a98 F3       		.byte	0xf3
+ 2191 0a99 01       		.uleb128 0x1
+ 2192 0a9a 50       		.byte	0x50
+ 2193 0a9b 00       		.byte	0
+ 2194 0a9c 00       		.byte	0
+ 2195 0a9d 1E       		.uleb128 0x1e
+ 2196 0a9e 01       		.byte	0x1
+ 2197 0a9f 47010000 		.4byte	.LASF123
+ 2198 0aa3 01       		.byte	0x1
+ 2199 0aa4 BE       		.byte	0xbe
+ 2200 0aa5 01       		.byte	0x1
+ 2201 0aa6 00000000 		.4byte	.LFB68
+ 2202 0aaa 18000000 		.4byte	.LFE68
+ 2203 0aae E5010000 		.4byte	.LLST18
+ 2204 0ab2 01       		.byte	0x1
+ 2205 0ab3 260B0000 		.4byte	0xb26
+ 2206 0ab7 1B       		.uleb128 0x1b
+ 2207 0ab8 9D050000 		.4byte	.LASF119
+ 2208 0abc 01       		.byte	0x1
+ 2209 0abd BE       		.byte	0xbe
+ 2210 0abe E6070000 		.4byte	0x7e6
+ 2211 0ac2 05020000 		.4byte	.LLST19
+ 2212 0ac6 24       		.uleb128 0x24
+ 2213 0ac7 6E00     		.ascii	"n\000"
+ 2214 0ac9 01       		.byte	0x1
+ 2215 0aca BE       		.byte	0xbe
+ 2216 0acb 30000000 		.4byte	0x30
+ 2217 0acf 26020000 		.4byte	.LLST20
+ 2218 0ad3 21       		.uleb128 0x21
+ 2219 0ad4 02000000 		.4byte	.LBB12
+ 2220 0ad8 08000000 		.4byte	.LBE12
+ 2221 0adc F00A0000 		.4byte	0xaf0
+ 2222 0ae0 20       		.uleb128 0x20
+ 2223 0ae1 746D7000 		.ascii	"tmp\000"
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 40
+
+
+ 2224 0ae5 01       		.byte	0x1
+ 2225 0ae6 C2       		.byte	0xc2
+ 2226 0ae7 86000000 		.4byte	0x86
+ 2227 0aeb 47020000 		.4byte	.LLST21
+ 2228 0aef 00       		.byte	0
+ 2229 0af0 21       		.uleb128 0x21
+ 2230 0af1 10000000 		.4byte	.LBB13
+ 2231 0af5 18000000 		.4byte	.LBE13
+ 2232 0af9 0D0B0000 		.4byte	0xb0d
+ 2233 0afd 20       		.uleb128 0x20
+ 2234 0afe 746D7000 		.ascii	"tmp\000"
+ 2235 0b02 01       		.byte	0x1
+ 2236 0b03 C5       		.byte	0xc5
+ 2237 0b04 86000000 		.4byte	0x86
+ 2238 0b08 5A020000 		.4byte	.LLST22
+ 2239 0b0c 00       		.byte	0
+ 2240 0b0d 22       		.uleb128 0x22
+ 2241 0b0e 10000000 		.4byte	.LVL33
+ 2242 0b12 F2100000 		.4byte	0x10f2
+ 2243 0b16 1D       		.uleb128 0x1d
+ 2244 0b17 01       		.byte	0x1
+ 2245 0b18 51       		.byte	0x51
+ 2246 0b19 03       		.byte	0x3
+ 2247 0b1a F3       		.byte	0xf3
+ 2248 0b1b 01       		.uleb128 0x1
+ 2249 0b1c 51       		.byte	0x51
+ 2250 0b1d 1D       		.uleb128 0x1d
+ 2251 0b1e 01       		.byte	0x1
+ 2252 0b1f 50       		.byte	0x50
+ 2253 0b20 03       		.byte	0x3
+ 2254 0b21 F3       		.byte	0xf3
+ 2255 0b22 01       		.uleb128 0x1
+ 2256 0b23 50       		.byte	0x50
+ 2257 0b24 00       		.byte	0
+ 2258 0b25 00       		.byte	0
+ 2259 0b26 1E       		.uleb128 0x1e
+ 2260 0b27 01       		.byte	0x1
+ 2261 0b28 64050000 		.4byte	.LASF124
+ 2262 0b2c 01       		.byte	0x1
+ 2263 0b2d D9       		.byte	0xd9
+ 2264 0b2e 01       		.byte	0x1
+ 2265 0b2f 00000000 		.4byte	.LFB69
+ 2266 0b33 1E000000 		.4byte	.LFE69
+ 2267 0b37 6D020000 		.4byte	.LLST23
+ 2268 0b3b 01       		.byte	0x1
+ 2269 0b3c DA0B0000 		.4byte	0xbda
+ 2270 0b40 1B       		.uleb128 0x1b
+ 2271 0b41 9D050000 		.4byte	.LASF119
+ 2272 0b45 01       		.byte	0x1
+ 2273 0b46 D9       		.byte	0xd9
+ 2274 0b47 E6070000 		.4byte	0x7e6
+ 2275 0b4b 8D020000 		.4byte	.LLST24
+ 2276 0b4f 24       		.uleb128 0x24
+ 2277 0b50 6E00     		.ascii	"n\000"
+ 2278 0b52 01       		.byte	0x1
+ 2279 0b53 D9       		.byte	0xd9
+ 2280 0b54 30000000 		.4byte	0x30
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 41
+
+
+ 2281 0b58 AB020000 		.4byte	.LLST25
+ 2282 0b5c 1B       		.uleb128 0x1b
+ 2283 0b5d DB010000 		.4byte	.LASF125
+ 2284 0b61 01       		.byte	0x1
+ 2285 0b62 DA       		.byte	0xda
+ 2286 0b63 DA0B0000 		.4byte	0xbda
+ 2287 0b67 CC020000 		.4byte	.LLST26
+ 2288 0b6b 1B       		.uleb128 0x1b
+ 2289 0b6c 2E000000 		.4byte	.LASF126
+ 2290 0b70 01       		.byte	0x1
+ 2291 0b71 DA       		.byte	0xda
+ 2292 0b72 83020000 		.4byte	0x283
+ 2293 0b76 ED020000 		.4byte	.LLST27
+ 2294 0b7a 21       		.uleb128 0x21
+ 2295 0b7b 06000000 		.4byte	.LBB14
+ 2296 0b7f 0C000000 		.4byte	.LBE14
+ 2297 0b83 970B0000 		.4byte	0xb97
+ 2298 0b87 20       		.uleb128 0x20
+ 2299 0b88 746D7000 		.ascii	"tmp\000"
+ 2300 0b8c 01       		.byte	0x1
+ 2301 0b8d DF       		.byte	0xdf
+ 2302 0b8e 86000000 		.4byte	0x86
+ 2303 0b92 24030000 		.4byte	.LLST28
+ 2304 0b96 00       		.byte	0
+ 2305 0b97 21       		.uleb128 0x21
+ 2306 0b98 16000000 		.4byte	.LBB15
+ 2307 0b9c 1E000000 		.4byte	.LBE15
+ 2308 0ba0 B40B0000 		.4byte	0xbb4
+ 2309 0ba4 20       		.uleb128 0x20
+ 2310 0ba5 746D7000 		.ascii	"tmp\000"
+ 2311 0ba9 01       		.byte	0x1
+ 2312 0baa E2       		.byte	0xe2
+ 2313 0bab 86000000 		.4byte	0x86
+ 2314 0baf 37030000 		.4byte	.LLST29
+ 2315 0bb3 00       		.byte	0
+ 2316 0bb4 22       		.uleb128 0x22
+ 2317 0bb5 16000000 		.4byte	.LVL41
+ 2318 0bb9 0C110000 		.4byte	0x110c
+ 2319 0bbd 1D       		.uleb128 0x1d
+ 2320 0bbe 01       		.byte	0x1
+ 2321 0bbf 53       		.byte	0x53
+ 2322 0bc0 03       		.byte	0x3
+ 2323 0bc1 F3       		.byte	0xf3
+ 2324 0bc2 01       		.uleb128 0x1
+ 2325 0bc3 53       		.byte	0x53
+ 2326 0bc4 1D       		.uleb128 0x1d
+ 2327 0bc5 01       		.byte	0x1
+ 2328 0bc6 52       		.byte	0x52
+ 2329 0bc7 03       		.byte	0x3
+ 2330 0bc8 F3       		.byte	0xf3
+ 2331 0bc9 01       		.uleb128 0x1
+ 2332 0bca 52       		.byte	0x52
+ 2333 0bcb 1D       		.uleb128 0x1d
+ 2334 0bcc 01       		.byte	0x1
+ 2335 0bcd 51       		.byte	0x51
+ 2336 0bce 03       		.byte	0x3
+ 2337 0bcf F3       		.byte	0xf3
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 42
+
+
+ 2338 0bd0 01       		.uleb128 0x1
+ 2339 0bd1 51       		.byte	0x51
+ 2340 0bd2 1D       		.uleb128 0x1d
+ 2341 0bd3 01       		.byte	0x1
+ 2342 0bd4 50       		.byte	0x50
+ 2343 0bd5 02       		.byte	0x2
+ 2344 0bd6 74       		.byte	0x74
+ 2345 0bd7 00       		.sleb128 0
+ 2346 0bd8 00       		.byte	0
+ 2347 0bd9 00       		.byte	0
+ 2348 0bda 09       		.uleb128 0x9
+ 2349 0bdb 04       		.byte	0x4
+ 2350 0bdc E00B0000 		.4byte	0xbe0
+ 2351 0be0 25       		.uleb128 0x25
+ 2352 0be1 1E       		.uleb128 0x1e
+ 2353 0be2 01       		.byte	0x1
+ 2354 0be3 15020000 		.4byte	.LASF127
+ 2355 0be7 01       		.byte	0x1
+ 2356 0be8 F4       		.byte	0xf4
+ 2357 0be9 01       		.byte	0x1
+ 2358 0bea 00000000 		.4byte	.LFB70
+ 2359 0bee 1A000000 		.4byte	.LFE70
+ 2360 0bf2 4A030000 		.4byte	.LLST30
+ 2361 0bf6 01       		.byte	0x1
+ 2362 0bf7 7B0C0000 		.4byte	0xc7b
+ 2363 0bfb 1B       		.uleb128 0x1b
+ 2364 0bfc 9D050000 		.4byte	.LASF119
+ 2365 0c00 01       		.byte	0x1
+ 2366 0c01 F4       		.byte	0xf4
+ 2367 0c02 E6070000 		.4byte	0x7e6
+ 2368 0c06 6A030000 		.4byte	.LLST31
+ 2369 0c0a 24       		.uleb128 0x24
+ 2370 0c0b 6E00     		.ascii	"n\000"
+ 2371 0c0d 01       		.byte	0x1
+ 2372 0c0e F4       		.byte	0xf4
+ 2373 0c0f 30000000 		.4byte	0x30
+ 2374 0c13 88030000 		.4byte	.LLST32
+ 2375 0c17 1B       		.uleb128 0x1b
+ 2376 0c18 DB010000 		.4byte	.LASF125
+ 2377 0c1c 01       		.byte	0x1
+ 2378 0c1d F4       		.byte	0xf4
+ 2379 0c1e DA0B0000 		.4byte	0xbda
+ 2380 0c22 A9030000 		.4byte	.LLST33
+ 2381 0c26 1F       		.uleb128 0x1f
+ 2382 0c27 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 2383 0c2b 3F0C0000 		.4byte	0xc3f
+ 2384 0c2f 20       		.uleb128 0x20
+ 2385 0c30 746D7000 		.ascii	"tmp\000"
+ 2386 0c34 01       		.byte	0x1
+ 2387 0c35 F9       		.byte	0xf9
+ 2388 0c36 86000000 		.4byte	0x86
+ 2389 0c3a CA030000 		.4byte	.LLST34
+ 2390 0c3e 00       		.byte	0
+ 2391 0c3f 21       		.uleb128 0x21
+ 2392 0c40 12000000 		.4byte	.LBB18
+ 2393 0c44 1A000000 		.4byte	.LBE18
+ 2394 0c48 5C0C0000 		.4byte	0xc5c
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 43
+
+
+ 2395 0c4c 20       		.uleb128 0x20
+ 2396 0c4d 746D7000 		.ascii	"tmp\000"
+ 2397 0c51 01       		.byte	0x1
+ 2398 0c52 FC       		.byte	0xfc
+ 2399 0c53 86000000 		.4byte	0x86
+ 2400 0c57 DD030000 		.4byte	.LLST35
+ 2401 0c5b 00       		.byte	0
+ 2402 0c5c 22       		.uleb128 0x22
+ 2403 0c5d 12000000 		.4byte	.LVL48
+ 2404 0c61 30110000 		.4byte	0x1130
+ 2405 0c65 1D       		.uleb128 0x1d
+ 2406 0c66 01       		.byte	0x1
+ 2407 0c67 52       		.byte	0x52
+ 2408 0c68 03       		.byte	0x3
+ 2409 0c69 F3       		.byte	0xf3
+ 2410 0c6a 01       		.uleb128 0x1
+ 2411 0c6b 52       		.byte	0x52
+ 2412 0c6c 1D       		.uleb128 0x1d
+ 2413 0c6d 01       		.byte	0x1
+ 2414 0c6e 51       		.byte	0x51
+ 2415 0c6f 03       		.byte	0x3
+ 2416 0c70 F3       		.byte	0xf3
+ 2417 0c71 01       		.uleb128 0x1
+ 2418 0c72 51       		.byte	0x51
+ 2419 0c73 1D       		.uleb128 0x1d
+ 2420 0c74 01       		.byte	0x1
+ 2421 0c75 50       		.byte	0x50
+ 2422 0c76 02       		.byte	0x2
+ 2423 0c77 74       		.byte	0x74
+ 2424 0c78 00       		.sleb128 0
+ 2425 0c79 00       		.byte	0
+ 2426 0c7a 00       		.byte	0
+ 2427 0c7b 26       		.uleb128 0x26
+ 2428 0c7c 01       		.byte	0x1
+ 2429 0c7d 01010000 		.4byte	.LASF128
+ 2430 0c81 01       		.byte	0x1
+ 2431 0c82 0E01     		.2byte	0x10e
+ 2432 0c84 01       		.byte	0x1
+ 2433 0c85 00000000 		.4byte	.LFB71
+ 2434 0c89 1A000000 		.4byte	.LFE71
+ 2435 0c8d F0030000 		.4byte	.LLST36
+ 2436 0c91 01       		.byte	0x1
+ 2437 0c92 1B0D0000 		.4byte	0xd1b
+ 2438 0c96 27       		.uleb128 0x27
+ 2439 0c97 9D050000 		.4byte	.LASF119
+ 2440 0c9b 01       		.byte	0x1
+ 2441 0c9c 0E01     		.2byte	0x10e
+ 2442 0c9e E6070000 		.4byte	0x7e6
+ 2443 0ca2 10040000 		.4byte	.LLST37
+ 2444 0ca6 28       		.uleb128 0x28
+ 2445 0ca7 6E00     		.ascii	"n\000"
+ 2446 0ca9 01       		.byte	0x1
+ 2447 0caa 0E01     		.2byte	0x10e
+ 2448 0cac 30000000 		.4byte	0x30
+ 2449 0cb0 2E040000 		.4byte	.LLST38
+ 2450 0cb4 27       		.uleb128 0x27
+ 2451 0cb5 2E000000 		.4byte	.LASF126
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 44
+
+
+ 2452 0cb9 01       		.byte	0x1
+ 2453 0cba 0E01     		.2byte	0x10e
+ 2454 0cbc 83020000 		.4byte	0x283
+ 2455 0cc0 4F040000 		.4byte	.LLST39
+ 2456 0cc4 1F       		.uleb128 0x1f
+ 2457 0cc5 48000000 		.4byte	.Ldebug_ranges0+0x48
+ 2458 0cc9 DE0C0000 		.4byte	0xcde
+ 2459 0ccd 29       		.uleb128 0x29
+ 2460 0cce 746D7000 		.ascii	"tmp\000"
+ 2461 0cd2 01       		.byte	0x1
+ 2462 0cd3 1301     		.2byte	0x113
+ 2463 0cd5 86000000 		.4byte	0x86
+ 2464 0cd9 70040000 		.4byte	.LLST40
+ 2465 0cdd 00       		.byte	0
+ 2466 0cde 21       		.uleb128 0x21
+ 2467 0cdf 12000000 		.4byte	.LBB21
+ 2468 0ce3 1A000000 		.4byte	.LBE21
+ 2469 0ce7 FC0C0000 		.4byte	0xcfc
+ 2470 0ceb 29       		.uleb128 0x29
+ 2471 0cec 746D7000 		.ascii	"tmp\000"
+ 2472 0cf0 01       		.byte	0x1
+ 2473 0cf1 1601     		.2byte	0x116
+ 2474 0cf3 86000000 		.4byte	0x86
+ 2475 0cf7 83040000 		.4byte	.LLST41
+ 2476 0cfb 00       		.byte	0
+ 2477 0cfc 22       		.uleb128 0x22
+ 2478 0cfd 12000000 		.4byte	.LVL55
+ 2479 0d01 4F110000 		.4byte	0x114f
+ 2480 0d05 1D       		.uleb128 0x1d
+ 2481 0d06 01       		.byte	0x1
+ 2482 0d07 52       		.byte	0x52
+ 2483 0d08 03       		.byte	0x3
+ 2484 0d09 F3       		.byte	0xf3
+ 2485 0d0a 01       		.uleb128 0x1
+ 2486 0d0b 52       		.byte	0x52
+ 2487 0d0c 1D       		.uleb128 0x1d
+ 2488 0d0d 01       		.byte	0x1
+ 2489 0d0e 51       		.byte	0x51
+ 2490 0d0f 03       		.byte	0x3
+ 2491 0d10 F3       		.byte	0xf3
+ 2492 0d11 01       		.uleb128 0x1
+ 2493 0d12 51       		.byte	0x51
+ 2494 0d13 1D       		.uleb128 0x1d
+ 2495 0d14 01       		.byte	0x1
+ 2496 0d15 50       		.byte	0x50
+ 2497 0d16 02       		.byte	0x2
+ 2498 0d17 74       		.byte	0x74
+ 2499 0d18 00       		.sleb128 0
+ 2500 0d19 00       		.byte	0
+ 2501 0d1a 00       		.byte	0
+ 2502 0d1b 26       		.uleb128 0x26
+ 2503 0d1c 01       		.byte	0x1
+ 2504 0d1d F8040000 		.4byte	.LASF129
+ 2505 0d21 01       		.byte	0x1
+ 2506 0d22 2801     		.2byte	0x128
+ 2507 0d24 01       		.byte	0x1
+ 2508 0d25 00000000 		.4byte	.LFB72
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 45
+
+
+ 2509 0d29 2C000000 		.4byte	.LFE72
+ 2510 0d2d 96040000 		.4byte	.LLST42
+ 2511 0d31 01       		.byte	0x1
+ 2512 0d32 B70D0000 		.4byte	0xdb7
+ 2513 0d36 27       		.uleb128 0x27
+ 2514 0d37 9D050000 		.4byte	.LASF119
+ 2515 0d3b 01       		.byte	0x1
+ 2516 0d3c 2801     		.2byte	0x128
+ 2517 0d3e E6070000 		.4byte	0x7e6
+ 2518 0d42 B6040000 		.4byte	.LLST43
+ 2519 0d46 28       		.uleb128 0x28
+ 2520 0d47 6E00     		.ascii	"n\000"
+ 2521 0d49 01       		.byte	0x1
+ 2522 0d4a 2801     		.2byte	0x128
+ 2523 0d4c 30000000 		.4byte	0x30
+ 2524 0d50 D4040000 		.4byte	.LLST44
+ 2525 0d54 1F       		.uleb128 0x1f
+ 2526 0d55 60000000 		.4byte	.Ldebug_ranges0+0x60
+ 2527 0d59 6E0D0000 		.4byte	0xd6e
+ 2528 0d5d 29       		.uleb128 0x29
+ 2529 0d5e 746D7000 		.ascii	"tmp\000"
+ 2530 0d62 01       		.byte	0x1
+ 2531 0d63 2C01     		.2byte	0x12c
+ 2532 0d65 86000000 		.4byte	0x86
+ 2533 0d69 F5040000 		.4byte	.LLST45
+ 2534 0d6d 00       		.byte	0
+ 2535 0d6e 21       		.uleb128 0x21
+ 2536 0d6f 24000000 		.4byte	.LBB24
+ 2537 0d73 2C000000 		.4byte	.LBE24
+ 2538 0d77 8C0D0000 		.4byte	0xd8c
+ 2539 0d7b 29       		.uleb128 0x29
+ 2540 0d7c 746D7000 		.ascii	"tmp\000"
+ 2541 0d80 01       		.byte	0x1
+ 2542 0d81 3101     		.2byte	0x131
+ 2543 0d83 86000000 		.4byte	0x86
+ 2544 0d87 08050000 		.4byte	.LLST46
+ 2545 0d8b 00       		.byte	0
+ 2546 0d8c 23       		.uleb128 0x23
+ 2547 0d8d 12000000 		.4byte	.LVL62
+ 2548 0d91 F2100000 		.4byte	0x10f2
+ 2549 0d95 A70D0000 		.4byte	0xda7
+ 2550 0d99 1D       		.uleb128 0x1d
+ 2551 0d9a 01       		.byte	0x1
+ 2552 0d9b 51       		.byte	0x51
+ 2553 0d9c 03       		.byte	0x3
+ 2554 0d9d F3       		.byte	0xf3
+ 2555 0d9e 01       		.uleb128 0x1
+ 2556 0d9f 51       		.byte	0x51
+ 2557 0da0 1D       		.uleb128 0x1d
+ 2558 0da1 01       		.byte	0x1
+ 2559 0da2 50       		.byte	0x50
+ 2560 0da3 02       		.byte	0x2
+ 2561 0da4 74       		.byte	0x74
+ 2562 0da5 00       		.sleb128 0
+ 2563 0da6 00       		.byte	0
+ 2564 0da7 22       		.uleb128 0x22
+ 2565 0da8 24000000 		.4byte	.LVL63
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 46
+
+
+ 2566 0dac 6E110000 		.4byte	0x116e
+ 2567 0db0 1D       		.uleb128 0x1d
+ 2568 0db1 01       		.byte	0x1
+ 2569 0db2 50       		.byte	0x50
+ 2570 0db3 01       		.byte	0x1
+ 2571 0db4 32       		.byte	0x32
+ 2572 0db5 00       		.byte	0
+ 2573 0db6 00       		.byte	0
+ 2574 0db7 26       		.uleb128 0x26
+ 2575 0db8 01       		.byte	0x1
+ 2576 0db9 83020000 		.4byte	.LASF130
+ 2577 0dbd 01       		.byte	0x1
+ 2578 0dbe 4601     		.2byte	0x146
+ 2579 0dc0 01       		.byte	0x1
+ 2580 0dc1 00000000 		.4byte	.LFB73
+ 2581 0dc5 30000000 		.4byte	.LFE73
+ 2582 0dc9 1B050000 		.4byte	.LLST47
+ 2583 0dcd 01       		.byte	0x1
+ 2584 0dce 850E0000 		.4byte	0xe85
+ 2585 0dd2 27       		.uleb128 0x27
+ 2586 0dd3 9D050000 		.4byte	.LASF119
+ 2587 0dd7 01       		.byte	0x1
+ 2588 0dd8 4601     		.2byte	0x146
+ 2589 0dda E6070000 		.4byte	0x7e6
+ 2590 0dde 3B050000 		.4byte	.LLST48
+ 2591 0de2 28       		.uleb128 0x28
+ 2592 0de3 6E00     		.ascii	"n\000"
+ 2593 0de5 01       		.byte	0x1
+ 2594 0de6 4601     		.2byte	0x146
+ 2595 0de8 30000000 		.4byte	0x30
+ 2596 0dec 59050000 		.4byte	.LLST49
+ 2597 0df0 27       		.uleb128 0x27
+ 2598 0df1 DB010000 		.4byte	.LASF125
+ 2599 0df5 01       		.byte	0x1
+ 2600 0df6 4701     		.2byte	0x147
+ 2601 0df8 DA0B0000 		.4byte	0xbda
+ 2602 0dfc 7A050000 		.4byte	.LLST50
+ 2603 0e00 27       		.uleb128 0x27
+ 2604 0e01 2E000000 		.4byte	.LASF126
+ 2605 0e05 01       		.byte	0x1
+ 2606 0e06 4701     		.2byte	0x147
+ 2607 0e08 83020000 		.4byte	0x283
+ 2608 0e0c 9B050000 		.4byte	.LLST51
+ 2609 0e10 21       		.uleb128 0x21
+ 2610 0e11 06000000 		.4byte	.LBB25
+ 2611 0e15 0C000000 		.4byte	.LBE25
+ 2612 0e19 2E0E0000 		.4byte	0xe2e
+ 2613 0e1d 29       		.uleb128 0x29
+ 2614 0e1e 746D7000 		.ascii	"tmp\000"
+ 2615 0e22 01       		.byte	0x1
+ 2616 0e23 4C01     		.2byte	0x14c
+ 2617 0e25 86000000 		.4byte	0x86
+ 2618 0e29 D2050000 		.4byte	.LLST52
+ 2619 0e2d 00       		.byte	0
+ 2620 0e2e 21       		.uleb128 0x21
+ 2621 0e2f 28000000 		.4byte	.LBB26
+ 2622 0e33 30000000 		.4byte	.LBE26
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 47
+
+
+ 2623 0e37 4C0E0000 		.4byte	0xe4c
+ 2624 0e3b 29       		.uleb128 0x29
+ 2625 0e3c 746D7000 		.ascii	"tmp\000"
+ 2626 0e40 01       		.byte	0x1
+ 2627 0e41 5201     		.2byte	0x152
+ 2628 0e43 86000000 		.4byte	0x86
+ 2629 0e47 E5050000 		.4byte	.LLST53
+ 2630 0e4b 00       		.byte	0
+ 2631 0e4c 23       		.uleb128 0x23
+ 2632 0e4d 16000000 		.4byte	.LVL71
+ 2633 0e51 0C110000 		.4byte	0x110c
+ 2634 0e55 750E0000 		.4byte	0xe75
+ 2635 0e59 1D       		.uleb128 0x1d
+ 2636 0e5a 01       		.byte	0x1
+ 2637 0e5b 53       		.byte	0x53
+ 2638 0e5c 03       		.byte	0x3
+ 2639 0e5d F3       		.byte	0xf3
+ 2640 0e5e 01       		.uleb128 0x1
+ 2641 0e5f 53       		.byte	0x53
+ 2642 0e60 1D       		.uleb128 0x1d
+ 2643 0e61 01       		.byte	0x1
+ 2644 0e62 52       		.byte	0x52
+ 2645 0e63 03       		.byte	0x3
+ 2646 0e64 F3       		.byte	0xf3
+ 2647 0e65 01       		.uleb128 0x1
+ 2648 0e66 52       		.byte	0x52
+ 2649 0e67 1D       		.uleb128 0x1d
+ 2650 0e68 01       		.byte	0x1
+ 2651 0e69 51       		.byte	0x51
+ 2652 0e6a 03       		.byte	0x3
+ 2653 0e6b F3       		.byte	0xf3
+ 2654 0e6c 01       		.uleb128 0x1
+ 2655 0e6d 51       		.byte	0x51
+ 2656 0e6e 1D       		.uleb128 0x1d
+ 2657 0e6f 01       		.byte	0x1
+ 2658 0e70 50       		.byte	0x50
+ 2659 0e71 02       		.byte	0x2
+ 2660 0e72 74       		.byte	0x74
+ 2661 0e73 00       		.sleb128 0
+ 2662 0e74 00       		.byte	0
+ 2663 0e75 22       		.uleb128 0x22
+ 2664 0e76 28000000 		.4byte	.LVL72
+ 2665 0e7a 6E110000 		.4byte	0x116e
+ 2666 0e7e 1D       		.uleb128 0x1d
+ 2667 0e7f 01       		.byte	0x1
+ 2668 0e80 50       		.byte	0x50
+ 2669 0e81 01       		.byte	0x1
+ 2670 0e82 32       		.byte	0x32
+ 2671 0e83 00       		.byte	0
+ 2672 0e84 00       		.byte	0
+ 2673 0e85 26       		.uleb128 0x26
+ 2674 0e86 01       		.byte	0x1
+ 2675 0e87 99030000 		.4byte	.LASF131
+ 2676 0e8b 01       		.byte	0x1
+ 2677 0e8c 6501     		.2byte	0x165
+ 2678 0e8e 01       		.byte	0x1
+ 2679 0e8f 00000000 		.4byte	.LFB74
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 48
+
+
+ 2680 0e93 2C000000 		.4byte	.LFE74
+ 2681 0e97 F8050000 		.4byte	.LLST54
+ 2682 0e9b 01       		.byte	0x1
+ 2683 0e9c 380F0000 		.4byte	0xf38
+ 2684 0ea0 27       		.uleb128 0x27
+ 2685 0ea1 9D050000 		.4byte	.LASF119
+ 2686 0ea5 01       		.byte	0x1
+ 2687 0ea6 6501     		.2byte	0x165
+ 2688 0ea8 E6070000 		.4byte	0x7e6
+ 2689 0eac 18060000 		.4byte	.LLST55
+ 2690 0eb0 28       		.uleb128 0x28
+ 2691 0eb1 6E00     		.ascii	"n\000"
+ 2692 0eb3 01       		.byte	0x1
+ 2693 0eb4 6501     		.2byte	0x165
+ 2694 0eb6 30000000 		.4byte	0x30
+ 2695 0eba 36060000 		.4byte	.LLST56
+ 2696 0ebe 27       		.uleb128 0x27
+ 2697 0ebf DB010000 		.4byte	.LASF125
+ 2698 0ec3 01       		.byte	0x1
+ 2699 0ec4 6501     		.2byte	0x165
+ 2700 0ec6 DA0B0000 		.4byte	0xbda
+ 2701 0eca 57060000 		.4byte	.LLST57
+ 2702 0ece 1F       		.uleb128 0x1f
+ 2703 0ecf 78000000 		.4byte	.Ldebug_ranges0+0x78
+ 2704 0ed3 E80E0000 		.4byte	0xee8
+ 2705 0ed7 29       		.uleb128 0x29
+ 2706 0ed8 746D7000 		.ascii	"tmp\000"
+ 2707 0edc 01       		.byte	0x1
+ 2708 0edd 6901     		.2byte	0x169
+ 2709 0edf 86000000 		.4byte	0x86
+ 2710 0ee3 78060000 		.4byte	.LLST58
+ 2711 0ee7 00       		.byte	0
+ 2712 0ee8 21       		.uleb128 0x21
+ 2713 0ee9 24000000 		.4byte	.LBB29
+ 2714 0eed 2C000000 		.4byte	.LBE29
+ 2715 0ef1 060F0000 		.4byte	0xf06
+ 2716 0ef5 29       		.uleb128 0x29
+ 2717 0ef6 746D7000 		.ascii	"tmp\000"
+ 2718 0efa 01       		.byte	0x1
+ 2719 0efb 6E01     		.2byte	0x16e
+ 2720 0efd 86000000 		.4byte	0x86
+ 2721 0f01 8B060000 		.4byte	.LLST59
+ 2722 0f05 00       		.byte	0
+ 2723 0f06 23       		.uleb128 0x23
+ 2724 0f07 12000000 		.4byte	.LVL79
+ 2725 0f0b 30110000 		.4byte	0x1130
+ 2726 0f0f 280F0000 		.4byte	0xf28
+ 2727 0f13 1D       		.uleb128 0x1d
+ 2728 0f14 01       		.byte	0x1
+ 2729 0f15 52       		.byte	0x52
+ 2730 0f16 03       		.byte	0x3
+ 2731 0f17 F3       		.byte	0xf3
+ 2732 0f18 01       		.uleb128 0x1
+ 2733 0f19 52       		.byte	0x52
+ 2734 0f1a 1D       		.uleb128 0x1d
+ 2735 0f1b 01       		.byte	0x1
+ 2736 0f1c 51       		.byte	0x51
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 49
+
+
+ 2737 0f1d 03       		.byte	0x3
+ 2738 0f1e F3       		.byte	0xf3
+ 2739 0f1f 01       		.uleb128 0x1
+ 2740 0f20 51       		.byte	0x51
+ 2741 0f21 1D       		.uleb128 0x1d
+ 2742 0f22 01       		.byte	0x1
+ 2743 0f23 50       		.byte	0x50
+ 2744 0f24 02       		.byte	0x2
+ 2745 0f25 74       		.byte	0x74
+ 2746 0f26 00       		.sleb128 0
+ 2747 0f27 00       		.byte	0
+ 2748 0f28 22       		.uleb128 0x22
+ 2749 0f29 24000000 		.4byte	.LVL80
+ 2750 0f2d 6E110000 		.4byte	0x116e
+ 2751 0f31 1D       		.uleb128 0x1d
+ 2752 0f32 01       		.byte	0x1
+ 2753 0f33 50       		.byte	0x50
+ 2754 0f34 01       		.byte	0x1
+ 2755 0f35 32       		.byte	0x32
+ 2756 0f36 00       		.byte	0
+ 2757 0f37 00       		.byte	0
+ 2758 0f38 26       		.uleb128 0x26
+ 2759 0f39 01       		.byte	0x1
+ 2760 0f3a E1010000 		.4byte	.LASF132
+ 2761 0f3e 01       		.byte	0x1
+ 2762 0f3f 8101     		.2byte	0x181
+ 2763 0f41 01       		.byte	0x1
+ 2764 0f42 00000000 		.4byte	.LFB75
+ 2765 0f46 2C000000 		.4byte	.LFE75
+ 2766 0f4a 9E060000 		.4byte	.LLST60
+ 2767 0f4e 01       		.byte	0x1
+ 2768 0f4f EB0F0000 		.4byte	0xfeb
+ 2769 0f53 27       		.uleb128 0x27
+ 2770 0f54 9D050000 		.4byte	.LASF119
+ 2771 0f58 01       		.byte	0x1
+ 2772 0f59 8101     		.2byte	0x181
+ 2773 0f5b E6070000 		.4byte	0x7e6
+ 2774 0f5f BE060000 		.4byte	.LLST61
+ 2775 0f63 28       		.uleb128 0x28
+ 2776 0f64 6E00     		.ascii	"n\000"
+ 2777 0f66 01       		.byte	0x1
+ 2778 0f67 8101     		.2byte	0x181
+ 2779 0f69 30000000 		.4byte	0x30
+ 2780 0f6d DC060000 		.4byte	.LLST62
+ 2781 0f71 27       		.uleb128 0x27
+ 2782 0f72 2E000000 		.4byte	.LASF126
+ 2783 0f76 01       		.byte	0x1
+ 2784 0f77 8101     		.2byte	0x181
+ 2785 0f79 83020000 		.4byte	0x283
+ 2786 0f7d FD060000 		.4byte	.LLST63
+ 2787 0f81 1F       		.uleb128 0x1f
+ 2788 0f82 90000000 		.4byte	.Ldebug_ranges0+0x90
+ 2789 0f86 9B0F0000 		.4byte	0xf9b
+ 2790 0f8a 29       		.uleb128 0x29
+ 2791 0f8b 746D7000 		.ascii	"tmp\000"
+ 2792 0f8f 01       		.byte	0x1
+ 2793 0f90 8601     		.2byte	0x186
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 50
+
+
+ 2794 0f92 86000000 		.4byte	0x86
+ 2795 0f96 1E070000 		.4byte	.LLST64
+ 2796 0f9a 00       		.byte	0
+ 2797 0f9b 21       		.uleb128 0x21
+ 2798 0f9c 24000000 		.4byte	.LBB32
+ 2799 0fa0 2C000000 		.4byte	.LBE32
+ 2800 0fa4 B90F0000 		.4byte	0xfb9
+ 2801 0fa8 29       		.uleb128 0x29
+ 2802 0fa9 746D7000 		.ascii	"tmp\000"
+ 2803 0fad 01       		.byte	0x1
+ 2804 0fae 8C01     		.2byte	0x18c
+ 2805 0fb0 86000000 		.4byte	0x86
+ 2806 0fb4 31070000 		.4byte	.LLST65
+ 2807 0fb8 00       		.byte	0
+ 2808 0fb9 23       		.uleb128 0x23
+ 2809 0fba 12000000 		.4byte	.LVL87
+ 2810 0fbe 4F110000 		.4byte	0x114f
+ 2811 0fc2 DB0F0000 		.4byte	0xfdb
+ 2812 0fc6 1D       		.uleb128 0x1d
+ 2813 0fc7 01       		.byte	0x1
+ 2814 0fc8 52       		.byte	0x52
+ 2815 0fc9 03       		.byte	0x3
+ 2816 0fca F3       		.byte	0xf3
+ 2817 0fcb 01       		.uleb128 0x1
+ 2818 0fcc 52       		.byte	0x52
+ 2819 0fcd 1D       		.uleb128 0x1d
+ 2820 0fce 01       		.byte	0x1
+ 2821 0fcf 51       		.byte	0x51
+ 2822 0fd0 03       		.byte	0x3
+ 2823 0fd1 F3       		.byte	0xf3
+ 2824 0fd2 01       		.uleb128 0x1
+ 2825 0fd3 51       		.byte	0x51
+ 2826 0fd4 1D       		.uleb128 0x1d
+ 2827 0fd5 01       		.byte	0x1
+ 2828 0fd6 50       		.byte	0x50
+ 2829 0fd7 02       		.byte	0x2
+ 2830 0fd8 74       		.byte	0x74
+ 2831 0fd9 00       		.sleb128 0
+ 2832 0fda 00       		.byte	0
+ 2833 0fdb 22       		.uleb128 0x22
+ 2834 0fdc 24000000 		.4byte	.LVL88
+ 2835 0fe0 6E110000 		.4byte	0x116e
+ 2836 0fe4 1D       		.uleb128 0x1d
+ 2837 0fe5 01       		.byte	0x1
+ 2838 0fe6 50       		.byte	0x50
+ 2839 0fe7 01       		.byte	0x1
+ 2840 0fe8 32       		.byte	0x32
+ 2841 0fe9 00       		.byte	0
+ 2842 0fea 00       		.byte	0
+ 2843 0feb 2A       		.uleb128 0x2a
+ 2844 0fec 01       		.byte	0x1
+ 2845 0fed B1020000 		.4byte	.LASF133
+ 2846 0ff1 01       		.byte	0x1
+ 2847 0ff2 9C01     		.2byte	0x19c
+ 2848 0ff4 01       		.byte	0x1
+ 2849 0ff5 00000000 		.4byte	.LFB76
+ 2850 0ff9 06000000 		.4byte	.LFE76
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 51
+
+
+ 2851 0ffd 02       		.byte	0x2
+ 2852 0ffe 7D       		.byte	0x7d
+ 2853 0fff 00       		.sleb128 0
+ 2854 1000 01       		.byte	0x1
+ 2855 1001 2A100000 		.4byte	0x102a
+ 2856 1005 27       		.uleb128 0x27
+ 2857 1006 9D050000 		.4byte	.LASF119
+ 2858 100a 01       		.byte	0x1
+ 2859 100b 9C01     		.2byte	0x19c
+ 2860 100d E6070000 		.4byte	0x7e6
+ 2861 1011 44070000 		.4byte	.LLST66
+ 2862 1015 1C       		.uleb128 0x1c
+ 2863 1016 06000000 		.4byte	.LVL93
+ 2864 101a 01       		.byte	0x1
+ 2865 101b 82110000 		.4byte	0x1182
+ 2866 101f 1D       		.uleb128 0x1d
+ 2867 1020 01       		.byte	0x1
+ 2868 1021 50       		.byte	0x50
+ 2869 1022 05       		.byte	0x5
+ 2870 1023 F3       		.byte	0xf3
+ 2871 1024 01       		.uleb128 0x1
+ 2872 1025 50       		.byte	0x50
+ 2873 1026 23       		.byte	0x23
+ 2874 1027 0C       		.uleb128 0xc
+ 2875 1028 00       		.byte	0
+ 2876 1029 00       		.byte	0
+ 2877 102a 2A       		.uleb128 0x2a
+ 2878 102b 01       		.byte	0x1
+ 2879 102c EA040000 		.4byte	.LASF134
+ 2880 1030 01       		.byte	0x1
+ 2881 1031 B001     		.2byte	0x1b0
+ 2882 1033 01       		.byte	0x1
+ 2883 1034 00000000 		.4byte	.LFB77
+ 2884 1038 04000000 		.4byte	.LFE77
+ 2885 103c 02       		.byte	0x2
+ 2886 103d 7D       		.byte	0x7d
+ 2887 103e 00       		.sleb128 0
+ 2888 103f 01       		.byte	0x1
+ 2889 1040 5F100000 		.4byte	0x105f
+ 2890 1044 27       		.uleb128 0x27
+ 2891 1045 9D050000 		.4byte	.LASF119
+ 2892 1049 01       		.byte	0x1
+ 2893 104a B001     		.2byte	0x1b0
+ 2894 104c E6070000 		.4byte	0x7e6
+ 2895 1050 72070000 		.4byte	.LLST67
+ 2896 1054 1A       		.uleb128 0x1a
+ 2897 1055 04000000 		.4byte	.LVL95
+ 2898 1059 01       		.byte	0x1
+ 2899 105a 96110000 		.4byte	0x1196
+ 2900 105e 00       		.byte	0
+ 2901 105f 2B       		.uleb128 0x2b
+ 2902 1060 A4010000 		.4byte	.LASF135
+ 2903 1064 08       		.byte	0x8
+ 2904 1065 72       		.byte	0x72
+ 2905 1066 B1030000 		.4byte	0x3b1
+ 2906 106a 01       		.byte	0x1
+ 2907 106b 01       		.byte	0x1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 52
+
+
+ 2908 106c 2C       		.uleb128 0x2c
+ 2909 106d 7E000000 		.4byte	.LASF136
+ 2910 1071 0F       		.byte	0xf
+ 2911 1072 9404     		.2byte	0x494
+ 2912 1074 7A100000 		.4byte	0x107a
+ 2913 1078 01       		.byte	0x1
+ 2914 1079 01       		.byte	0x1
+ 2915 107a 0D       		.uleb128 0xd
+ 2916 107b 74000000 		.4byte	0x74
+ 2917 107f 2D       		.uleb128 0x2d
+ 2918 1080 01       		.byte	0x1
+ 2919 1081 C6000000 		.4byte	.LASF151
+ 2920 1085 0E       		.byte	0xe
+ 2921 1086 7501     		.2byte	0x175
+ 2922 1088 01       		.byte	0x1
+ 2923 1089 01       		.byte	0x1
+ 2924 108a 2E       		.uleb128 0x2e
+ 2925 108b 01       		.byte	0x1
+ 2926 108c 4B050000 		.4byte	.LASF137
+ 2927 1090 09       		.byte	0x9
+ 2928 1091 38       		.byte	0x38
+ 2929 1092 01       		.byte	0x1
+ 2930 1093 01       		.byte	0x1
+ 2931 1094 9E100000 		.4byte	0x109e
+ 2932 1098 18       		.uleb128 0x18
+ 2933 1099 4B040000 		.4byte	0x44b
+ 2934 109d 00       		.byte	0
+ 2935 109e 2F       		.uleb128 0x2f
+ 2936 109f 01       		.byte	0x1
+ 2937 10a0 87050000 		.4byte	.LASF138
+ 2938 10a4 0E       		.byte	0xe
+ 2939 10a5 7601     		.2byte	0x176
+ 2940 10a7 01       		.byte	0x1
+ 2941 10a8 01       		.byte	0x1
+ 2942 10a9 B3100000 		.4byte	0x10b3
+ 2943 10ad 18       		.uleb128 0x18
+ 2944 10ae E6070000 		.4byte	0x7e6
+ 2945 10b2 00       		.byte	0
+ 2946 10b3 2F       		.uleb128 0x2f
+ 2947 10b4 01       		.byte	0x1
+ 2948 10b5 CA010000 		.4byte	.LASF139
+ 2949 10b9 0E       		.byte	0xe
+ 2950 10ba 7901     		.2byte	0x179
+ 2951 10bc 01       		.byte	0x1
+ 2952 10bd 01       		.byte	0x1
+ 2953 10be C8100000 		.4byte	0x10c8
+ 2954 10c2 18       		.uleb128 0x18
+ 2955 10c3 E6070000 		.4byte	0x7e6
+ 2956 10c7 00       		.byte	0
+ 2957 10c8 2F       		.uleb128 0x2f
+ 2958 10c9 01       		.byte	0x1
+ 2959 10ca A4020000 		.4byte	.LASF140
+ 2960 10ce 0E       		.byte	0xe
+ 2961 10cf 7701     		.2byte	0x177
+ 2962 10d1 01       		.byte	0x1
+ 2963 10d2 01       		.byte	0x1
+ 2964 10d3 DD100000 		.4byte	0x10dd
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 53
+
+
+ 2965 10d7 18       		.uleb128 0x18
+ 2966 10d8 E6070000 		.4byte	0x7e6
+ 2967 10dc 00       		.byte	0
+ 2968 10dd 2F       		.uleb128 0x2f
+ 2969 10de 01       		.byte	0x1
+ 2970 10df 0D050000 		.4byte	.LASF141
+ 2971 10e3 0E       		.byte	0xe
+ 2972 10e4 7801     		.2byte	0x178
+ 2973 10e6 01       		.byte	0x1
+ 2974 10e7 01       		.byte	0x1
+ 2975 10e8 F2100000 		.4byte	0x10f2
+ 2976 10ec 18       		.uleb128 0x18
+ 2977 10ed E6070000 		.4byte	0x7e6
+ 2978 10f1 00       		.byte	0
+ 2979 10f2 2F       		.uleb128 0x2f
+ 2980 10f3 01       		.byte	0x1
+ 2981 10f4 55050000 		.4byte	.LASF142
+ 2982 10f8 0E       		.byte	0xe
+ 2983 10f9 7A01     		.2byte	0x17a
+ 2984 10fb 01       		.byte	0x1
+ 2985 10fc 01       		.byte	0x1
+ 2986 10fd 0C110000 		.4byte	0x110c
+ 2987 1101 18       		.uleb128 0x18
+ 2988 1102 E6070000 		.4byte	0x7e6
+ 2989 1106 18       		.uleb128 0x18
+ 2990 1107 30000000 		.4byte	0x30
+ 2991 110b 00       		.byte	0
+ 2992 110c 2F       		.uleb128 0x2f
+ 2993 110d 01       		.byte	0x1
+ 2994 110e 11010000 		.4byte	.LASF143
+ 2995 1112 0E       		.byte	0xe
+ 2996 1113 7B01     		.2byte	0x17b
+ 2997 1115 01       		.byte	0x1
+ 2998 1116 01       		.byte	0x1
+ 2999 1117 30110000 		.4byte	0x1130
+ 3000 111b 18       		.uleb128 0x18
+ 3001 111c E6070000 		.4byte	0x7e6
+ 3002 1120 18       		.uleb128 0x18
+ 3003 1121 30000000 		.4byte	0x30
+ 3004 1125 18       		.uleb128 0x18
+ 3005 1126 DA0B0000 		.4byte	0xbda
+ 3006 112a 18       		.uleb128 0x18
+ 3007 112b 83020000 		.4byte	0x283
+ 3008 112f 00       		.byte	0
+ 3009 1130 2F       		.uleb128 0x2f
+ 3010 1131 01       		.byte	0x1
+ 3011 1132 AA010000 		.4byte	.LASF144
+ 3012 1136 0E       		.byte	0xe
+ 3013 1137 7D01     		.2byte	0x17d
+ 3014 1139 01       		.byte	0x1
+ 3015 113a 01       		.byte	0x1
+ 3016 113b 4F110000 		.4byte	0x114f
+ 3017 113f 18       		.uleb128 0x18
+ 3018 1140 E6070000 		.4byte	0x7e6
+ 3019 1144 18       		.uleb128 0x18
+ 3020 1145 30000000 		.4byte	0x30
+ 3021 1149 18       		.uleb128 0x18
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 54
+
+
+ 3022 114a DA0B0000 		.4byte	0xbda
+ 3023 114e 00       		.byte	0
+ 3024 114f 2F       		.uleb128 0x2f
+ 3025 1150 01       		.byte	0x1
+ 3026 1151 E1030000 		.4byte	.LASF145
+ 3027 1155 0E       		.byte	0xe
+ 3028 1156 7E01     		.2byte	0x17e
+ 3029 1158 01       		.byte	0x1
+ 3030 1159 01       		.byte	0x1
+ 3031 115a 6E110000 		.4byte	0x116e
+ 3032 115e 18       		.uleb128 0x18
+ 3033 115f E6070000 		.4byte	0x7e6
+ 3034 1163 18       		.uleb128 0x18
+ 3035 1164 30000000 		.4byte	0x30
+ 3036 1168 18       		.uleb128 0x18
+ 3037 1169 83020000 		.4byte	0x283
+ 3038 116d 00       		.byte	0
+ 3039 116e 2E       		.uleb128 0x2e
+ 3040 116f 01       		.byte	0x1
+ 3041 1170 44040000 		.4byte	.LASF146
+ 3042 1174 08       		.byte	0x8
+ 3043 1175 96       		.byte	0x96
+ 3044 1176 01       		.byte	0x1
+ 3045 1177 01       		.byte	0x1
+ 3046 1178 82110000 		.4byte	0x1182
+ 3047 117c 18       		.uleb128 0x18
+ 3048 117d B1000000 		.4byte	0xb1
+ 3049 1181 00       		.byte	0
+ 3050 1182 2E       		.uleb128 0x2e
+ 3051 1183 01       		.byte	0x1
+ 3052 1184 BF020000 		.4byte	.LASF147
+ 3053 1188 09       		.byte	0x9
+ 3054 1189 39       		.byte	0x39
+ 3055 118a 01       		.byte	0x1
+ 3056 118b 01       		.byte	0x1
+ 3057 118c 96110000 		.4byte	0x1196
+ 3058 1190 18       		.uleb128 0x18
+ 3059 1191 4B040000 		.4byte	0x44b
+ 3060 1195 00       		.byte	0
+ 3061 1196 30       		.uleb128 0x30
+ 3062 1197 01       		.byte	0x1
+ 3063 1198 98000000 		.4byte	.LASF152
+ 3064 119c 09       		.byte	0x9
+ 3065 119d 3D       		.byte	0x3d
+ 3066 119e 01       		.byte	0x1
+ 3067 119f 4B040000 		.4byte	0x44b
+ 3068 11a3 01       		.byte	0x1
+ 3069 11a4 00       		.byte	0
+ 3070              		.section	.debug_abbrev,"",%progbits
+ 3071              	.Ldebug_abbrev0:
+ 3072 0000 01       		.uleb128 0x1
+ 3073 0001 11       		.uleb128 0x11
+ 3074 0002 01       		.byte	0x1
+ 3075 0003 25       		.uleb128 0x25
+ 3076 0004 0E       		.uleb128 0xe
+ 3077 0005 13       		.uleb128 0x13
+ 3078 0006 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 55
+
+
+ 3079 0007 03       		.uleb128 0x3
+ 3080 0008 0E       		.uleb128 0xe
+ 3081 0009 1B       		.uleb128 0x1b
+ 3082 000a 0E       		.uleb128 0xe
+ 3083 000b 55       		.uleb128 0x55
+ 3084 000c 06       		.uleb128 0x6
+ 3085 000d 11       		.uleb128 0x11
+ 3086 000e 01       		.uleb128 0x1
+ 3087 000f 52       		.uleb128 0x52
+ 3088 0010 01       		.uleb128 0x1
+ 3089 0011 10       		.uleb128 0x10
+ 3090 0012 06       		.uleb128 0x6
+ 3091 0013 00       		.byte	0
+ 3092 0014 00       		.byte	0
+ 3093 0015 02       		.uleb128 0x2
+ 3094 0016 24       		.uleb128 0x24
+ 3095 0017 00       		.byte	0
+ 3096 0018 0B       		.uleb128 0xb
+ 3097 0019 0B       		.uleb128 0xb
+ 3098 001a 3E       		.uleb128 0x3e
+ 3099 001b 0B       		.uleb128 0xb
+ 3100 001c 03       		.uleb128 0x3
+ 3101 001d 08       		.uleb128 0x8
+ 3102 001e 00       		.byte	0
+ 3103 001f 00       		.byte	0
+ 3104 0020 03       		.uleb128 0x3
+ 3105 0021 16       		.uleb128 0x16
+ 3106 0022 00       		.byte	0
+ 3107 0023 03       		.uleb128 0x3
+ 3108 0024 0E       		.uleb128 0xe
+ 3109 0025 3A       		.uleb128 0x3a
+ 3110 0026 0B       		.uleb128 0xb
+ 3111 0027 3B       		.uleb128 0x3b
+ 3112 0028 0B       		.uleb128 0xb
+ 3113 0029 49       		.uleb128 0x49
+ 3114 002a 13       		.uleb128 0x13
+ 3115 002b 00       		.byte	0
+ 3116 002c 00       		.byte	0
+ 3117 002d 04       		.uleb128 0x4
+ 3118 002e 24       		.uleb128 0x24
+ 3119 002f 00       		.byte	0
+ 3120 0030 0B       		.uleb128 0xb
+ 3121 0031 0B       		.uleb128 0xb
+ 3122 0032 3E       		.uleb128 0x3e
+ 3123 0033 0B       		.uleb128 0xb
+ 3124 0034 03       		.uleb128 0x3
+ 3125 0035 0E       		.uleb128 0xe
+ 3126 0036 00       		.byte	0
+ 3127 0037 00       		.byte	0
+ 3128 0038 05       		.uleb128 0x5
+ 3129 0039 13       		.uleb128 0x13
+ 3130 003a 01       		.byte	0x1
+ 3131 003b 03       		.uleb128 0x3
+ 3132 003c 0E       		.uleb128 0xe
+ 3133 003d 0B       		.uleb128 0xb
+ 3134 003e 0B       		.uleb128 0xb
+ 3135 003f 3A       		.uleb128 0x3a
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 56
+
+
+ 3136 0040 0B       		.uleb128 0xb
+ 3137 0041 3B       		.uleb128 0x3b
+ 3138 0042 0B       		.uleb128 0xb
+ 3139 0043 01       		.uleb128 0x1
+ 3140 0044 13       		.uleb128 0x13
+ 3141 0045 00       		.byte	0
+ 3142 0046 00       		.byte	0
+ 3143 0047 06       		.uleb128 0x6
+ 3144 0048 0D       		.uleb128 0xd
+ 3145 0049 00       		.byte	0
+ 3146 004a 03       		.uleb128 0x3
+ 3147 004b 0E       		.uleb128 0xe
+ 3148 004c 3A       		.uleb128 0x3a
+ 3149 004d 0B       		.uleb128 0xb
+ 3150 004e 3B       		.uleb128 0x3b
+ 3151 004f 0B       		.uleb128 0xb
+ 3152 0050 49       		.uleb128 0x49
+ 3153 0051 13       		.uleb128 0x13
+ 3154 0052 38       		.uleb128 0x38
+ 3155 0053 0A       		.uleb128 0xa
+ 3156 0054 00       		.byte	0
+ 3157 0055 00       		.byte	0
+ 3158 0056 07       		.uleb128 0x7
+ 3159 0057 0D       		.uleb128 0xd
+ 3160 0058 00       		.byte	0
+ 3161 0059 03       		.uleb128 0x3
+ 3162 005a 08       		.uleb128 0x8
+ 3163 005b 3A       		.uleb128 0x3a
+ 3164 005c 0B       		.uleb128 0xb
+ 3165 005d 3B       		.uleb128 0x3b
+ 3166 005e 0B       		.uleb128 0xb
+ 3167 005f 49       		.uleb128 0x49
+ 3168 0060 13       		.uleb128 0x13
+ 3169 0061 38       		.uleb128 0x38
+ 3170 0062 0A       		.uleb128 0xa
+ 3171 0063 00       		.byte	0
+ 3172 0064 00       		.byte	0
+ 3173 0065 08       		.uleb128 0x8
+ 3174 0066 13       		.uleb128 0x13
+ 3175 0067 01       		.byte	0x1
+ 3176 0068 0B       		.uleb128 0xb
+ 3177 0069 0B       		.uleb128 0xb
+ 3178 006a 3A       		.uleb128 0x3a
+ 3179 006b 0B       		.uleb128 0xb
+ 3180 006c 3B       		.uleb128 0x3b
+ 3181 006d 0B       		.uleb128 0xb
+ 3182 006e 01       		.uleb128 0x1
+ 3183 006f 13       		.uleb128 0x13
+ 3184 0070 00       		.byte	0
+ 3185 0071 00       		.byte	0
+ 3186 0072 09       		.uleb128 0x9
+ 3187 0073 0F       		.uleb128 0xf
+ 3188 0074 00       		.byte	0
+ 3189 0075 0B       		.uleb128 0xb
+ 3190 0076 0B       		.uleb128 0xb
+ 3191 0077 49       		.uleb128 0x49
+ 3192 0078 13       		.uleb128 0x13
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 57
+
+
+ 3193 0079 00       		.byte	0
+ 3194 007a 00       		.byte	0
+ 3195 007b 0A       		.uleb128 0xa
+ 3196 007c 0F       		.uleb128 0xf
+ 3197 007d 00       		.byte	0
+ 3198 007e 0B       		.uleb128 0xb
+ 3199 007f 0B       		.uleb128 0xb
+ 3200 0080 00       		.byte	0
+ 3201 0081 00       		.byte	0
+ 3202 0082 0B       		.uleb128 0xb
+ 3203 0083 0D       		.uleb128 0xd
+ 3204 0084 00       		.byte	0
+ 3205 0085 03       		.uleb128 0x3
+ 3206 0086 08       		.uleb128 0x8
+ 3207 0087 3A       		.uleb128 0x3a
+ 3208 0088 0B       		.uleb128 0xb
+ 3209 0089 3B       		.uleb128 0x3b
+ 3210 008a 05       		.uleb128 0x5
+ 3211 008b 49       		.uleb128 0x49
+ 3212 008c 13       		.uleb128 0x13
+ 3213 008d 38       		.uleb128 0x38
+ 3214 008e 0A       		.uleb128 0xa
+ 3215 008f 00       		.byte	0
+ 3216 0090 00       		.byte	0
+ 3217 0091 0C       		.uleb128 0xc
+ 3218 0092 13       		.uleb128 0x13
+ 3219 0093 01       		.byte	0x1
+ 3220 0094 03       		.uleb128 0x3
+ 3221 0095 0E       		.uleb128 0xe
+ 3222 0096 0B       		.uleb128 0xb
+ 3223 0097 0B       		.uleb128 0xb
+ 3224 0098 3A       		.uleb128 0x3a
+ 3225 0099 0B       		.uleb128 0xb
+ 3226 009a 3B       		.uleb128 0x3b
+ 3227 009b 05       		.uleb128 0x5
+ 3228 009c 01       		.uleb128 0x1
+ 3229 009d 13       		.uleb128 0x13
+ 3230 009e 00       		.byte	0
+ 3231 009f 00       		.byte	0
+ 3232 00a0 0D       		.uleb128 0xd
+ 3233 00a1 35       		.uleb128 0x35
+ 3234 00a2 00       		.byte	0
+ 3235 00a3 49       		.uleb128 0x49
+ 3236 00a4 13       		.uleb128 0x13
+ 3237 00a5 00       		.byte	0
+ 3238 00a6 00       		.byte	0
+ 3239 00a7 0E       		.uleb128 0xe
+ 3240 00a8 17       		.uleb128 0x17
+ 3241 00a9 01       		.byte	0x1
+ 3242 00aa 0B       		.uleb128 0xb
+ 3243 00ab 0B       		.uleb128 0xb
+ 3244 00ac 3A       		.uleb128 0x3a
+ 3245 00ad 0B       		.uleb128 0xb
+ 3246 00ae 3B       		.uleb128 0x3b
+ 3247 00af 0B       		.uleb128 0xb
+ 3248 00b0 01       		.uleb128 0x1
+ 3249 00b1 13       		.uleb128 0x13
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 58
+
+
+ 3250 00b2 00       		.byte	0
+ 3251 00b3 00       		.byte	0
+ 3252 00b4 0F       		.uleb128 0xf
+ 3253 00b5 0D       		.uleb128 0xd
+ 3254 00b6 00       		.byte	0
+ 3255 00b7 03       		.uleb128 0x3
+ 3256 00b8 0E       		.uleb128 0xe
+ 3257 00b9 3A       		.uleb128 0x3a
+ 3258 00ba 0B       		.uleb128 0xb
+ 3259 00bb 3B       		.uleb128 0x3b
+ 3260 00bc 0B       		.uleb128 0xb
+ 3261 00bd 49       		.uleb128 0x49
+ 3262 00be 13       		.uleb128 0x13
+ 3263 00bf 00       		.byte	0
+ 3264 00c0 00       		.byte	0
+ 3265 00c1 10       		.uleb128 0x10
+ 3266 00c2 26       		.uleb128 0x26
+ 3267 00c3 00       		.byte	0
+ 3268 00c4 49       		.uleb128 0x49
+ 3269 00c5 13       		.uleb128 0x13
+ 3270 00c6 00       		.byte	0
+ 3271 00c7 00       		.byte	0
+ 3272 00c8 11       		.uleb128 0x11
+ 3273 00c9 13       		.uleb128 0x13
+ 3274 00ca 01       		.byte	0x1
+ 3275 00cb 0B       		.uleb128 0xb
+ 3276 00cc 0B       		.uleb128 0xb
+ 3277 00cd 3A       		.uleb128 0x3a
+ 3278 00ce 0B       		.uleb128 0xb
+ 3279 00cf 3B       		.uleb128 0x3b
+ 3280 00d0 05       		.uleb128 0x5
+ 3281 00d1 01       		.uleb128 0x1
+ 3282 00d2 13       		.uleb128 0x13
+ 3283 00d3 00       		.byte	0
+ 3284 00d4 00       		.byte	0
+ 3285 00d5 12       		.uleb128 0x12
+ 3286 00d6 0D       		.uleb128 0xd
+ 3287 00d7 00       		.byte	0
+ 3288 00d8 03       		.uleb128 0x3
+ 3289 00d9 0E       		.uleb128 0xe
+ 3290 00da 3A       		.uleb128 0x3a
+ 3291 00db 0B       		.uleb128 0xb
+ 3292 00dc 3B       		.uleb128 0x3b
+ 3293 00dd 05       		.uleb128 0x5
+ 3294 00de 49       		.uleb128 0x49
+ 3295 00df 13       		.uleb128 0x13
+ 3296 00e0 38       		.uleb128 0x38
+ 3297 00e1 0A       		.uleb128 0xa
+ 3298 00e2 00       		.byte	0
+ 3299 00e3 00       		.byte	0
+ 3300 00e4 13       		.uleb128 0x13
+ 3301 00e5 16       		.uleb128 0x16
+ 3302 00e6 00       		.byte	0
+ 3303 00e7 03       		.uleb128 0x3
+ 3304 00e8 0E       		.uleb128 0xe
+ 3305 00e9 3A       		.uleb128 0x3a
+ 3306 00ea 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 59
+
+
+ 3307 00eb 3B       		.uleb128 0x3b
+ 3308 00ec 05       		.uleb128 0x5
+ 3309 00ed 49       		.uleb128 0x49
+ 3310 00ee 13       		.uleb128 0x13
+ 3311 00ef 00       		.byte	0
+ 3312 00f0 00       		.byte	0
+ 3313 00f1 14       		.uleb128 0x14
+ 3314 00f2 0D       		.uleb128 0xd
+ 3315 00f3 00       		.byte	0
+ 3316 00f4 03       		.uleb128 0x3
+ 3317 00f5 08       		.uleb128 0x8
+ 3318 00f6 3A       		.uleb128 0x3a
+ 3319 00f7 0B       		.uleb128 0xb
+ 3320 00f8 3B       		.uleb128 0x3b
+ 3321 00f9 0B       		.uleb128 0xb
+ 3322 00fa 49       		.uleb128 0x49
+ 3323 00fb 13       		.uleb128 0x13
+ 3324 00fc 00       		.byte	0
+ 3325 00fd 00       		.byte	0
+ 3326 00fe 15       		.uleb128 0x15
+ 3327 00ff 04       		.uleb128 0x4
+ 3328 0100 01       		.byte	0x1
+ 3329 0101 0B       		.uleb128 0xb
+ 3330 0102 0B       		.uleb128 0xb
+ 3331 0103 3A       		.uleb128 0x3a
+ 3332 0104 0B       		.uleb128 0xb
+ 3333 0105 3B       		.uleb128 0x3b
+ 3334 0106 0B       		.uleb128 0xb
+ 3335 0107 01       		.uleb128 0x1
+ 3336 0108 13       		.uleb128 0x13
+ 3337 0109 00       		.byte	0
+ 3338 010a 00       		.byte	0
+ 3339 010b 16       		.uleb128 0x16
+ 3340 010c 28       		.uleb128 0x28
+ 3341 010d 00       		.byte	0
+ 3342 010e 03       		.uleb128 0x3
+ 3343 010f 0E       		.uleb128 0xe
+ 3344 0110 1C       		.uleb128 0x1c
+ 3345 0111 0D       		.uleb128 0xd
+ 3346 0112 00       		.byte	0
+ 3347 0113 00       		.byte	0
+ 3348 0114 17       		.uleb128 0x17
+ 3349 0115 15       		.uleb128 0x15
+ 3350 0116 01       		.byte	0x1
+ 3351 0117 27       		.uleb128 0x27
+ 3352 0118 0C       		.uleb128 0xc
+ 3353 0119 01       		.uleb128 0x1
+ 3354 011a 13       		.uleb128 0x13
+ 3355 011b 00       		.byte	0
+ 3356 011c 00       		.byte	0
+ 3357 011d 18       		.uleb128 0x18
+ 3358 011e 05       		.uleb128 0x5
+ 3359 011f 00       		.byte	0
+ 3360 0120 49       		.uleb128 0x49
+ 3361 0121 13       		.uleb128 0x13
+ 3362 0122 00       		.byte	0
+ 3363 0123 00       		.byte	0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 60
+
+
+ 3364 0124 19       		.uleb128 0x19
+ 3365 0125 2E       		.uleb128 0x2e
+ 3366 0126 01       		.byte	0x1
+ 3367 0127 3F       		.uleb128 0x3f
+ 3368 0128 0C       		.uleb128 0xc
+ 3369 0129 03       		.uleb128 0x3
+ 3370 012a 0E       		.uleb128 0xe
+ 3371 012b 3A       		.uleb128 0x3a
+ 3372 012c 0B       		.uleb128 0xb
+ 3373 012d 3B       		.uleb128 0x3b
+ 3374 012e 0B       		.uleb128 0xb
+ 3375 012f 27       		.uleb128 0x27
+ 3376 0130 0C       		.uleb128 0xc
+ 3377 0131 11       		.uleb128 0x11
+ 3378 0132 01       		.uleb128 0x1
+ 3379 0133 12       		.uleb128 0x12
+ 3380 0134 01       		.uleb128 0x1
+ 3381 0135 40       		.uleb128 0x40
+ 3382 0136 0A       		.uleb128 0xa
+ 3383 0137 9742     		.uleb128 0x2117
+ 3384 0139 0C       		.uleb128 0xc
+ 3385 013a 01       		.uleb128 0x1
+ 3386 013b 13       		.uleb128 0x13
+ 3387 013c 00       		.byte	0
+ 3388 013d 00       		.byte	0
+ 3389 013e 1A       		.uleb128 0x1a
+ 3390 013f 898201   		.uleb128 0x4109
+ 3391 0142 00       		.byte	0
+ 3392 0143 11       		.uleb128 0x11
+ 3393 0144 01       		.uleb128 0x1
+ 3394 0145 9542     		.uleb128 0x2115
+ 3395 0147 0C       		.uleb128 0xc
+ 3396 0148 31       		.uleb128 0x31
+ 3397 0149 13       		.uleb128 0x13
+ 3398 014a 00       		.byte	0
+ 3399 014b 00       		.byte	0
+ 3400 014c 1B       		.uleb128 0x1b
+ 3401 014d 05       		.uleb128 0x5
+ 3402 014e 00       		.byte	0
+ 3403 014f 03       		.uleb128 0x3
+ 3404 0150 0E       		.uleb128 0xe
+ 3405 0151 3A       		.uleb128 0x3a
+ 3406 0152 0B       		.uleb128 0xb
+ 3407 0153 3B       		.uleb128 0x3b
+ 3408 0154 0B       		.uleb128 0xb
+ 3409 0155 49       		.uleb128 0x49
+ 3410 0156 13       		.uleb128 0x13
+ 3411 0157 02       		.uleb128 0x2
+ 3412 0158 06       		.uleb128 0x6
+ 3413 0159 00       		.byte	0
+ 3414 015a 00       		.byte	0
+ 3415 015b 1C       		.uleb128 0x1c
+ 3416 015c 898201   		.uleb128 0x4109
+ 3417 015f 01       		.byte	0x1
+ 3418 0160 11       		.uleb128 0x11
+ 3419 0161 01       		.uleb128 0x1
+ 3420 0162 9542     		.uleb128 0x2115
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 61
+
+
+ 3421 0164 0C       		.uleb128 0xc
+ 3422 0165 31       		.uleb128 0x31
+ 3423 0166 13       		.uleb128 0x13
+ 3424 0167 00       		.byte	0
+ 3425 0168 00       		.byte	0
+ 3426 0169 1D       		.uleb128 0x1d
+ 3427 016a 8A8201   		.uleb128 0x410a
+ 3428 016d 00       		.byte	0
+ 3429 016e 02       		.uleb128 0x2
+ 3430 016f 0A       		.uleb128 0xa
+ 3431 0170 9142     		.uleb128 0x2111
+ 3432 0172 0A       		.uleb128 0xa
+ 3433 0173 00       		.byte	0
+ 3434 0174 00       		.byte	0
+ 3435 0175 1E       		.uleb128 0x1e
+ 3436 0176 2E       		.uleb128 0x2e
+ 3437 0177 01       		.byte	0x1
+ 3438 0178 3F       		.uleb128 0x3f
+ 3439 0179 0C       		.uleb128 0xc
+ 3440 017a 03       		.uleb128 0x3
+ 3441 017b 0E       		.uleb128 0xe
+ 3442 017c 3A       		.uleb128 0x3a
+ 3443 017d 0B       		.uleb128 0xb
+ 3444 017e 3B       		.uleb128 0x3b
+ 3445 017f 0B       		.uleb128 0xb
+ 3446 0180 27       		.uleb128 0x27
+ 3447 0181 0C       		.uleb128 0xc
+ 3448 0182 11       		.uleb128 0x11
+ 3449 0183 01       		.uleb128 0x1
+ 3450 0184 12       		.uleb128 0x12
+ 3451 0185 01       		.uleb128 0x1
+ 3452 0186 40       		.uleb128 0x40
+ 3453 0187 06       		.uleb128 0x6
+ 3454 0188 9742     		.uleb128 0x2117
+ 3455 018a 0C       		.uleb128 0xc
+ 3456 018b 01       		.uleb128 0x1
+ 3457 018c 13       		.uleb128 0x13
+ 3458 018d 00       		.byte	0
+ 3459 018e 00       		.byte	0
+ 3460 018f 1F       		.uleb128 0x1f
+ 3461 0190 0B       		.uleb128 0xb
+ 3462 0191 01       		.byte	0x1
+ 3463 0192 55       		.uleb128 0x55
+ 3464 0193 06       		.uleb128 0x6
+ 3465 0194 01       		.uleb128 0x1
+ 3466 0195 13       		.uleb128 0x13
+ 3467 0196 00       		.byte	0
+ 3468 0197 00       		.byte	0
+ 3469 0198 20       		.uleb128 0x20
+ 3470 0199 34       		.uleb128 0x34
+ 3471 019a 00       		.byte	0
+ 3472 019b 03       		.uleb128 0x3
+ 3473 019c 08       		.uleb128 0x8
+ 3474 019d 3A       		.uleb128 0x3a
+ 3475 019e 0B       		.uleb128 0xb
+ 3476 019f 3B       		.uleb128 0x3b
+ 3477 01a0 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 62
+
+
+ 3478 01a1 49       		.uleb128 0x49
+ 3479 01a2 13       		.uleb128 0x13
+ 3480 01a3 02       		.uleb128 0x2
+ 3481 01a4 06       		.uleb128 0x6
+ 3482 01a5 00       		.byte	0
+ 3483 01a6 00       		.byte	0
+ 3484 01a7 21       		.uleb128 0x21
+ 3485 01a8 0B       		.uleb128 0xb
+ 3486 01a9 01       		.byte	0x1
+ 3487 01aa 11       		.uleb128 0x11
+ 3488 01ab 01       		.uleb128 0x1
+ 3489 01ac 12       		.uleb128 0x12
+ 3490 01ad 01       		.uleb128 0x1
+ 3491 01ae 01       		.uleb128 0x1
+ 3492 01af 13       		.uleb128 0x13
+ 3493 01b0 00       		.byte	0
+ 3494 01b1 00       		.byte	0
+ 3495 01b2 22       		.uleb128 0x22
+ 3496 01b3 898201   		.uleb128 0x4109
+ 3497 01b6 01       		.byte	0x1
+ 3498 01b7 11       		.uleb128 0x11
+ 3499 01b8 01       		.uleb128 0x1
+ 3500 01b9 31       		.uleb128 0x31
+ 3501 01ba 13       		.uleb128 0x13
+ 3502 01bb 00       		.byte	0
+ 3503 01bc 00       		.byte	0
+ 3504 01bd 23       		.uleb128 0x23
+ 3505 01be 898201   		.uleb128 0x4109
+ 3506 01c1 01       		.byte	0x1
+ 3507 01c2 11       		.uleb128 0x11
+ 3508 01c3 01       		.uleb128 0x1
+ 3509 01c4 31       		.uleb128 0x31
+ 3510 01c5 13       		.uleb128 0x13
+ 3511 01c6 01       		.uleb128 0x1
+ 3512 01c7 13       		.uleb128 0x13
+ 3513 01c8 00       		.byte	0
+ 3514 01c9 00       		.byte	0
+ 3515 01ca 24       		.uleb128 0x24
+ 3516 01cb 05       		.uleb128 0x5
+ 3517 01cc 00       		.byte	0
+ 3518 01cd 03       		.uleb128 0x3
+ 3519 01ce 08       		.uleb128 0x8
+ 3520 01cf 3A       		.uleb128 0x3a
+ 3521 01d0 0B       		.uleb128 0xb
+ 3522 01d1 3B       		.uleb128 0x3b
+ 3523 01d2 0B       		.uleb128 0xb
+ 3524 01d3 49       		.uleb128 0x49
+ 3525 01d4 13       		.uleb128 0x13
+ 3526 01d5 02       		.uleb128 0x2
+ 3527 01d6 06       		.uleb128 0x6
+ 3528 01d7 00       		.byte	0
+ 3529 01d8 00       		.byte	0
+ 3530 01d9 25       		.uleb128 0x25
+ 3531 01da 26       		.uleb128 0x26
+ 3532 01db 00       		.byte	0
+ 3533 01dc 00       		.byte	0
+ 3534 01dd 00       		.byte	0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 63
+
+
+ 3535 01de 26       		.uleb128 0x26
+ 3536 01df 2E       		.uleb128 0x2e
+ 3537 01e0 01       		.byte	0x1
+ 3538 01e1 3F       		.uleb128 0x3f
+ 3539 01e2 0C       		.uleb128 0xc
+ 3540 01e3 03       		.uleb128 0x3
+ 3541 01e4 0E       		.uleb128 0xe
+ 3542 01e5 3A       		.uleb128 0x3a
+ 3543 01e6 0B       		.uleb128 0xb
+ 3544 01e7 3B       		.uleb128 0x3b
+ 3545 01e8 05       		.uleb128 0x5
+ 3546 01e9 27       		.uleb128 0x27
+ 3547 01ea 0C       		.uleb128 0xc
+ 3548 01eb 11       		.uleb128 0x11
+ 3549 01ec 01       		.uleb128 0x1
+ 3550 01ed 12       		.uleb128 0x12
+ 3551 01ee 01       		.uleb128 0x1
+ 3552 01ef 40       		.uleb128 0x40
+ 3553 01f0 06       		.uleb128 0x6
+ 3554 01f1 9742     		.uleb128 0x2117
+ 3555 01f3 0C       		.uleb128 0xc
+ 3556 01f4 01       		.uleb128 0x1
+ 3557 01f5 13       		.uleb128 0x13
+ 3558 01f6 00       		.byte	0
+ 3559 01f7 00       		.byte	0
+ 3560 01f8 27       		.uleb128 0x27
+ 3561 01f9 05       		.uleb128 0x5
+ 3562 01fa 00       		.byte	0
+ 3563 01fb 03       		.uleb128 0x3
+ 3564 01fc 0E       		.uleb128 0xe
+ 3565 01fd 3A       		.uleb128 0x3a
+ 3566 01fe 0B       		.uleb128 0xb
+ 3567 01ff 3B       		.uleb128 0x3b
+ 3568 0200 05       		.uleb128 0x5
+ 3569 0201 49       		.uleb128 0x49
+ 3570 0202 13       		.uleb128 0x13
+ 3571 0203 02       		.uleb128 0x2
+ 3572 0204 06       		.uleb128 0x6
+ 3573 0205 00       		.byte	0
+ 3574 0206 00       		.byte	0
+ 3575 0207 28       		.uleb128 0x28
+ 3576 0208 05       		.uleb128 0x5
+ 3577 0209 00       		.byte	0
+ 3578 020a 03       		.uleb128 0x3
+ 3579 020b 08       		.uleb128 0x8
+ 3580 020c 3A       		.uleb128 0x3a
+ 3581 020d 0B       		.uleb128 0xb
+ 3582 020e 3B       		.uleb128 0x3b
+ 3583 020f 05       		.uleb128 0x5
+ 3584 0210 49       		.uleb128 0x49
+ 3585 0211 13       		.uleb128 0x13
+ 3586 0212 02       		.uleb128 0x2
+ 3587 0213 06       		.uleb128 0x6
+ 3588 0214 00       		.byte	0
+ 3589 0215 00       		.byte	0
+ 3590 0216 29       		.uleb128 0x29
+ 3591 0217 34       		.uleb128 0x34
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 64
+
+
+ 3592 0218 00       		.byte	0
+ 3593 0219 03       		.uleb128 0x3
+ 3594 021a 08       		.uleb128 0x8
+ 3595 021b 3A       		.uleb128 0x3a
+ 3596 021c 0B       		.uleb128 0xb
+ 3597 021d 3B       		.uleb128 0x3b
+ 3598 021e 05       		.uleb128 0x5
+ 3599 021f 49       		.uleb128 0x49
+ 3600 0220 13       		.uleb128 0x13
+ 3601 0221 02       		.uleb128 0x2
+ 3602 0222 06       		.uleb128 0x6
+ 3603 0223 00       		.byte	0
+ 3604 0224 00       		.byte	0
+ 3605 0225 2A       		.uleb128 0x2a
+ 3606 0226 2E       		.uleb128 0x2e
+ 3607 0227 01       		.byte	0x1
+ 3608 0228 3F       		.uleb128 0x3f
+ 3609 0229 0C       		.uleb128 0xc
+ 3610 022a 03       		.uleb128 0x3
+ 3611 022b 0E       		.uleb128 0xe
+ 3612 022c 3A       		.uleb128 0x3a
+ 3613 022d 0B       		.uleb128 0xb
+ 3614 022e 3B       		.uleb128 0x3b
+ 3615 022f 05       		.uleb128 0x5
+ 3616 0230 27       		.uleb128 0x27
+ 3617 0231 0C       		.uleb128 0xc
+ 3618 0232 11       		.uleb128 0x11
+ 3619 0233 01       		.uleb128 0x1
+ 3620 0234 12       		.uleb128 0x12
+ 3621 0235 01       		.uleb128 0x1
+ 3622 0236 40       		.uleb128 0x40
+ 3623 0237 0A       		.uleb128 0xa
+ 3624 0238 9742     		.uleb128 0x2117
+ 3625 023a 0C       		.uleb128 0xc
+ 3626 023b 01       		.uleb128 0x1
+ 3627 023c 13       		.uleb128 0x13
+ 3628 023d 00       		.byte	0
+ 3629 023e 00       		.byte	0
+ 3630 023f 2B       		.uleb128 0x2b
+ 3631 0240 34       		.uleb128 0x34
+ 3632 0241 00       		.byte	0
+ 3633 0242 03       		.uleb128 0x3
+ 3634 0243 0E       		.uleb128 0xe
+ 3635 0244 3A       		.uleb128 0x3a
+ 3636 0245 0B       		.uleb128 0xb
+ 3637 0246 3B       		.uleb128 0x3b
+ 3638 0247 0B       		.uleb128 0xb
+ 3639 0248 49       		.uleb128 0x49
+ 3640 0249 13       		.uleb128 0x13
+ 3641 024a 3F       		.uleb128 0x3f
+ 3642 024b 0C       		.uleb128 0xc
+ 3643 024c 3C       		.uleb128 0x3c
+ 3644 024d 0C       		.uleb128 0xc
+ 3645 024e 00       		.byte	0
+ 3646 024f 00       		.byte	0
+ 3647 0250 2C       		.uleb128 0x2c
+ 3648 0251 34       		.uleb128 0x34
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 65
+
+
+ 3649 0252 00       		.byte	0
+ 3650 0253 03       		.uleb128 0x3
+ 3651 0254 0E       		.uleb128 0xe
+ 3652 0255 3A       		.uleb128 0x3a
+ 3653 0256 0B       		.uleb128 0xb
+ 3654 0257 3B       		.uleb128 0x3b
+ 3655 0258 05       		.uleb128 0x5
+ 3656 0259 49       		.uleb128 0x49
+ 3657 025a 13       		.uleb128 0x13
+ 3658 025b 3F       		.uleb128 0x3f
+ 3659 025c 0C       		.uleb128 0xc
+ 3660 025d 3C       		.uleb128 0x3c
+ 3661 025e 0C       		.uleb128 0xc
+ 3662 025f 00       		.byte	0
+ 3663 0260 00       		.byte	0
+ 3664 0261 2D       		.uleb128 0x2d
+ 3665 0262 2E       		.uleb128 0x2e
+ 3666 0263 00       		.byte	0
+ 3667 0264 3F       		.uleb128 0x3f
+ 3668 0265 0C       		.uleb128 0xc
+ 3669 0266 03       		.uleb128 0x3
+ 3670 0267 0E       		.uleb128 0xe
+ 3671 0268 3A       		.uleb128 0x3a
+ 3672 0269 0B       		.uleb128 0xb
+ 3673 026a 3B       		.uleb128 0x3b
+ 3674 026b 05       		.uleb128 0x5
+ 3675 026c 27       		.uleb128 0x27
+ 3676 026d 0C       		.uleb128 0xc
+ 3677 026e 3C       		.uleb128 0x3c
+ 3678 026f 0C       		.uleb128 0xc
+ 3679 0270 00       		.byte	0
+ 3680 0271 00       		.byte	0
+ 3681 0272 2E       		.uleb128 0x2e
+ 3682 0273 2E       		.uleb128 0x2e
+ 3683 0274 01       		.byte	0x1
+ 3684 0275 3F       		.uleb128 0x3f
+ 3685 0276 0C       		.uleb128 0xc
+ 3686 0277 03       		.uleb128 0x3
+ 3687 0278 0E       		.uleb128 0xe
+ 3688 0279 3A       		.uleb128 0x3a
+ 3689 027a 0B       		.uleb128 0xb
+ 3690 027b 3B       		.uleb128 0x3b
+ 3691 027c 0B       		.uleb128 0xb
+ 3692 027d 27       		.uleb128 0x27
+ 3693 027e 0C       		.uleb128 0xc
+ 3694 027f 3C       		.uleb128 0x3c
+ 3695 0280 0C       		.uleb128 0xc
+ 3696 0281 01       		.uleb128 0x1
+ 3697 0282 13       		.uleb128 0x13
+ 3698 0283 00       		.byte	0
+ 3699 0284 00       		.byte	0
+ 3700 0285 2F       		.uleb128 0x2f
+ 3701 0286 2E       		.uleb128 0x2e
+ 3702 0287 01       		.byte	0x1
+ 3703 0288 3F       		.uleb128 0x3f
+ 3704 0289 0C       		.uleb128 0xc
+ 3705 028a 03       		.uleb128 0x3
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 66
+
+
+ 3706 028b 0E       		.uleb128 0xe
+ 3707 028c 3A       		.uleb128 0x3a
+ 3708 028d 0B       		.uleb128 0xb
+ 3709 028e 3B       		.uleb128 0x3b
+ 3710 028f 05       		.uleb128 0x5
+ 3711 0290 27       		.uleb128 0x27
+ 3712 0291 0C       		.uleb128 0xc
+ 3713 0292 3C       		.uleb128 0x3c
+ 3714 0293 0C       		.uleb128 0xc
+ 3715 0294 01       		.uleb128 0x1
+ 3716 0295 13       		.uleb128 0x13
+ 3717 0296 00       		.byte	0
+ 3718 0297 00       		.byte	0
+ 3719 0298 30       		.uleb128 0x30
+ 3720 0299 2E       		.uleb128 0x2e
+ 3721 029a 00       		.byte	0
+ 3722 029b 3F       		.uleb128 0x3f
+ 3723 029c 0C       		.uleb128 0xc
+ 3724 029d 03       		.uleb128 0x3
+ 3725 029e 0E       		.uleb128 0xe
+ 3726 029f 3A       		.uleb128 0x3a
+ 3727 02a0 0B       		.uleb128 0xb
+ 3728 02a1 3B       		.uleb128 0x3b
+ 3729 02a2 0B       		.uleb128 0xb
+ 3730 02a3 27       		.uleb128 0x27
+ 3731 02a4 0C       		.uleb128 0xc
+ 3732 02a5 49       		.uleb128 0x49
+ 3733 02a6 13       		.uleb128 0x13
+ 3734 02a7 3C       		.uleb128 0x3c
+ 3735 02a8 0C       		.uleb128 0xc
+ 3736 02a9 00       		.byte	0
+ 3737 02aa 00       		.byte	0
+ 3738 02ab 00       		.byte	0
+ 3739              		.section	.debug_loc,"",%progbits
+ 3740              	.Ldebug_loc0:
+ 3741              	.LLST0:
+ 3742 0000 00000000 		.4byte	.LVL1
+ 3743 0004 0C000000 		.4byte	.LVL2
+ 3744 0008 0100     		.2byte	0x1
+ 3745 000a 50       		.byte	0x50
+ 3746 000b 0C000000 		.4byte	.LVL2
+ 3747 000f 0F000000 		.4byte	.LVL3-1
+ 3748 0013 0300     		.2byte	0x3
+ 3749 0015 70       		.byte	0x70
+ 3750 0016 74       		.sleb128 -12
+ 3751 0017 9F       		.byte	0x9f
+ 3752 0018 0F000000 		.4byte	.LVL3-1
+ 3753 001c 10000000 		.4byte	.LFE63
+ 3754 0020 0400     		.2byte	0x4
+ 3755 0022 F3       		.byte	0xf3
+ 3756 0023 01       		.uleb128 0x1
+ 3757 0024 50       		.byte	0x50
+ 3758 0025 9F       		.byte	0x9f
+ 3759 0026 00000000 		.4byte	0
+ 3760 002a 00000000 		.4byte	0
+ 3761              	.LLST1:
+ 3762 002e 00000000 		.4byte	.LFB64
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 67
+
+
+ 3763 0032 02000000 		.4byte	.LCFI0
+ 3764 0036 0200     		.2byte	0x2
+ 3765 0038 7D       		.byte	0x7d
+ 3766 0039 00       		.sleb128 0
+ 3767 003a 02000000 		.4byte	.LCFI0
+ 3768 003e 1C000000 		.4byte	.LFE64
+ 3769 0042 0200     		.2byte	0x2
+ 3770 0044 7D       		.byte	0x7d
+ 3771 0045 08       		.sleb128 8
+ 3772 0046 00000000 		.4byte	0
+ 3773 004a 00000000 		.4byte	0
+ 3774              	.LLST2:
+ 3775 004e 00000000 		.4byte	.LVL4
+ 3776 0052 0F000000 		.4byte	.LVL7-1
+ 3777 0056 0100     		.2byte	0x1
+ 3778 0058 50       		.byte	0x50
+ 3779 0059 0F000000 		.4byte	.LVL7-1
+ 3780 005d 1C000000 		.4byte	.LFE64
+ 3781 0061 0100     		.2byte	0x1
+ 3782 0063 54       		.byte	0x54
+ 3783 0064 00000000 		.4byte	0
+ 3784 0068 00000000 		.4byte	0
+ 3785              	.LLST3:
+ 3786 006c 00000000 		.4byte	.LVL4
+ 3787 0070 0F000000 		.4byte	.LVL7-1
+ 3788 0074 0100     		.2byte	0x1
+ 3789 0076 51       		.byte	0x51
+ 3790 0077 0F000000 		.4byte	.LVL7-1
+ 3791 007b 1C000000 		.4byte	.LFE64
+ 3792 007f 0400     		.2byte	0x4
+ 3793 0081 F3       		.byte	0xf3
+ 3794 0082 01       		.uleb128 0x1
+ 3795 0083 51       		.byte	0x51
+ 3796 0084 9F       		.byte	0x9f
+ 3797 0085 00000000 		.4byte	0
+ 3798 0089 00000000 		.4byte	0
+ 3799              	.LLST4:
+ 3800 008d 0A000000 		.4byte	.LVL6
+ 3801 0091 0F000000 		.4byte	.LVL7-1
+ 3802 0095 0100     		.2byte	0x1
+ 3803 0097 53       		.byte	0x53
+ 3804 0098 00000000 		.4byte	0
+ 3805 009c 00000000 		.4byte	0
+ 3806              	.LLST5:
+ 3807 00a0 1A000000 		.4byte	.LVL9
+ 3808 00a4 1C000000 		.4byte	.LFE64
+ 3809 00a8 0100     		.2byte	0x1
+ 3810 00aa 53       		.byte	0x53
+ 3811 00ab 00000000 		.4byte	0
+ 3812 00af 00000000 		.4byte	0
+ 3813              	.LLST6:
+ 3814 00b3 00000000 		.4byte	.LFB65
+ 3815 00b7 02000000 		.4byte	.LCFI1
+ 3816 00bb 0200     		.2byte	0x2
+ 3817 00bd 7D       		.byte	0x7d
+ 3818 00be 00       		.sleb128 0
+ 3819 00bf 02000000 		.4byte	.LCFI1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 68
+
+
+ 3820 00c3 20000000 		.4byte	.LFE65
+ 3821 00c7 0200     		.2byte	0x2
+ 3822 00c9 7D       		.byte	0x7d
+ 3823 00ca 08       		.sleb128 8
+ 3824 00cb 00000000 		.4byte	0
+ 3825 00cf 00000000 		.4byte	0
+ 3826              	.LLST7:
+ 3827 00d3 00000000 		.4byte	.LVL10
+ 3828 00d7 0D000000 		.4byte	.LVL13-1
+ 3829 00db 0100     		.2byte	0x1
+ 3830 00dd 50       		.byte	0x50
+ 3831 00de 0D000000 		.4byte	.LVL13-1
+ 3832 00e2 20000000 		.4byte	.LFE65
+ 3833 00e6 0100     		.2byte	0x1
+ 3834 00e8 54       		.byte	0x54
+ 3835 00e9 00000000 		.4byte	0
+ 3836 00ed 00000000 		.4byte	0
+ 3837              	.LLST8:
+ 3838 00f1 0A000000 		.4byte	.LVL12
+ 3839 00f5 0D000000 		.4byte	.LVL13-1
+ 3840 00f9 0100     		.2byte	0x1
+ 3841 00fb 53       		.byte	0x53
+ 3842 00fc 00000000 		.4byte	0
+ 3843 0100 00000000 		.4byte	0
+ 3844              	.LLST9:
+ 3845 0104 1E000000 		.4byte	.LVL16
+ 3846 0108 20000000 		.4byte	.LFE65
+ 3847 010c 0100     		.2byte	0x1
+ 3848 010e 53       		.byte	0x53
+ 3849 010f 00000000 		.4byte	0
+ 3850 0113 00000000 		.4byte	0
+ 3851              	.LLST10:
+ 3852 0117 00000000 		.4byte	.LFB66
+ 3853 011b 02000000 		.4byte	.LCFI2
+ 3854 011f 0200     		.2byte	0x2
+ 3855 0121 7D       		.byte	0x7d
+ 3856 0122 00       		.sleb128 0
+ 3857 0123 02000000 		.4byte	.LCFI2
+ 3858 0127 14000000 		.4byte	.LFE66
+ 3859 012b 0200     		.2byte	0x2
+ 3860 012d 7D       		.byte	0x7d
+ 3861 012e 08       		.sleb128 8
+ 3862 012f 00000000 		.4byte	0
+ 3863 0133 00000000 		.4byte	0
+ 3864              	.LLST11:
+ 3865 0137 00000000 		.4byte	.LVL17
+ 3866 013b 0B000000 		.4byte	.LVL20-1
+ 3867 013f 0100     		.2byte	0x1
+ 3868 0141 50       		.byte	0x50
+ 3869 0142 0B000000 		.4byte	.LVL20-1
+ 3870 0146 14000000 		.4byte	.LFE66
+ 3871 014a 0400     		.2byte	0x4
+ 3872 014c F3       		.byte	0xf3
+ 3873 014d 01       		.uleb128 0x1
+ 3874 014e 50       		.byte	0x50
+ 3875 014f 9F       		.byte	0x9f
+ 3876 0150 00000000 		.4byte	0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 69
+
+
+ 3877 0154 00000000 		.4byte	0
+ 3878              	.LLST12:
+ 3879 0158 08000000 		.4byte	.LVL19
+ 3880 015c 0B000000 		.4byte	.LVL20-1
+ 3881 0160 0100     		.2byte	0x1
+ 3882 0162 53       		.byte	0x53
+ 3883 0163 00000000 		.4byte	0
+ 3884 0167 00000000 		.4byte	0
+ 3885              	.LLST13:
+ 3886 016b 12000000 		.4byte	.LVL22
+ 3887 016f 14000000 		.4byte	.LFE66
+ 3888 0173 0100     		.2byte	0x1
+ 3889 0175 53       		.byte	0x53
+ 3890 0176 00000000 		.4byte	0
+ 3891 017a 00000000 		.4byte	0
+ 3892              	.LLST14:
+ 3893 017e 00000000 		.4byte	.LFB67
+ 3894 0182 02000000 		.4byte	.LCFI3
+ 3895 0186 0200     		.2byte	0x2
+ 3896 0188 7D       		.byte	0x7d
+ 3897 0189 00       		.sleb128 0
+ 3898 018a 02000000 		.4byte	.LCFI3
+ 3899 018e 14000000 		.4byte	.LFE67
+ 3900 0192 0200     		.2byte	0x2
+ 3901 0194 7D       		.byte	0x7d
+ 3902 0195 08       		.sleb128 8
+ 3903 0196 00000000 		.4byte	0
+ 3904 019a 00000000 		.4byte	0
+ 3905              	.LLST15:
+ 3906 019e 00000000 		.4byte	.LVL23
+ 3907 01a2 0B000000 		.4byte	.LVL26-1
+ 3908 01a6 0100     		.2byte	0x1
+ 3909 01a8 50       		.byte	0x50
+ 3910 01a9 0B000000 		.4byte	.LVL26-1
+ 3911 01ad 14000000 		.4byte	.LFE67
+ 3912 01b1 0400     		.2byte	0x4
+ 3913 01b3 F3       		.byte	0xf3
+ 3914 01b4 01       		.uleb128 0x1
+ 3915 01b5 50       		.byte	0x50
+ 3916 01b6 9F       		.byte	0x9f
+ 3917 01b7 00000000 		.4byte	0
+ 3918 01bb 00000000 		.4byte	0
+ 3919              	.LLST16:
+ 3920 01bf 08000000 		.4byte	.LVL25
+ 3921 01c3 0B000000 		.4byte	.LVL26-1
+ 3922 01c7 0100     		.2byte	0x1
+ 3923 01c9 53       		.byte	0x53
+ 3924 01ca 00000000 		.4byte	0
+ 3925 01ce 00000000 		.4byte	0
+ 3926              	.LLST17:
+ 3927 01d2 12000000 		.4byte	.LVL28
+ 3928 01d6 14000000 		.4byte	.LFE67
+ 3929 01da 0100     		.2byte	0x1
+ 3930 01dc 53       		.byte	0x53
+ 3931 01dd 00000000 		.4byte	0
+ 3932 01e1 00000000 		.4byte	0
+ 3933              	.LLST18:
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 70
+
+
+ 3934 01e5 00000000 		.4byte	.LFB68
+ 3935 01e9 02000000 		.4byte	.LCFI4
+ 3936 01ed 0200     		.2byte	0x2
+ 3937 01ef 7D       		.byte	0x7d
+ 3938 01f0 00       		.sleb128 0
+ 3939 01f1 02000000 		.4byte	.LCFI4
+ 3940 01f5 18000000 		.4byte	.LFE68
+ 3941 01f9 0200     		.2byte	0x2
+ 3942 01fb 7D       		.byte	0x7d
+ 3943 01fc 08       		.sleb128 8
+ 3944 01fd 00000000 		.4byte	0
+ 3945 0201 00000000 		.4byte	0
+ 3946              	.LLST19:
+ 3947 0205 00000000 		.4byte	.LVL29
+ 3948 0209 0F000000 		.4byte	.LVL33-1
+ 3949 020d 0100     		.2byte	0x1
+ 3950 020f 50       		.byte	0x50
+ 3951 0210 0F000000 		.4byte	.LVL33-1
+ 3952 0214 18000000 		.4byte	.LFE68
+ 3953 0218 0400     		.2byte	0x4
+ 3954 021a F3       		.byte	0xf3
+ 3955 021b 01       		.uleb128 0x1
+ 3956 021c 50       		.byte	0x50
+ 3957 021d 9F       		.byte	0x9f
+ 3958 021e 00000000 		.4byte	0
+ 3959 0222 00000000 		.4byte	0
+ 3960              	.LLST20:
+ 3961 0226 00000000 		.4byte	.LVL29
+ 3962 022a 0F000000 		.4byte	.LVL33-1
+ 3963 022e 0100     		.2byte	0x1
+ 3964 0230 51       		.byte	0x51
+ 3965 0231 0F000000 		.4byte	.LVL33-1
+ 3966 0235 18000000 		.4byte	.LFE68
+ 3967 0239 0400     		.2byte	0x4
+ 3968 023b F3       		.byte	0xf3
+ 3969 023c 01       		.uleb128 0x1
+ 3970 023d 51       		.byte	0x51
+ 3971 023e 9F       		.byte	0x9f
+ 3972 023f 00000000 		.4byte	0
+ 3973 0243 00000000 		.4byte	0
+ 3974              	.LLST21:
+ 3975 0247 08000000 		.4byte	.LVL31
+ 3976 024b 0A000000 		.4byte	.LVL32
+ 3977 024f 0100     		.2byte	0x1
+ 3978 0251 53       		.byte	0x53
+ 3979 0252 00000000 		.4byte	0
+ 3980 0256 00000000 		.4byte	0
+ 3981              	.LLST22:
+ 3982 025a 16000000 		.4byte	.LVL35
+ 3983 025e 18000000 		.4byte	.LFE68
+ 3984 0262 0100     		.2byte	0x1
+ 3985 0264 53       		.byte	0x53
+ 3986 0265 00000000 		.4byte	0
+ 3987 0269 00000000 		.4byte	0
+ 3988              	.LLST23:
+ 3989 026d 00000000 		.4byte	.LFB69
+ 3990 0271 02000000 		.4byte	.LCFI5
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 71
+
+
+ 3991 0275 0200     		.2byte	0x2
+ 3992 0277 7D       		.byte	0x7d
+ 3993 0278 00       		.sleb128 0
+ 3994 0279 02000000 		.4byte	.LCFI5
+ 3995 027d 1E000000 		.4byte	.LFE69
+ 3996 0281 0200     		.2byte	0x2
+ 3997 0283 7D       		.byte	0x7d
+ 3998 0284 10       		.sleb128 16
+ 3999 0285 00000000 		.4byte	0
+ 4000 0289 00000000 		.4byte	0
+ 4001              	.LLST24:
+ 4002 028d 00000000 		.4byte	.LVL36
+ 4003 0291 15000000 		.4byte	.LVL41-1
+ 4004 0295 0100     		.2byte	0x1
+ 4005 0297 50       		.byte	0x50
+ 4006 0298 15000000 		.4byte	.LVL41-1
+ 4007 029c 1E000000 		.4byte	.LFE69
+ 4008 02a0 0100     		.2byte	0x1
+ 4009 02a2 54       		.byte	0x54
+ 4010 02a3 00000000 		.4byte	0
+ 4011 02a7 00000000 		.4byte	0
+ 4012              	.LLST25:
+ 4013 02ab 00000000 		.4byte	.LVL36
+ 4014 02af 15000000 		.4byte	.LVL41-1
+ 4015 02b3 0100     		.2byte	0x1
+ 4016 02b5 51       		.byte	0x51
+ 4017 02b6 15000000 		.4byte	.LVL41-1
+ 4018 02ba 1E000000 		.4byte	.LFE69
+ 4019 02be 0400     		.2byte	0x4
+ 4020 02c0 F3       		.byte	0xf3
+ 4021 02c1 01       		.uleb128 0x1
+ 4022 02c2 51       		.byte	0x51
+ 4023 02c3 9F       		.byte	0x9f
+ 4024 02c4 00000000 		.4byte	0
+ 4025 02c8 00000000 		.4byte	0
+ 4026              	.LLST26:
+ 4027 02cc 00000000 		.4byte	.LVL36
+ 4028 02d0 15000000 		.4byte	.LVL41-1
+ 4029 02d4 0100     		.2byte	0x1
+ 4030 02d6 52       		.byte	0x52
+ 4031 02d7 15000000 		.4byte	.LVL41-1
+ 4032 02db 1E000000 		.4byte	.LFE69
+ 4033 02df 0400     		.2byte	0x4
+ 4034 02e1 F3       		.byte	0xf3
+ 4035 02e2 01       		.uleb128 0x1
+ 4036 02e3 52       		.byte	0x52
+ 4037 02e4 9F       		.byte	0x9f
+ 4038 02e5 00000000 		.4byte	0
+ 4039 02e9 00000000 		.4byte	0
+ 4040              	.LLST27:
+ 4041 02ed 00000000 		.4byte	.LVL36
+ 4042 02f1 08000000 		.4byte	.LVL37
+ 4043 02f5 0100     		.2byte	0x1
+ 4044 02f7 53       		.byte	0x53
+ 4045 02f8 08000000 		.4byte	.LVL37
+ 4046 02fc 10000000 		.4byte	.LVL40
+ 4047 0300 0100     		.2byte	0x1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 72
+
+
+ 4048 0302 55       		.byte	0x55
+ 4049 0303 10000000 		.4byte	.LVL40
+ 4050 0307 15000000 		.4byte	.LVL41-1
+ 4051 030b 0100     		.2byte	0x1
+ 4052 030d 53       		.byte	0x53
+ 4053 030e 15000000 		.4byte	.LVL41-1
+ 4054 0312 1E000000 		.4byte	.LFE69
+ 4055 0316 0400     		.2byte	0x4
+ 4056 0318 F3       		.byte	0xf3
+ 4057 0319 01       		.uleb128 0x1
+ 4058 031a 53       		.byte	0x53
+ 4059 031b 9F       		.byte	0x9f
+ 4060 031c 00000000 		.4byte	0
+ 4061 0320 00000000 		.4byte	0
+ 4062              	.LLST28:
+ 4063 0324 0C000000 		.4byte	.LVL38
+ 4064 0328 0E000000 		.4byte	.LVL39
+ 4065 032c 0100     		.2byte	0x1
+ 4066 032e 53       		.byte	0x53
+ 4067 032f 00000000 		.4byte	0
+ 4068 0333 00000000 		.4byte	0
+ 4069              	.LLST29:
+ 4070 0337 1C000000 		.4byte	.LVL43
+ 4071 033b 1E000000 		.4byte	.LFE69
+ 4072 033f 0100     		.2byte	0x1
+ 4073 0341 53       		.byte	0x53
+ 4074 0342 00000000 		.4byte	0
+ 4075 0346 00000000 		.4byte	0
+ 4076              	.LLST30:
+ 4077 034a 00000000 		.4byte	.LFB70
+ 4078 034e 02000000 		.4byte	.LCFI6
+ 4079 0352 0200     		.2byte	0x2
+ 4080 0354 7D       		.byte	0x7d
+ 4081 0355 00       		.sleb128 0
+ 4082 0356 02000000 		.4byte	.LCFI6
+ 4083 035a 1A000000 		.4byte	.LFE70
+ 4084 035e 0200     		.2byte	0x2
+ 4085 0360 7D       		.byte	0x7d
+ 4086 0361 08       		.sleb128 8
+ 4087 0362 00000000 		.4byte	0
+ 4088 0366 00000000 		.4byte	0
+ 4089              	.LLST31:
+ 4090 036a 00000000 		.4byte	.LVL44
+ 4091 036e 11000000 		.4byte	.LVL48-1
+ 4092 0372 0100     		.2byte	0x1
+ 4093 0374 50       		.byte	0x50
+ 4094 0375 11000000 		.4byte	.LVL48-1
+ 4095 0379 1A000000 		.4byte	.LFE70
+ 4096 037d 0100     		.2byte	0x1
+ 4097 037f 54       		.byte	0x54
+ 4098 0380 00000000 		.4byte	0
+ 4099 0384 00000000 		.4byte	0
+ 4100              	.LLST32:
+ 4101 0388 00000000 		.4byte	.LVL44
+ 4102 038c 11000000 		.4byte	.LVL48-1
+ 4103 0390 0100     		.2byte	0x1
+ 4104 0392 51       		.byte	0x51
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 73
+
+
+ 4105 0393 11000000 		.4byte	.LVL48-1
+ 4106 0397 1A000000 		.4byte	.LFE70
+ 4107 039b 0400     		.2byte	0x4
+ 4108 039d F3       		.byte	0xf3
+ 4109 039e 01       		.uleb128 0x1
+ 4110 039f 51       		.byte	0x51
+ 4111 03a0 9F       		.byte	0x9f
+ 4112 03a1 00000000 		.4byte	0
+ 4113 03a5 00000000 		.4byte	0
+ 4114              	.LLST33:
+ 4115 03a9 00000000 		.4byte	.LVL44
+ 4116 03ad 11000000 		.4byte	.LVL48-1
+ 4117 03b1 0100     		.2byte	0x1
+ 4118 03b3 52       		.byte	0x52
+ 4119 03b4 11000000 		.4byte	.LVL48-1
+ 4120 03b8 1A000000 		.4byte	.LFE70
+ 4121 03bc 0400     		.2byte	0x4
+ 4122 03be F3       		.byte	0xf3
+ 4123 03bf 01       		.uleb128 0x1
+ 4124 03c0 52       		.byte	0x52
+ 4125 03c1 9F       		.byte	0x9f
+ 4126 03c2 00000000 		.4byte	0
+ 4127 03c6 00000000 		.4byte	0
+ 4128              	.LLST34:
+ 4129 03ca 0A000000 		.4byte	.LVL46
+ 4130 03ce 0C000000 		.4byte	.LVL47
+ 4131 03d2 0100     		.2byte	0x1
+ 4132 03d4 53       		.byte	0x53
+ 4133 03d5 00000000 		.4byte	0
+ 4134 03d9 00000000 		.4byte	0
+ 4135              	.LLST35:
+ 4136 03dd 18000000 		.4byte	.LVL50
+ 4137 03e1 1A000000 		.4byte	.LFE70
+ 4138 03e5 0100     		.2byte	0x1
+ 4139 03e7 53       		.byte	0x53
+ 4140 03e8 00000000 		.4byte	0
+ 4141 03ec 00000000 		.4byte	0
+ 4142              	.LLST36:
+ 4143 03f0 00000000 		.4byte	.LFB71
+ 4144 03f4 02000000 		.4byte	.LCFI7
+ 4145 03f8 0200     		.2byte	0x2
+ 4146 03fa 7D       		.byte	0x7d
+ 4147 03fb 00       		.sleb128 0
+ 4148 03fc 02000000 		.4byte	.LCFI7
+ 4149 0400 1A000000 		.4byte	.LFE71
+ 4150 0404 0200     		.2byte	0x2
+ 4151 0406 7D       		.byte	0x7d
+ 4152 0407 08       		.sleb128 8
+ 4153 0408 00000000 		.4byte	0
+ 4154 040c 00000000 		.4byte	0
+ 4155              	.LLST37:
+ 4156 0410 00000000 		.4byte	.LVL51
+ 4157 0414 11000000 		.4byte	.LVL55-1
+ 4158 0418 0100     		.2byte	0x1
+ 4159 041a 50       		.byte	0x50
+ 4160 041b 11000000 		.4byte	.LVL55-1
+ 4161 041f 1A000000 		.4byte	.LFE71
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 74
+
+
+ 4162 0423 0100     		.2byte	0x1
+ 4163 0425 54       		.byte	0x54
+ 4164 0426 00000000 		.4byte	0
+ 4165 042a 00000000 		.4byte	0
+ 4166              	.LLST38:
+ 4167 042e 00000000 		.4byte	.LVL51
+ 4168 0432 11000000 		.4byte	.LVL55-1
+ 4169 0436 0100     		.2byte	0x1
+ 4170 0438 51       		.byte	0x51
+ 4171 0439 11000000 		.4byte	.LVL55-1
+ 4172 043d 1A000000 		.4byte	.LFE71
+ 4173 0441 0400     		.2byte	0x4
+ 4174 0443 F3       		.byte	0xf3
+ 4175 0444 01       		.uleb128 0x1
+ 4176 0445 51       		.byte	0x51
+ 4177 0446 9F       		.byte	0x9f
+ 4178 0447 00000000 		.4byte	0
+ 4179 044b 00000000 		.4byte	0
+ 4180              	.LLST39:
+ 4181 044f 00000000 		.4byte	.LVL51
+ 4182 0453 11000000 		.4byte	.LVL55-1
+ 4183 0457 0100     		.2byte	0x1
+ 4184 0459 52       		.byte	0x52
+ 4185 045a 11000000 		.4byte	.LVL55-1
+ 4186 045e 1A000000 		.4byte	.LFE71
+ 4187 0462 0400     		.2byte	0x4
+ 4188 0464 F3       		.byte	0xf3
+ 4189 0465 01       		.uleb128 0x1
+ 4190 0466 52       		.byte	0x52
+ 4191 0467 9F       		.byte	0x9f
+ 4192 0468 00000000 		.4byte	0
+ 4193 046c 00000000 		.4byte	0
+ 4194              	.LLST40:
+ 4195 0470 0A000000 		.4byte	.LVL53
+ 4196 0474 0C000000 		.4byte	.LVL54
+ 4197 0478 0100     		.2byte	0x1
+ 4198 047a 53       		.byte	0x53
+ 4199 047b 00000000 		.4byte	0
+ 4200 047f 00000000 		.4byte	0
+ 4201              	.LLST41:
+ 4202 0483 18000000 		.4byte	.LVL57
+ 4203 0487 1A000000 		.4byte	.LFE71
+ 4204 048b 0100     		.2byte	0x1
+ 4205 048d 53       		.byte	0x53
+ 4206 048e 00000000 		.4byte	0
+ 4207 0492 00000000 		.4byte	0
+ 4208              	.LLST42:
+ 4209 0496 00000000 		.4byte	.LFB72
+ 4210 049a 02000000 		.4byte	.LCFI8
+ 4211 049e 0200     		.2byte	0x2
+ 4212 04a0 7D       		.byte	0x7d
+ 4213 04a1 00       		.sleb128 0
+ 4214 04a2 02000000 		.4byte	.LCFI8
+ 4215 04a6 2C000000 		.4byte	.LFE72
+ 4216 04aa 0200     		.2byte	0x2
+ 4217 04ac 7D       		.byte	0x7d
+ 4218 04ad 08       		.sleb128 8
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 75
+
+
+ 4219 04ae 00000000 		.4byte	0
+ 4220 04b2 00000000 		.4byte	0
+ 4221              	.LLST43:
+ 4222 04b6 00000000 		.4byte	.LVL58
+ 4223 04ba 11000000 		.4byte	.LVL62-1
+ 4224 04be 0100     		.2byte	0x1
+ 4225 04c0 50       		.byte	0x50
+ 4226 04c1 11000000 		.4byte	.LVL62-1
+ 4227 04c5 2C000000 		.4byte	.LFE72
+ 4228 04c9 0100     		.2byte	0x1
+ 4229 04cb 54       		.byte	0x54
+ 4230 04cc 00000000 		.4byte	0
+ 4231 04d0 00000000 		.4byte	0
+ 4232              	.LLST44:
+ 4233 04d4 00000000 		.4byte	.LVL58
+ 4234 04d8 11000000 		.4byte	.LVL62-1
+ 4235 04dc 0100     		.2byte	0x1
+ 4236 04de 51       		.byte	0x51
+ 4237 04df 11000000 		.4byte	.LVL62-1
+ 4238 04e3 2C000000 		.4byte	.LFE72
+ 4239 04e7 0400     		.2byte	0x4
+ 4240 04e9 F3       		.byte	0xf3
+ 4241 04ea 01       		.uleb128 0x1
+ 4242 04eb 51       		.byte	0x51
+ 4243 04ec 9F       		.byte	0x9f
+ 4244 04ed 00000000 		.4byte	0
+ 4245 04f1 00000000 		.4byte	0
+ 4246              	.LLST45:
+ 4247 04f5 0A000000 		.4byte	.LVL60
+ 4248 04f9 0C000000 		.4byte	.LVL61
+ 4249 04fd 0100     		.2byte	0x1
+ 4250 04ff 53       		.byte	0x53
+ 4251 0500 00000000 		.4byte	0
+ 4252 0504 00000000 		.4byte	0
+ 4253              	.LLST46:
+ 4254 0508 2A000000 		.4byte	.LVL65
+ 4255 050c 2C000000 		.4byte	.LFE72
+ 4256 0510 0100     		.2byte	0x1
+ 4257 0512 53       		.byte	0x53
+ 4258 0513 00000000 		.4byte	0
+ 4259 0517 00000000 		.4byte	0
+ 4260              	.LLST47:
+ 4261 051b 00000000 		.4byte	.LFB73
+ 4262 051f 02000000 		.4byte	.LCFI9
+ 4263 0523 0200     		.2byte	0x2
+ 4264 0525 7D       		.byte	0x7d
+ 4265 0526 00       		.sleb128 0
+ 4266 0527 02000000 		.4byte	.LCFI9
+ 4267 052b 30000000 		.4byte	.LFE73
+ 4268 052f 0200     		.2byte	0x2
+ 4269 0531 7D       		.byte	0x7d
+ 4270 0532 10       		.sleb128 16
+ 4271 0533 00000000 		.4byte	0
+ 4272 0537 00000000 		.4byte	0
+ 4273              	.LLST48:
+ 4274 053b 00000000 		.4byte	.LVL66
+ 4275 053f 15000000 		.4byte	.LVL71-1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 76
+
+
+ 4276 0543 0100     		.2byte	0x1
+ 4277 0545 50       		.byte	0x50
+ 4278 0546 15000000 		.4byte	.LVL71-1
+ 4279 054a 30000000 		.4byte	.LFE73
+ 4280 054e 0100     		.2byte	0x1
+ 4281 0550 54       		.byte	0x54
+ 4282 0551 00000000 		.4byte	0
+ 4283 0555 00000000 		.4byte	0
+ 4284              	.LLST49:
+ 4285 0559 00000000 		.4byte	.LVL66
+ 4286 055d 15000000 		.4byte	.LVL71-1
+ 4287 0561 0100     		.2byte	0x1
+ 4288 0563 51       		.byte	0x51
+ 4289 0564 15000000 		.4byte	.LVL71-1
+ 4290 0568 30000000 		.4byte	.LFE73
+ 4291 056c 0400     		.2byte	0x4
+ 4292 056e F3       		.byte	0xf3
+ 4293 056f 01       		.uleb128 0x1
+ 4294 0570 51       		.byte	0x51
+ 4295 0571 9F       		.byte	0x9f
+ 4296 0572 00000000 		.4byte	0
+ 4297 0576 00000000 		.4byte	0
+ 4298              	.LLST50:
+ 4299 057a 00000000 		.4byte	.LVL66
+ 4300 057e 15000000 		.4byte	.LVL71-1
+ 4301 0582 0100     		.2byte	0x1
+ 4302 0584 52       		.byte	0x52
+ 4303 0585 15000000 		.4byte	.LVL71-1
+ 4304 0589 30000000 		.4byte	.LFE73
+ 4305 058d 0400     		.2byte	0x4
+ 4306 058f F3       		.byte	0xf3
+ 4307 0590 01       		.uleb128 0x1
+ 4308 0591 52       		.byte	0x52
+ 4309 0592 9F       		.byte	0x9f
+ 4310 0593 00000000 		.4byte	0
+ 4311 0597 00000000 		.4byte	0
+ 4312              	.LLST51:
+ 4313 059b 00000000 		.4byte	.LVL66
+ 4314 059f 08000000 		.4byte	.LVL67
+ 4315 05a3 0100     		.2byte	0x1
+ 4316 05a5 53       		.byte	0x53
+ 4317 05a6 08000000 		.4byte	.LVL67
+ 4318 05aa 10000000 		.4byte	.LVL70
+ 4319 05ae 0100     		.2byte	0x1
+ 4320 05b0 55       		.byte	0x55
+ 4321 05b1 10000000 		.4byte	.LVL70
+ 4322 05b5 15000000 		.4byte	.LVL71-1
+ 4323 05b9 0100     		.2byte	0x1
+ 4324 05bb 53       		.byte	0x53
+ 4325 05bc 15000000 		.4byte	.LVL71-1
+ 4326 05c0 30000000 		.4byte	.LFE73
+ 4327 05c4 0400     		.2byte	0x4
+ 4328 05c6 F3       		.byte	0xf3
+ 4329 05c7 01       		.uleb128 0x1
+ 4330 05c8 53       		.byte	0x53
+ 4331 05c9 9F       		.byte	0x9f
+ 4332 05ca 00000000 		.4byte	0
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 77
+
+
+ 4333 05ce 00000000 		.4byte	0
+ 4334              	.LLST52:
+ 4335 05d2 0C000000 		.4byte	.LVL68
+ 4336 05d6 0E000000 		.4byte	.LVL69
+ 4337 05da 0100     		.2byte	0x1
+ 4338 05dc 53       		.byte	0x53
+ 4339 05dd 00000000 		.4byte	0
+ 4340 05e1 00000000 		.4byte	0
+ 4341              	.LLST53:
+ 4342 05e5 2E000000 		.4byte	.LVL74
+ 4343 05e9 30000000 		.4byte	.LFE73
+ 4344 05ed 0100     		.2byte	0x1
+ 4345 05ef 53       		.byte	0x53
+ 4346 05f0 00000000 		.4byte	0
+ 4347 05f4 00000000 		.4byte	0
+ 4348              	.LLST54:
+ 4349 05f8 00000000 		.4byte	.LFB74
+ 4350 05fc 02000000 		.4byte	.LCFI10
+ 4351 0600 0200     		.2byte	0x2
+ 4352 0602 7D       		.byte	0x7d
+ 4353 0603 00       		.sleb128 0
+ 4354 0604 02000000 		.4byte	.LCFI10
+ 4355 0608 2C000000 		.4byte	.LFE74
+ 4356 060c 0200     		.2byte	0x2
+ 4357 060e 7D       		.byte	0x7d
+ 4358 060f 08       		.sleb128 8
+ 4359 0610 00000000 		.4byte	0
+ 4360 0614 00000000 		.4byte	0
+ 4361              	.LLST55:
+ 4362 0618 00000000 		.4byte	.LVL75
+ 4363 061c 11000000 		.4byte	.LVL79-1
+ 4364 0620 0100     		.2byte	0x1
+ 4365 0622 50       		.byte	0x50
+ 4366 0623 11000000 		.4byte	.LVL79-1
+ 4367 0627 2C000000 		.4byte	.LFE74
+ 4368 062b 0100     		.2byte	0x1
+ 4369 062d 54       		.byte	0x54
+ 4370 062e 00000000 		.4byte	0
+ 4371 0632 00000000 		.4byte	0
+ 4372              	.LLST56:
+ 4373 0636 00000000 		.4byte	.LVL75
+ 4374 063a 11000000 		.4byte	.LVL79-1
+ 4375 063e 0100     		.2byte	0x1
+ 4376 0640 51       		.byte	0x51
+ 4377 0641 11000000 		.4byte	.LVL79-1
+ 4378 0645 2C000000 		.4byte	.LFE74
+ 4379 0649 0400     		.2byte	0x4
+ 4380 064b F3       		.byte	0xf3
+ 4381 064c 01       		.uleb128 0x1
+ 4382 064d 51       		.byte	0x51
+ 4383 064e 9F       		.byte	0x9f
+ 4384 064f 00000000 		.4byte	0
+ 4385 0653 00000000 		.4byte	0
+ 4386              	.LLST57:
+ 4387 0657 00000000 		.4byte	.LVL75
+ 4388 065b 11000000 		.4byte	.LVL79-1
+ 4389 065f 0100     		.2byte	0x1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 78
+
+
+ 4390 0661 52       		.byte	0x52
+ 4391 0662 11000000 		.4byte	.LVL79-1
+ 4392 0666 2C000000 		.4byte	.LFE74
+ 4393 066a 0400     		.2byte	0x4
+ 4394 066c F3       		.byte	0xf3
+ 4395 066d 01       		.uleb128 0x1
+ 4396 066e 52       		.byte	0x52
+ 4397 066f 9F       		.byte	0x9f
+ 4398 0670 00000000 		.4byte	0
+ 4399 0674 00000000 		.4byte	0
+ 4400              	.LLST58:
+ 4401 0678 0A000000 		.4byte	.LVL77
+ 4402 067c 0C000000 		.4byte	.LVL78
+ 4403 0680 0100     		.2byte	0x1
+ 4404 0682 53       		.byte	0x53
+ 4405 0683 00000000 		.4byte	0
+ 4406 0687 00000000 		.4byte	0
+ 4407              	.LLST59:
+ 4408 068b 2A000000 		.4byte	.LVL82
+ 4409 068f 2C000000 		.4byte	.LFE74
+ 4410 0693 0100     		.2byte	0x1
+ 4411 0695 53       		.byte	0x53
+ 4412 0696 00000000 		.4byte	0
+ 4413 069a 00000000 		.4byte	0
+ 4414              	.LLST60:
+ 4415 069e 00000000 		.4byte	.LFB75
+ 4416 06a2 02000000 		.4byte	.LCFI11
+ 4417 06a6 0200     		.2byte	0x2
+ 4418 06a8 7D       		.byte	0x7d
+ 4419 06a9 00       		.sleb128 0
+ 4420 06aa 02000000 		.4byte	.LCFI11
+ 4421 06ae 2C000000 		.4byte	.LFE75
+ 4422 06b2 0200     		.2byte	0x2
+ 4423 06b4 7D       		.byte	0x7d
+ 4424 06b5 08       		.sleb128 8
+ 4425 06b6 00000000 		.4byte	0
+ 4426 06ba 00000000 		.4byte	0
+ 4427              	.LLST61:
+ 4428 06be 00000000 		.4byte	.LVL83
+ 4429 06c2 11000000 		.4byte	.LVL87-1
+ 4430 06c6 0100     		.2byte	0x1
+ 4431 06c8 50       		.byte	0x50
+ 4432 06c9 11000000 		.4byte	.LVL87-1
+ 4433 06cd 2C000000 		.4byte	.LFE75
+ 4434 06d1 0100     		.2byte	0x1
+ 4435 06d3 54       		.byte	0x54
+ 4436 06d4 00000000 		.4byte	0
+ 4437 06d8 00000000 		.4byte	0
+ 4438              	.LLST62:
+ 4439 06dc 00000000 		.4byte	.LVL83
+ 4440 06e0 11000000 		.4byte	.LVL87-1
+ 4441 06e4 0100     		.2byte	0x1
+ 4442 06e6 51       		.byte	0x51
+ 4443 06e7 11000000 		.4byte	.LVL87-1
+ 4444 06eb 2C000000 		.4byte	.LFE75
+ 4445 06ef 0400     		.2byte	0x4
+ 4446 06f1 F3       		.byte	0xf3
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 79
+
+
+ 4447 06f2 01       		.uleb128 0x1
+ 4448 06f3 51       		.byte	0x51
+ 4449 06f4 9F       		.byte	0x9f
+ 4450 06f5 00000000 		.4byte	0
+ 4451 06f9 00000000 		.4byte	0
+ 4452              	.LLST63:
+ 4453 06fd 00000000 		.4byte	.LVL83
+ 4454 0701 11000000 		.4byte	.LVL87-1
+ 4455 0705 0100     		.2byte	0x1
+ 4456 0707 52       		.byte	0x52
+ 4457 0708 11000000 		.4byte	.LVL87-1
+ 4458 070c 2C000000 		.4byte	.LFE75
+ 4459 0710 0400     		.2byte	0x4
+ 4460 0712 F3       		.byte	0xf3
+ 4461 0713 01       		.uleb128 0x1
+ 4462 0714 52       		.byte	0x52
+ 4463 0715 9F       		.byte	0x9f
+ 4464 0716 00000000 		.4byte	0
+ 4465 071a 00000000 		.4byte	0
+ 4466              	.LLST64:
+ 4467 071e 0A000000 		.4byte	.LVL85
+ 4468 0722 0C000000 		.4byte	.LVL86
+ 4469 0726 0100     		.2byte	0x1
+ 4470 0728 53       		.byte	0x53
+ 4471 0729 00000000 		.4byte	0
+ 4472 072d 00000000 		.4byte	0
+ 4473              	.LLST65:
+ 4474 0731 2A000000 		.4byte	.LVL90
+ 4475 0735 2C000000 		.4byte	.LFE75
+ 4476 0739 0100     		.2byte	0x1
+ 4477 073b 53       		.byte	0x53
+ 4478 073c 00000000 		.4byte	0
+ 4479 0740 00000000 		.4byte	0
+ 4480              	.LLST66:
+ 4481 0744 00000000 		.4byte	.LVL91
+ 4482 0748 02000000 		.4byte	.LVL92
+ 4483 074c 0100     		.2byte	0x1
+ 4484 074e 50       		.byte	0x50
+ 4485 074f 02000000 		.4byte	.LVL92
+ 4486 0753 05000000 		.4byte	.LVL93-1
+ 4487 0757 0300     		.2byte	0x3
+ 4488 0759 70       		.byte	0x70
+ 4489 075a 74       		.sleb128 -12
+ 4490 075b 9F       		.byte	0x9f
+ 4491 075c 05000000 		.4byte	.LVL93-1
+ 4492 0760 06000000 		.4byte	.LFE76
+ 4493 0764 0400     		.2byte	0x4
+ 4494 0766 F3       		.byte	0xf3
+ 4495 0767 01       		.uleb128 0x1
+ 4496 0768 50       		.byte	0x50
+ 4497 0769 9F       		.byte	0x9f
+ 4498 076a 00000000 		.4byte	0
+ 4499 076e 00000000 		.4byte	0
+ 4500              	.LLST67:
+ 4501 0772 00000000 		.4byte	.LVL94
+ 4502 0776 03000000 		.4byte	.LVL95-1
+ 4503 077a 0100     		.2byte	0x1
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 80
+
+
+ 4504 077c 50       		.byte	0x50
+ 4505 077d 03000000 		.4byte	.LVL95-1
+ 4506 0781 04000000 		.4byte	.LFE77
+ 4507 0785 0400     		.2byte	0x4
+ 4508 0787 F3       		.byte	0xf3
+ 4509 0788 01       		.uleb128 0x1
+ 4510 0789 50       		.byte	0x50
+ 4511 078a 9F       		.byte	0x9f
+ 4512 078b 00000000 		.4byte	0
+ 4513 078f 00000000 		.4byte	0
+ 4514              		.section	.debug_aranges,"",%progbits
+ 4515 0000 94000000 		.4byte	0x94
+ 4516 0004 0200     		.2byte	0x2
+ 4517 0006 00000000 		.4byte	.Ldebug_info0
+ 4518 000a 04       		.byte	0x4
+ 4519 000b 00       		.byte	0
+ 4520 000c 0000     		.2byte	0
+ 4521 000e 0000     		.2byte	0
+ 4522 0010 00000000 		.4byte	.LFB62
+ 4523 0014 04000000 		.4byte	.LFE62-.LFB62
+ 4524 0018 00000000 		.4byte	.LFB63
+ 4525 001c 10000000 		.4byte	.LFE63-.LFB63
+ 4526 0020 00000000 		.4byte	.LFB64
+ 4527 0024 1C000000 		.4byte	.LFE64-.LFB64
+ 4528 0028 00000000 		.4byte	.LFB65
+ 4529 002c 20000000 		.4byte	.LFE65-.LFB65
+ 4530 0030 00000000 		.4byte	.LFB66
+ 4531 0034 14000000 		.4byte	.LFE66-.LFB66
+ 4532 0038 00000000 		.4byte	.LFB67
+ 4533 003c 14000000 		.4byte	.LFE67-.LFB67
+ 4534 0040 00000000 		.4byte	.LFB68
+ 4535 0044 18000000 		.4byte	.LFE68-.LFB68
+ 4536 0048 00000000 		.4byte	.LFB69
+ 4537 004c 1E000000 		.4byte	.LFE69-.LFB69
+ 4538 0050 00000000 		.4byte	.LFB70
+ 4539 0054 1A000000 		.4byte	.LFE70-.LFB70
+ 4540 0058 00000000 		.4byte	.LFB71
+ 4541 005c 1A000000 		.4byte	.LFE71-.LFB71
+ 4542 0060 00000000 		.4byte	.LFB72
+ 4543 0064 2C000000 		.4byte	.LFE72-.LFB72
+ 4544 0068 00000000 		.4byte	.LFB73
+ 4545 006c 30000000 		.4byte	.LFE73-.LFB73
+ 4546 0070 00000000 		.4byte	.LFB74
+ 4547 0074 2C000000 		.4byte	.LFE74-.LFB74
+ 4548 0078 00000000 		.4byte	.LFB75
+ 4549 007c 2C000000 		.4byte	.LFE75-.LFB75
+ 4550 0080 00000000 		.4byte	.LFB76
+ 4551 0084 06000000 		.4byte	.LFE76-.LFB76
+ 4552 0088 00000000 		.4byte	.LFB77
+ 4553 008c 04000000 		.4byte	.LFE77-.LFB77
+ 4554 0090 00000000 		.4byte	0
+ 4555 0094 00000000 		.4byte	0
+ 4556              		.section	.debug_ranges,"",%progbits
+ 4557              	.Ldebug_ranges0:
+ 4558 0000 02000000 		.4byte	.LBB2
+ 4559 0004 04000000 		.4byte	.LBE2
+ 4560 0008 06000000 		.4byte	.LBB3
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 81
+
+
+ 4561 000c 0A000000 		.4byte	.LBE3
+ 4562 0010 00000000 		.4byte	0
+ 4563 0014 00000000 		.4byte	0
+ 4564 0018 02000000 		.4byte	.LBB5
+ 4565 001c 04000000 		.4byte	.LBE5
+ 4566 0020 06000000 		.4byte	.LBB6
+ 4567 0024 0A000000 		.4byte	.LBE6
+ 4568 0028 00000000 		.4byte	0
+ 4569 002c 00000000 		.4byte	0
+ 4570 0030 02000000 		.4byte	.LBB16
+ 4571 0034 04000000 		.4byte	.LBE16
+ 4572 0038 06000000 		.4byte	.LBB17
+ 4573 003c 0A000000 		.4byte	.LBE17
+ 4574 0040 00000000 		.4byte	0
+ 4575 0044 00000000 		.4byte	0
+ 4576 0048 02000000 		.4byte	.LBB19
+ 4577 004c 04000000 		.4byte	.LBE19
+ 4578 0050 06000000 		.4byte	.LBB20
+ 4579 0054 0A000000 		.4byte	.LBE20
+ 4580 0058 00000000 		.4byte	0
+ 4581 005c 00000000 		.4byte	0
+ 4582 0060 02000000 		.4byte	.LBB22
+ 4583 0064 04000000 		.4byte	.LBE22
+ 4584 0068 06000000 		.4byte	.LBB23
+ 4585 006c 0A000000 		.4byte	.LBE23
+ 4586 0070 00000000 		.4byte	0
+ 4587 0074 00000000 		.4byte	0
+ 4588 0078 02000000 		.4byte	.LBB27
+ 4589 007c 04000000 		.4byte	.LBE27
+ 4590 0080 06000000 		.4byte	.LBB28
+ 4591 0084 0A000000 		.4byte	.LBE28
+ 4592 0088 00000000 		.4byte	0
+ 4593 008c 00000000 		.4byte	0
+ 4594 0090 02000000 		.4byte	.LBB30
+ 4595 0094 04000000 		.4byte	.LBE30
+ 4596 0098 06000000 		.4byte	.LBB31
+ 4597 009c 0A000000 		.4byte	.LBE31
+ 4598 00a0 00000000 		.4byte	0
+ 4599 00a4 00000000 		.4byte	0
+ 4600 00a8 00000000 		.4byte	.LFB62
+ 4601 00ac 04000000 		.4byte	.LFE62
+ 4602 00b0 00000000 		.4byte	.LFB63
+ 4603 00b4 10000000 		.4byte	.LFE63
+ 4604 00b8 00000000 		.4byte	.LFB64
+ 4605 00bc 1C000000 		.4byte	.LFE64
+ 4606 00c0 00000000 		.4byte	.LFB65
+ 4607 00c4 20000000 		.4byte	.LFE65
+ 4608 00c8 00000000 		.4byte	.LFB66
+ 4609 00cc 14000000 		.4byte	.LFE66
+ 4610 00d0 00000000 		.4byte	.LFB67
+ 4611 00d4 14000000 		.4byte	.LFE67
+ 4612 00d8 00000000 		.4byte	.LFB68
+ 4613 00dc 18000000 		.4byte	.LFE68
+ 4614 00e0 00000000 		.4byte	.LFB69
+ 4615 00e4 1E000000 		.4byte	.LFE69
+ 4616 00e8 00000000 		.4byte	.LFB70
+ 4617 00ec 1A000000 		.4byte	.LFE70
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 82
+
+
+ 4618 00f0 00000000 		.4byte	.LFB71
+ 4619 00f4 1A000000 		.4byte	.LFE71
+ 4620 00f8 00000000 		.4byte	.LFB72
+ 4621 00fc 2C000000 		.4byte	.LFE72
+ 4622 0100 00000000 		.4byte	.LFB73
+ 4623 0104 30000000 		.4byte	.LFE73
+ 4624 0108 00000000 		.4byte	.LFB74
+ 4625 010c 2C000000 		.4byte	.LFE74
+ 4626 0110 00000000 		.4byte	.LFB75
+ 4627 0114 2C000000 		.4byte	.LFE75
+ 4628 0118 00000000 		.4byte	.LFB76
+ 4629 011c 06000000 		.4byte	.LFE76
+ 4630 0120 00000000 		.4byte	.LFB77
+ 4631 0124 04000000 		.4byte	.LFE77
+ 4632 0128 00000000 		.4byte	0
+ 4633 012c 00000000 		.4byte	0
+ 4634              		.section	.debug_line,"",%progbits
+ 4635              	.Ldebug_line0:
+ 4636 0000 91030000 		.section	.debug_str,"MS",%progbits,1
+ 4636      02003D02 
+ 4636      00000201 
+ 4636      FB0E0D00 
+ 4636      01010101 
+ 4637              	.LASF107:
+ 4638 0000 646D6172 		.ascii	"dmarx\000"
+ 4638      7800
+ 4639              	.LASF2:
+ 4640 0006 73697A65 		.ascii	"size_t\000"
+ 4640      5F7400
+ 4641              	.LASF59:
+ 4642 000d 7264796D 		.ascii	"rdymsg\000"
+ 4642      736700
+ 4643              	.LASF87:
+ 4644 0014 4F545950 		.ascii	"OTYPER\000"
+ 4644      455200
+ 4645              	.LASF99:
+ 4646 001b 5350495F 		.ascii	"SPI_ACTIVE\000"
+ 4646      41435449 
+ 4646      564500
+ 4647              	.LASF120:
+ 4648 0026 73706953 		.ascii	"spiStop\000"
+ 4648      746F7000 
+ 4649              	.LASF126:
+ 4650 002e 72786275 		.ascii	"rxbuf\000"
+ 4650      6600
+ 4651              	.LASF86:
+ 4652 0034 4D4F4445 		.ascii	"MODER\000"
+ 4652      5200
+ 4653              	.LASF13:
+ 4654 003a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4654      206C6F6E 
+ 4654      6720756E 
+ 4654      7369676E 
+ 4654      65642069 
+ 4655              	.LASF72:
+ 4656 0051 43524350 		.ascii	"CRCPR\000"
+ 4656      5200
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 83
+
+
+ 4657              	.LASF89:
+ 4658 0057 50555044 		.ascii	"PUPDR\000"
+ 4658      5200
+ 4659              	.LASF60:
+ 4660 005d 65786974 		.ascii	"exitcode\000"
+ 4660      636F6465 
+ 4660      00
+ 4661              	.LASF83:
+ 4662 0066 76656374 		.ascii	"vector\000"
+ 4662      6F7200
+ 4663              	.LASF102:
+ 4664 006d 53504944 		.ascii	"SPIDriver\000"
+ 4664      72697665 
+ 4664      7200
+ 4665              	.LASF113:
+ 4666 0077 7373706F 		.ascii	"ssport\000"
+ 4666      727400
+ 4667              	.LASF136:
+ 4668 007e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 4668      52784275 
+ 4668      66666572 
+ 4668      00
+ 4669              	.LASF25:
+ 4670 008b 705F7072 		.ascii	"p_prio\000"
+ 4670      696F00
+ 4671              	.LASF114:
+ 4672 0092 73737061 		.ascii	"sspad\000"
+ 4672      6400
+ 4673              	.LASF152:
+ 4674 0098 63684D74 		.ascii	"chMtxUnlock\000"
+ 4674      78556E6C 
+ 4674      6F636B00 
+ 4675              	.LASF1:
+ 4676 00a4 7369676E 		.ascii	"signed char\000"
+ 4676      65642063 
+ 4676      68617200 
+ 4677              	.LASF90:
+ 4678 00b0 42535252 		.ascii	"BSRR\000"
+ 4678      00
+ 4679              	.LASF97:
+ 4680 00b5 5350495F 		.ascii	"SPI_STOP\000"
+ 4680      53544F50 
+ 4680      00
+ 4681              	.LASF40:
+ 4682 00be 705F6D70 		.ascii	"p_mpool\000"
+ 4682      6F6F6C00 
+ 4683              	.LASF151:
+ 4684 00c6 7370695F 		.ascii	"spi_lld_init\000"
+ 4684      6C6C645F 
+ 4684      696E6974 
+ 4684      00
+ 4685              	.LASF56:
+ 4686 00d3 6D5F7175 		.ascii	"m_queue\000"
+ 4686      65756500 
+ 4687              	.LASF111:
+ 4688 00db 73706963 		.ascii	"spicallback_t\000"
+ 4688      616C6C62 
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 84
+
+
+ 4688      61636B5F 
+ 4688      7400
+ 4689              	.LASF103:
+ 4690 00e9 73746174 		.ascii	"state\000"
+ 4690      6500
+ 4691              	.LASF9:
+ 4692 00ef 6C6F6E67 		.ascii	"long int\000"
+ 4692      20696E74 
+ 4692      00
+ 4693              	.LASF15:
+ 4694 00f8 74737461 		.ascii	"tstate_t\000"
+ 4694      74655F74 
+ 4694      00
+ 4695              	.LASF128:
+ 4696 0101 73706953 		.ascii	"spiStartReceive\000"
+ 4696      74617274 
+ 4696      52656365 
+ 4696      69766500 
+ 4697              	.LASF143:
+ 4698 0111 7370695F 		.ascii	"spi_lld_exchange\000"
+ 4698      6C6C645F 
+ 4698      65786368 
+ 4698      616E6765 
+ 4698      00
+ 4699              	.LASF32:
+ 4700 0122 705F7265 		.ascii	"p_refs\000"
+ 4700      667300
+ 4701              	.LASF12:
+ 4702 0129 6C6F6E67 		.ascii	"long long int\000"
+ 4702      206C6F6E 
+ 4702      6720696E 
+ 4702      7400
+ 4703              	.LASF6:
+ 4704 0137 75696E74 		.ascii	"uint16_t\000"
+ 4704      31365F74 
+ 4704      00
+ 4705              	.LASF33:
+ 4706 0140 705F7469 		.ascii	"p_time\000"
+ 4706      6D6500
+ 4707              	.LASF123:
+ 4708 0147 73706953 		.ascii	"spiStartIgnore\000"
+ 4708      74617274 
+ 4708      49676E6F 
+ 4708      726500
+ 4709              	.LASF27:
+ 4710 0156 705F6E65 		.ascii	"p_newer\000"
+ 4710      77657200 
+ 4711              	.LASF112:
+ 4712 015e 656E645F 		.ascii	"end_cb\000"
+ 4712      636200
+ 4713              	.LASF109:
+ 4714 0165 7278646D 		.ascii	"rxdmamode\000"
+ 4714      616D6F64 
+ 4714      6500
+ 4715              	.LASF108:
+ 4716 016f 646D6174 		.ascii	"dmatx\000"
+ 4716      7800
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 85
+
+
+ 4717              	.LASF88:
+ 4718 0175 4F535045 		.ascii	"OSPEEDR\000"
+ 4718      45445200 
+ 4719              	.LASF50:
+ 4720 017d 725F6E65 		.ascii	"r_newer\000"
+ 4720      77657200 
+ 4721              	.LASF43:
+ 4722 0185 72656761 		.ascii	"regarm_t\000"
+ 4722      726D5F74 
+ 4722      00
+ 4723              	.LASF82:
+ 4724 018e 73656C66 		.ascii	"selfindex\000"
+ 4724      696E6465 
+ 4724      7800
+ 4725              	.LASF122:
+ 4726 0198 73706955 		.ascii	"spiUnselect\000"
+ 4726      6E73656C 
+ 4726      65637400 
+ 4727              	.LASF135:
+ 4728 01a4 726C6973 		.ascii	"rlist\000"
+ 4728      7400
+ 4729              	.LASF144:
+ 4730 01aa 7370695F 		.ascii	"spi_lld_send\000"
+ 4730      6C6C645F 
+ 4730      73656E64 
+ 4730      00
+ 4731              	.LASF21:
+ 4732 01b7 636E745F 		.ascii	"cnt_t\000"
+ 4732      7400
+ 4733              	.LASF0:
+ 4734 01bd 756E7369 		.ascii	"unsigned int\000"
+ 4734      676E6564 
+ 4734      20696E74 
+ 4734      00
+ 4735              	.LASF139:
+ 4736 01ca 7370695F 		.ascii	"spi_lld_unselect\000"
+ 4736      6C6C645F 
+ 4736      756E7365 
+ 4736      6C656374 
+ 4736      00
+ 4737              	.LASF125:
+ 4738 01db 74786275 		.ascii	"txbuf\000"
+ 4738      6600
+ 4739              	.LASF132:
+ 4740 01e1 73706952 		.ascii	"spiReceive\000"
+ 4740      65636569 
+ 4740      766500
+ 4741              	.LASF65:
+ 4742 01ec 43504152 		.ascii	"CPAR\000"
+ 4742      00
+ 4743              	.LASF35:
+ 4744 01f1 705F6D73 		.ascii	"p_msgqueue\000"
+ 4744      67717565 
+ 4744      756500
+ 4745              	.LASF94:
+ 4746 01fc 4750494F 		.ascii	"GPIO_TypeDef\000"
+ 4746      5F547970 
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 86
+
+
+ 4746      65446566 
+ 4746      00
+ 4747              	.LASF91:
+ 4748 0209 4C434B52 		.ascii	"LCKR\000"
+ 4748      00
+ 4749              	.LASF81:
+ 4750 020e 69736869 		.ascii	"ishift\000"
+ 4750      667400
+ 4751              	.LASF127:
+ 4752 0215 73706953 		.ascii	"spiStartSend\000"
+ 4752      74617274 
+ 4752      53656E64 
+ 4752      00
+ 4753              	.LASF45:
+ 4754 0222 636F6E74 		.ascii	"context\000"
+ 4754      65787400 
+ 4755              	.LASF7:
+ 4756 022a 73686F72 		.ascii	"short unsigned int\000"
+ 4756      7420756E 
+ 4756      7369676E 
+ 4756      65642069 
+ 4756      6E7400
+ 4757              	.LASF18:
+ 4758 023d 6D73675F 		.ascii	"msg_t\000"
+ 4758      7400
+ 4759              	.LASF14:
+ 4760 0243 746D6F64 		.ascii	"tmode_t\000"
+ 4760      655F7400 
+ 4761              	.LASF42:
+ 4762 024b 54687265 		.ascii	"ThreadsList\000"
+ 4762      6164734C 
+ 4762      69737400 
+ 4763              	.LASF19:
+ 4764 0257 6576656E 		.ascii	"eventmask_t\000"
+ 4764      746D6173 
+ 4764      6B5F7400 
+ 4765              	.LASF54:
+ 4766 0263 52656164 		.ascii	"ReadyList\000"
+ 4766      794C6973 
+ 4766      7400
+ 4767              	.LASF116:
+ 4768 026d 73706949 		.ascii	"spiInit\000"
+ 4768      6E697400 
+ 4769              	.LASF22:
+ 4770 0275 54687265 		.ascii	"Thread\000"
+ 4770      616400
+ 4771              	.LASF48:
+ 4772 027c 725F7072 		.ascii	"r_prio\000"
+ 4772      696F00
+ 4773              	.LASF130:
+ 4774 0283 73706945 		.ascii	"spiExchange\000"
+ 4774      78636861 
+ 4774      6E676500 
+ 4775              	.LASF46:
+ 4776 028f 73697A65 		.ascii	"sizetype\000"
+ 4776      74797065 
+ 4776      00
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 87
+
+
+ 4777              	.LASF85:
+ 4778 0298 636C6561 		.ascii	"clear\000"
+ 4778      7200
+ 4779              	.LASF55:
+ 4780 029e 4D757465 		.ascii	"Mutex\000"
+ 4780      7800
+ 4781              	.LASF140:
+ 4782 02a4 7370695F 		.ascii	"spi_lld_stop\000"
+ 4782      6C6C645F 
+ 4782      73746F70 
+ 4782      00
+ 4783              	.LASF133:
+ 4784 02b1 73706941 		.ascii	"spiAcquireBus\000"
+ 4784      63717569 
+ 4784      72654275 
+ 4784      7300
+ 4785              	.LASF147:
+ 4786 02bf 63684D74 		.ascii	"chMtxLock\000"
+ 4786      784C6F63 
+ 4786      6B00
+ 4787              	.LASF149:
+ 4788 02c9 2E2E2F2E 		.ascii	"../../os/hal/src/spi.c\000"
+ 4788      2E2F6F73 
+ 4788      2F68616C 
+ 4788      2F737263 
+ 4788      2F737069 
+ 4789              	.LASF28:
+ 4790 02e0 705F6F6C 		.ascii	"p_older\000"
+ 4790      64657200 
+ 4791              	.LASF49:
+ 4792 02e8 725F6374 		.ascii	"r_ctx\000"
+ 4792      7800
+ 4793              	.LASF41:
+ 4794 02ee 54687265 		.ascii	"ThreadsQueue\000"
+ 4794      61647351 
+ 4794      75657565 
+ 4794      00
+ 4795              	.LASF110:
+ 4796 02fb 7478646D 		.ascii	"txdmamode\000"
+ 4796      616D6F64 
+ 4796      6500
+ 4797              	.LASF148:
+ 4798 0305 474E5520 		.ascii	"GNU C 4.7.1\000"
+ 4798      4320342E 
+ 4798      372E3100 
+ 4799              	.LASF53:
+ 4800 0311 725F6375 		.ascii	"r_current\000"
+ 4800      7272656E 
+ 4800      7400
+ 4801              	.LASF51:
+ 4802 031b 725F6F6C 		.ascii	"r_older\000"
+ 4802      64657200 
+ 4803              	.LASF67:
+ 4804 0323 444D415F 		.ascii	"DMA_Channel_TypeDef\000"
+ 4804      4368616E 
+ 4804      6E656C5F 
+ 4804      54797065 
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 88
+
+
+ 4804      44656600 
+ 4805              	.LASF92:
+ 4806 0337 4146524C 		.ascii	"AFRL\000"
+ 4806      00
+ 4807              	.LASF76:
+ 4808 033c 54584352 		.ascii	"TXCRCR\000"
+ 4808      435200
+ 4809              	.LASF68:
+ 4810 0343 52455345 		.ascii	"RESERVED0\000"
+ 4810      52564544 
+ 4810      3000
+ 4811              	.LASF69:
+ 4812 034d 52455345 		.ascii	"RESERVED1\000"
+ 4812      52564544 
+ 4812      3100
+ 4813              	.LASF70:
+ 4814 0357 52455345 		.ascii	"RESERVED2\000"
+ 4814      52564544 
+ 4814      3200
+ 4815              	.LASF71:
+ 4816 0361 52455345 		.ascii	"RESERVED3\000"
+ 4816      52564544 
+ 4816      3300
+ 4817              	.LASF73:
+ 4818 036b 52455345 		.ascii	"RESERVED4\000"
+ 4818      52564544 
+ 4818      3400
+ 4819              	.LASF24:
+ 4820 0375 705F7072 		.ascii	"p_prev\000"
+ 4820      657600
+ 4821              	.LASF77:
+ 4822 037c 52455345 		.ascii	"RESERVED6\000"
+ 4822      52564544 
+ 4822      3600
+ 4823              	.LASF84:
+ 4824 0386 73746D33 		.ascii	"stm32_dma_stream_t\000"
+ 4824      325F646D 
+ 4824      615F7374 
+ 4824      7265616D 
+ 4824      5F7400
+ 4825              	.LASF131:
+ 4826 0399 73706953 		.ascii	"spiSend\000"
+ 4826      656E6400 
+ 4827              	.LASF17:
+ 4828 03a1 74707269 		.ascii	"tprio_t\000"
+ 4828      6F5F7400 
+ 4829              	.LASF106:
+ 4830 03a9 6D757465 		.ascii	"mutex\000"
+ 4830      7800
+ 4831              	.LASF8:
+ 4832 03af 696E7433 		.ascii	"int32_t\000"
+ 4832      325F7400 
+ 4833              	.LASF4:
+ 4834 03b7 756E7369 		.ascii	"unsigned char\000"
+ 4834      676E6564 
+ 4834      20636861 
+ 4834      7200
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 89
+
+
+ 4835              	.LASF38:
+ 4836 03c5 705F6D74 		.ascii	"p_mtxlist\000"
+ 4836      786C6973 
+ 4836      7400
+ 4837              	.LASF5:
+ 4838 03cf 73686F72 		.ascii	"short int\000"
+ 4838      7420696E 
+ 4838      7400
+ 4839              	.LASF30:
+ 4840 03d9 705F7374 		.ascii	"p_state\000"
+ 4840      61746500 
+ 4841              	.LASF145:
+ 4842 03e1 7370695F 		.ascii	"spi_lld_receive\000"
+ 4842      6C6C645F 
+ 4842      72656365 
+ 4842      69766500 
+ 4843              	.LASF117:
+ 4844 03f1 7370694F 		.ascii	"spiObjectInit\000"
+ 4844      626A6563 
+ 4844      74496E69 
+ 4844      7400
+ 4845              	.LASF62:
+ 4846 03ff 65776D61 		.ascii	"ewmask\000"
+ 4846      736B00
+ 4847              	.LASF23:
+ 4848 0406 705F6E65 		.ascii	"p_next\000"
+ 4848      787400
+ 4849              	.LASF31:
+ 4850 040d 705F666C 		.ascii	"p_flags\000"
+ 4850      61677300 
+ 4851              	.LASF79:
+ 4852 0415 6368616E 		.ascii	"channel\000"
+ 4852      6E656C00 
+ 4853              	.LASF150:
+ 4854 041d 433A5C70 		.ascii	"C:\\projects\\ChibiOS_2.4.2\\demos\\TOAST2\000"
+ 4854      726F6A65 
+ 4854      6374735C 
+ 4854      43686962 
+ 4854      694F535F 
+ 4855              	.LASF146:
+ 4856 0444 63685363 		.ascii	"chSchGoSleepS\000"
+ 4856      68476F53 
+ 4856      6C656570 
+ 4856      5300
+ 4857              	.LASF37:
+ 4858 0452 705F6570 		.ascii	"p_epending\000"
+ 4858      656E6469 
+ 4858      6E6700
+ 4859              	.LASF80:
+ 4860 045d 69666372 		.ascii	"ifcr\000"
+ 4860      00
+ 4861              	.LASF75:
+ 4862 0462 52455345 		.ascii	"RESERVED5\000"
+ 4862      52564544 
+ 4862      3500
+ 4863              	.LASF10:
+ 4864 046c 75696E74 		.ascii	"uint32_t\000"
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 90
+
+
+ 4864      33325F74 
+ 4864      00
+ 4865              	.LASF47:
+ 4866 0475 725F7175 		.ascii	"r_queue\000"
+ 4866      65756500 
+ 4867              	.LASF16:
+ 4868 047d 74726566 		.ascii	"trefs_t\000"
+ 4868      735F7400 
+ 4869              	.LASF11:
+ 4870 0485 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4870      20756E73 
+ 4870      69676E65 
+ 4870      6420696E 
+ 4870      7400
+ 4871              	.LASF78:
+ 4872 0497 5350495F 		.ascii	"SPI_TypeDef\000"
+ 4872      54797065 
+ 4872      44656600 
+ 4873              	.LASF63:
+ 4874 04a3 63686172 		.ascii	"char\000"
+ 4874      00
+ 4875              	.LASF100:
+ 4876 04a8 5350495F 		.ascii	"SPI_COMPLETE\000"
+ 4876      434F4D50 
+ 4876      4C455445 
+ 4876      00
+ 4877              	.LASF104:
+ 4878 04b5 636F6E66 		.ascii	"config\000"
+ 4878      696700
+ 4879              	.LASF101:
+ 4880 04bc 73706973 		.ascii	"spistate_t\000"
+ 4880      74617465 
+ 4880      5F7400
+ 4881              	.LASF58:
+ 4882 04c7 6D5F6E65 		.ascii	"m_next\000"
+ 4882      787400
+ 4883              	.LASF20:
+ 4884 04ce 73797374 		.ascii	"systime_t\000"
+ 4884      696D655F 
+ 4884      7400
+ 4885              	.LASF39:
+ 4886 04d8 705F7265 		.ascii	"p_realprio\000"
+ 4886      616C7072 
+ 4886      696F00
+ 4887              	.LASF105:
+ 4888 04e3 74687265 		.ascii	"thread\000"
+ 4888      616400
+ 4889              	.LASF134:
+ 4890 04ea 73706952 		.ascii	"spiReleaseBus\000"
+ 4890      656C6561 
+ 4890      73654275 
+ 4890      7300
+ 4891              	.LASF129:
+ 4892 04f8 73706949 		.ascii	"spiIgnore\000"
+ 4892      676E6F72 
+ 4892      6500
+ 4893              	.LASF95:
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 91
+
+
+ 4894 0502 696F706F 		.ascii	"ioportid_t\000"
+ 4894      72746964 
+ 4894      5F7400
+ 4895              	.LASF141:
+ 4896 050d 7370695F 		.ascii	"spi_lld_select\000"
+ 4896      6C6C645F 
+ 4896      73656C65 
+ 4896      637400
+ 4897              	.LASF118:
+ 4898 051c 73706953 		.ascii	"spiStart\000"
+ 4898      74617274 
+ 4898      00
+ 4899              	.LASF121:
+ 4900 0525 73706953 		.ascii	"spiSelect\000"
+ 4900      656C6563 
+ 4900      7400
+ 4901              	.LASF44:
+ 4902 052f 696E7463 		.ascii	"intctx\000"
+ 4902      747800
+ 4903              	.LASF98:
+ 4904 0536 5350495F 		.ascii	"SPI_READY\000"
+ 4904      52454144 
+ 4904      5900
+ 4905              	.LASF96:
+ 4906 0540 5350495F 		.ascii	"SPI_UNINIT\000"
+ 4906      554E494E 
+ 4906      495400
+ 4907              	.LASF137:
+ 4908 054b 63684D74 		.ascii	"chMtxInit\000"
+ 4908      78496E69 
+ 4908      7400
+ 4909              	.LASF142:
+ 4910 0555 7370695F 		.ascii	"spi_lld_ignore\000"
+ 4910      6C6C645F 
+ 4910      69676E6F 
+ 4910      726500
+ 4911              	.LASF124:
+ 4912 0564 73706953 		.ascii	"spiStartExchange\000"
+ 4912      74617274 
+ 4912      45786368 
+ 4912      616E6765 
+ 4912      00
+ 4913              	.LASF64:
+ 4914 0575 434E4454 		.ascii	"CNDTR\000"
+ 4914      5200
+ 4915              	.LASF66:
+ 4916 057b 434D4152 		.ascii	"CMAR\000"
+ 4916      00
+ 4917              	.LASF74:
+ 4918 0580 52584352 		.ascii	"RXCRCR\000"
+ 4918      435200
+ 4919              	.LASF138:
+ 4920 0587 7370695F 		.ascii	"spi_lld_start\000"
+ 4920      6C6C645F 
+ 4920      73746172 
+ 4920      7400
+ 4921              	.LASF3:
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 92
+
+
+ 4922 0595 75696E74 		.ascii	"uint8_t\000"
+ 4922      385F7400 
+ 4923              	.LASF119:
+ 4924 059d 73706970 		.ascii	"spip\000"
+ 4924      00
+ 4925              	.LASF61:
+ 4926 05a2 77746F62 		.ascii	"wtobjp\000"
+ 4926      6A7000
+ 4927              	.LASF29:
+ 4928 05a9 705F6E61 		.ascii	"p_name\000"
+ 4928      6D6500
+ 4929              	.LASF115:
+ 4930 05b0 53504943 		.ascii	"SPIConfig\000"
+ 4930      6F6E6669 
+ 4930      6700
+ 4931              	.LASF36:
+ 4932 05ba 705F6D73 		.ascii	"p_msg\000"
+ 4932      6700
+ 4933              	.LASF52:
+ 4934 05c0 725F7072 		.ascii	"r_preempt\000"
+ 4934      65656D70 
+ 4934      7400
+ 4935              	.LASF93:
+ 4936 05ca 41465248 		.ascii	"AFRH\000"
+ 4936      00
+ 4937              	.LASF57:
+ 4938 05cf 6D5F6F77 		.ascii	"m_owner\000"
+ 4938      6E657200 
+ 4939              	.LASF26:
+ 4940 05d7 705F6374 		.ascii	"p_ctx\000"
+ 4940      7800
+ 4941              	.LASF34:
+ 4942 05dd 705F7761 		.ascii	"p_waiting\000"
+ 4942      6974696E 
+ 4942      6700
+ 4943              		.ident	"GCC: (GNU) 4.7.1"
+ARM GAS  C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s 			page 93
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 spi.c
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:19     .text.spiInit:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:24     .text.spiInit:00000000 spiInit
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:40     .text.spiObjectInit:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:45     .text.spiObjectInit:00000000 spiObjectInit
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:73     .text.spiStart:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:78     .text.spiStart:00000000 spiStart
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:128    .text.spiStop:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:133    .text.spiStop:00000000 spiStop
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:185    .text.spiSelect:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:190    .text.spiSelect:00000000 spiSelect
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:230    .text.spiUnselect:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:235    .text.spiUnselect:00000000 spiUnselect
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:275    .text.spiStartIgnore:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:280    .text.spiStartIgnore:00000000 spiStartIgnore
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:323    .text.spiStartExchange:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:328    .text.spiStartExchange:00000000 spiStartExchange
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:378    .text.spiStartSend:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:383    .text.spiStartSend:00000000 spiStartSend
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:431    .text.spiStartReceive:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:436    .text.spiStartReceive:00000000 spiStartReceive
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:484    .text.spiIgnore:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:489    .text.spiIgnore:00000000 spiIgnore
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:545    .text.spiExchange:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:550    .text.spiExchange:00000000 spiExchange
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:608    .text.spiSend:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:613    .text.spiSend:00000000 spiSend
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:669    .text.spiReceive:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:674    .text.spiReceive:00000000 spiReceive
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:730    .text.spiAcquireBus:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:735    .text.spiAcquireBus:00000000 spiAcquireBus
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:754    .text.spiReleaseBus:00000000 $t
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\ccliALLk.s:759    .text.spiReleaseBus:00000000 spiReleaseBus
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+spi_lld_init
+chMtxInit
+spi_lld_start
+spi_lld_unselect
+spi_lld_stop
+spi_lld_select
+spi_lld_ignore
+spi_lld_exchange
+spi_lld_send
+spi_lld_receive
+rlist
+chSchGoSleepS
+chMtxLock
+chMtxUnlock
